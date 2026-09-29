@@ -3,63 +3,101 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Life is hard. Hold on. You fell. Get up. You left. Come back. Follow Jesus.">
+<meta name="description" content="Jesus, the Bible, faith, doubt, and the questions we stop asking.">
+<meta name="theme-color" content="#090909">
 <title>Christianity, Apparently.</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="top">
-  <a class="mark" href="#home">Christianity, <em>apparently.</em></a>
-  <nav><a href="#start">Start here</a><a href="#questions">Questions</a><a href="#support">Support</a></nav>
+<header class="nav">
+  <a class="brand" href="#home">Christianity, <span>Apparently.</span></a>
+  <nav aria-label="Primary navigation">
+    <a href="#start">Start here</a>
+    <a href="#questions">Keep going</a>
+    <a href="#support">Support</a>
+  </nav>
 </header>
+
 <main id="home">
-<section class="hero" aria-label="Christianity, Apparently">
-  <img src="assets/banner.png" alt="Christianity, Apparently">
-</section>
-<section class="call">
-  <div class="lines">
-    <p><strong>Life is hard.</strong><span>Hold on.</span></p>
-    <p><strong>You fell.</strong><span>Get up.</span></p>
-    <p><strong>You left.</strong><span>Come back.</span></p>
-    <p><strong>You have questions.</strong><span>Ask them.</span></p>
-    <p><strong>You don’t know Jesus?</strong><span>Get to know Him.</span></p>
+<section class="hero">
+  <img class="hero-art" src="assets/banner.png" alt="">
+  <div class="hero-shade"></div>
+  <div class="hero-copy">
+    <p class="kicker">Faith. Doubt. Questions. Jesus.</p>
+    <h1>Maybe you’re<br>not done yet.</h1>
+    <p class="lede">You don’t need all the answers before you take another look at Jesus.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#start">Start here <span>↘</span></a>
+      <a class="quiet-link" href="#questions">I have questions</a>
+    </div>
   </div>
-  <p class="maybe">Maybe that person is <em>you.</em></p>
-  <a class="button" href="#start">Start here <span>↓</span></a>
+  <p class="scroll">Keep going <span>↓</span></p>
 </section>
-<section class="start paper" id="start">
-  <p class="eyebrow">Start here</p>
-  <h1>You don’t need special words.<br>You don’t need all the answers.</h1>
-  <p>If you want to know Jesus, talk to Him.</p>
-  <blockquote>Jesus, have mercy on me.<br>I believe in You.<br>Help me follow You.</blockquote>
-  <p class="hinge">Those words don’t save you. <strong>Jesus does.</strong></p>
-  <p>You can’t earn your way to Him. You just come.</p>
+
+<section class="signals" aria-label="A place to begin">
+  <article><span>01</span><p><b>Life is hard.</b> Hold on.</p></article>
+  <article><span>02</span><p><b>You fell.</b> Get up.</p></article>
+  <article><span>03</span><p><b>You left.</b> Come back.</p></article>
+  <article><span>04</span><p><b>You have questions.</b> Ask them.</p></article>
 </section>
-<section class="path" id="questions">
-  <p class="eyebrow">Then keep going.</p>
-  <div class="path-grid">
-    <span>Talk to God.</span><span>Read about Jesus.</span><span>Find a good church.</span>
-    <span>Find a Christian you trust.</span><span>Ask hard questions.</span><span>Get baptized.</span>
-    <span>Love people.</span><span>Forgive people.</span>
+
+<section class="start" id="start">
+  <div class="section-label"><span></span> START HERE</div>
+  <div class="start-grid">
+    <div>
+      <h2>You don’t need<br>special words.</h2>
+      <p class="big-copy">If you want to know Jesus, talk to Him. You don’t have to clean yourself up first. You don’t have to pretend certainty you don’t have.</p>
+    </div>
+    <div class="prayer-card">
+      <p class="card-label">IF YOU DON’T KNOW WHAT TO SAY</p>
+      <blockquote>Jesus, have mercy on me.<br>I believe in You.<br>Help me follow You.</blockquote>
+      <div class="rule"></div>
+      <p>Those words don’t save you.</p>
+      <strong>Jesus does.</strong>
+    </div>
   </div>
-  <h2>Follow Jesus.</h2>
+  <p class="come">You can’t earn your way to Him. <em>Just come.</em></p>
 </section>
-<section class="support paper" id="support">
-  <p class="eyebrow">Support this ministry</p>
-  <h2>Pray first.</h2>
-  <p>Pray that the right person finds the right video at the right time.</p>
-  <p>The videos are free and always will be. If you’d also like to help with the tools and costs that keep them going, you can.</p>
-  <div class="buttons">
-    <a class="button dark" href="https://buymeacoffee.com/christianityapparently" target="_blank" rel="noopener">One-time support</a>
-    <a class="textlink" href="https://www.patreon.com/ChristianityApparently" target="_blank" rel="noopener">Monthly on Patreon →</a>
+
+<section class="questions" id="questions">
+  <div class="question-copy">
+    <div class="section-label light"><span></span> KEEP GOING</div>
+    <h2>Ask the<br><i>hard</i> questions.</h2>
+    <p>Faith doesn’t become more real by pretending the questions aren’t there.</p>
   </div>
-  <p class="last">But pray first. <strong>Always.</strong></p>
+  <div class="steps">
+    <a href="#start"><small>01</small><span>Talk to God.</span><b>↗</b></a>
+    <a href="#start"><small>02</small><span>Read about Jesus.</span><b>↗</b></a>
+    <a href="#start"><small>03</small><span>Find a good church.</span><b>↗</b></a>
+    <a href="#start"><small>04</small><span>Find a Christian you trust.</span><b>↗</b></a>
+    <a href="#start"><small>05</small><span>Ask hard questions.</span><b>↗</b></a>
+    <a href="#start"><small>06</small><span>Love people. Forgive people.</span><b>↗</b></a>
+  </div>
+</section>
+
+<section class="follow">
+  <p>When everything else gets complicated,</p>
+  <h2>Follow <i>Jesus.</i></h2>
+</section>
+
+<section class="support" id="support">
+  <div class="support-copy">
+    <div class="section-label"><span></span> SUPPORT THE WORK</div>
+    <h2>Pray first.</h2>
+    <p>Pray that the right person finds the right thing at the right time.</p>
+    <p class="muted">The videos are free and always will be. If you’d also like to help cover the tools and costs that keep them going, you can.</p>
+  </div>
+  <div class="support-actions">
+    <a class="support-card" href="https://www.patreon.com/ChristianityApparently" target="_blank" rel="noopener"><small>MONTHLY SUPPORT</small><strong>Patreon</strong><span>↗</span></a>
+    <a class="support-card" href="https://buymeacoffee.com/christianityapparently" target="_blank" rel="noopener"><small>ONE-TIME SUPPORT</small><strong>Buy me a coffee</strong><span>↗</span></a>
+  </div>
 </section>
 </main>
+
 <footer>
-  <img src="assets/logo.png" alt="">
-  <p><strong>Christianity, apparently.</strong><br>Love God. Love people. Keep going.</p>
+  <a class="brand" href="#home">Christianity, <span>Apparently.</span></a>
+  <p>Point people to Jesus.</p>
+  <p class="copyright">© 2026</p>
 </footer>
-<!-- Deployment trigger: 2026-09-29 -->
 </body>
 </html>
