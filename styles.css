@@ -424,3 +424,47 @@ footer{padding-top:16px!important;padding-bottom:16px!important}
     gap:4px!important;
   }
 }
+
+/* ultra-tight header */
+.nav{
+  height:50px!important;
+  padding:0 clamp(14px,3vw,34px)!important;
+}
+.nav .brand{
+  font-size:.88rem!important;
+}
+.nav nav{
+  gap:10px!important;
+}
+.nav nav a{
+  font-size:.68rem!important;
+  letter-spacing:.08em!important;
+}
+.nav .external-favicon{
+  width:13px!important;
+  height:13px!important;
+}
+.home-compact main{
+  padding-top:50px!important;
+}
+.page-hero{
+  padding-top:72px!important;
+}
+@media(max-width:850px){
+  .nav{
+    height:46px!important;
+    padding:0 12px!important;
+  }
+  .nav .brand{
+    font-size:.82rem!important;
+  }
+  .nav nav a{
+    font-size:.64rem!important;
+  }
+  .home-compact main{
+    padding-top:46px!important;
+  }
+  .page-hero{
+    padding-top:66px!important;
+  }
+}
