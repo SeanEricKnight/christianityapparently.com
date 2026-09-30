@@ -639,3 +639,35 @@ footer{
   .compact-list em{display:none!important}
   .compact-list b{grid-column:2!important}
 }
+
+/* tighter homepage section labels */
+.home-compact .compact-heading{
+  margin-bottom:10px!important;
+  gap:12px!important;
+}
+.home-compact .compact-heading .eyebrow,
+.home-compact .compact-prayer .eyebrow{
+  margin-bottom:0!important;
+}
+.home-compact .compact-section{
+  padding-top:28px!important;
+  padding-bottom:28px!important;
+}
+.home-compact .compact-start{
+  padding-top:28px!important;
+}
+.home-compact .compact-prayer{
+  padding-top:28px!important;
+  padding-bottom:28px!important;
+}
+@media(max-width:850px){
+  .home-compact .compact-heading{
+    gap:6px!important;
+    margin-bottom:8px!important;
+  }
+  .home-compact .compact-section,
+  .home-compact .compact-prayer{
+    padding-top:24px!important;
+    padding-bottom:24px!important;
+  }
+}
