@@ -604,3 +604,24 @@ footer{
 .question-more summary::-webkit-details-marker{display:none}
 .question-more summary span{margin-left:6px}
 .question-more[open] summary span{display:inline-block;transform:rotate(180deg)}
+
+/* quiet support utility at page end */
+.home-compact .compact-support{
+  justify-content:flex-end!important;
+  text-align:right!important;
+  gap:14px!important;
+  border-top:1px solid var(--line)!important;
+  border-bottom:0!important;
+}
+.home-compact .compact-support>span{
+  margin-left:auto!important;
+}
+@media(max-width:850px){
+  .home-compact .compact-support{
+    flex-direction:row!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    gap:10px!important;
+    text-align:right!important;
+  }
+}
