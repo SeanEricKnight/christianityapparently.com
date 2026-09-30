@@ -623,3 +623,19 @@ footer{
     padding:10px 14px!important;
   }
 }
+
+/* fix homepage row grid after removing numbers */
+.compact-list a{
+  grid-template-columns:minmax(0,1.25fr) minmax(160px,.75fr) 20px!important;
+}
+.compact-list span{grid-column:1}
+.compact-list em{grid-column:2}
+.compact-list b{grid-column:3}
+@media(max-width:850px){
+  .compact-list a{
+    grid-template-columns:minmax(0,1fr) 20px!important;
+  }
+  .compact-list span{grid-column:1}
+  .compact-list em{display:none!important}
+  .compact-list b{grid-column:2!important}
+}
