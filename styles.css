@@ -327,3 +327,100 @@ footer{
     min-height:54px;
   }
 }
+
+/* make interior pages genuinely minimal like the homepage */
+.page-hero{
+  min-height:0!important;
+  padding:94px 20px 18px!important;
+  border-bottom:1px solid var(--line)!important;
+  align-items:flex-start!important;
+}
+.page-hero .inner-wrap{max-width:900px!important;margin:0 auto!important}
+.page-hero .eyebrow{margin-bottom:8px!important}
+.page-hero h1{
+  font-size:clamp(2.35rem,4.2vw,3.9rem)!important;
+  line-height:1!important;
+  letter-spacing:-.02em!important;
+}
+.page-hero p:last-child{
+  margin-top:10px!important;
+  font-size:.96rem!important;
+  line-height:1.45!important;
+  max-width:620px!important;
+}
+
+.article,
+.article.wide{
+  max-width:900px!important;
+  padding:22px 20px 32px!important;
+}
+.article .intro{
+  font-size:1.14rem!important;
+  line-height:1.45!important;
+  margin:0 0 18px!important;
+}
+.article h2{
+  font-size:clamp(1.55rem,2.5vw,2.2rem)!important;
+  line-height:1.05!important;
+  margin:24px 0 8px!important;
+}
+.article h3{
+  font-size:1.22rem!important;
+  margin:18px 0 6px!important;
+}
+.article p,
+.article li{
+  font-size:1rem!important;
+  line-height:1.5!important;
+}
+.article p{margin:0 0 10px!important}
+.article ul,.article ol{margin:8px 0 14px;padding-left:22px}
+.article blockquote{
+  margin:18px 0!important;
+  padding:14px 0!important;
+  font-size:clamp(1.35rem,2vw,1.8rem)!important;
+  line-height:1.2!important;
+}
+.article .aside{
+  margin:18px 0!important;
+  padding:12px 0 12px 16px!important;
+}
+.inline-prayer{
+  margin:18px 0!important;
+  padding:14px 0!important;
+}
+.inline-prayer small{margin-bottom:6px!important}
+.inline-prayer p{
+  font-size:clamp(1.35rem,2vw,1.8rem)!important;
+  line-height:1.2!important;
+}
+.topic-links{margin-top:20px!important}
+.topic-links a{min-height:48px!important}
+.topic-links span{font-size:1.05rem!important}
+.romans-road{margin:20px 0!important}
+.romans-road section{
+  grid-template-columns:115px 140px 1fr!important;
+  gap:14px!important;
+  padding:13px 0!important;
+}
+.romans-road h3{font-size:1.2rem!important}
+.romans-road p{font-size:.95rem!important}
+footer{padding-top:16px!important;padding-bottom:16px!important}
+
+@media(max-width:850px){
+  .page-hero{
+    padding:82px 20px 16px!important;
+  }
+  .page-hero h1{
+    font-size:clamp(2.2rem,9vw,3.4rem)!important;
+  }
+  .article,
+  .article.wide{
+    padding:18px 20px 28px!important;
+  }
+  .article h2{margin-top:20px!important}
+  .romans-road section{
+    grid-template-columns:1fr!important;
+    gap:4px!important;
+  }
+}
