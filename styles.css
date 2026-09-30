@@ -79,3 +79,11 @@ footer{padding:34px clamp(22px,6vw,78px);display:grid;grid-template-columns:1.2f
 .support-band>a.external-inline{display:inline-flex;align-items:center;gap:8px}
 .topic-links .external-resource{grid-template-columns:auto 1fr auto}
 .topic-links .external-resource .external-favicon{width:20px;height:20px}
+
+.footer-mission{text-decoration:none;color:#aaa59a}.footer-mission:hover{color:var(--warm)}.footer-mission span{color:var(--warm)}
+.romans-road{margin:50px 0;border-top:1px solid var(--line)}
+.romans-road section{display:grid;grid-template-columns:150px 180px 1fr;gap:24px;align-items:start;padding:28px 0;border-bottom:1px solid var(--line)}
+.romans-road small{color:var(--warm);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding-top:6px}
+.romans-road h3{margin:0;font-family:"Source Serif 4",serif;font-size:1.8rem;font-weight:500;color:var(--text)}
+.romans-road p{margin:0}
+@media(max-width:700px){.romans-road section{grid-template-columns:1fr;gap:8px}.romans-road small{padding-top:0}.romans-road h3{font-size:1.6rem}}
