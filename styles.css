@@ -847,3 +847,16 @@ body{
     font-size:.76rem!important;
   }
 }
+
+
+/* Scripture links */
+.bible-ref{
+  color:var(--warm);
+  text-decoration-color:rgba(216,154,66,.42);
+  text-decoration-thickness:1px;
+  text-underline-offset:3px;
+}
+.bible-ref:hover{
+  color:#efb77e;
+  text-decoration-color:currentColor;
+}
