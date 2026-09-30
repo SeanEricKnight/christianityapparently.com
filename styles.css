@@ -1,5 +1,5 @@
 :root{
- --bg:#0a0a09;--surface:#151411;--surface2:#211f1b;--paper:#eee8da;--ink:#171613;
+ --bg:#17140f;--surface:#201b14;--surface2:#2a241b;--paper:#eee8da;--ink:#171613;
  --text:#eee9de;--muted:#aaa59a;--warm:#c88958;--gold:#d89a42;--line:rgba(238,233,222,.15);--max:1240px
 }
 *{box-sizing:border-box}
@@ -793,4 +793,40 @@ footer{
     font-size:.95rem;
   }
   .mobile-next b{color:var(--warm);font-weight:400}
+}
+
+
+/* warm photographic site background */
+body{
+  background:
+    radial-gradient(circle at 18% 0%,rgba(217,138,78,.10),transparent 34rem),
+    linear-gradient(rgba(20,16,11,.80),rgba(20,16,11,.90)),
+    url("assets/background.webp") center top / cover no-repeat;
+  background-color:var(--bg);
+  background-attachment:scroll;
+}
+
+.page-hero{
+  background:rgba(23,20,15,.76)!important;
+}
+
+.home-compact .compact-section,
+.home-compact .compact-prayer{
+  background:rgba(15,13,10,.18);
+}
+
+.nav{
+  background:rgba(17,15,12,.93)!important;
+}
+
+@media(min-width:901px){
+  body{background-attachment:fixed}
+}
+
+@media(max-width:900px){
+  body{
+    background-position:46% top;
+    background-size:auto 100vh;
+    background-repeat:repeat-y;
+  }
 }
