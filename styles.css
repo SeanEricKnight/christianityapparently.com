@@ -71,3 +71,11 @@ footer{padding:34px clamp(22px,6vw,78px);display:grid;grid-template-columns:1.2f
  .hero-message{grid-row:2}
  .video-card .video-image,.video-card.tall .video-image{height:44vw;min-height:190px;max-height:300px}
 }
+
+/* external destination favicons */
+.external-favicon{width:15px;height:15px;border-radius:3px;object-fit:contain;flex:0 0 auto;vertical-align:-2px}
+.external-inline{display:inline-flex!important;align-items:center;gap:7px}
+.video-card .external-inline{font-size:.82rem;color:var(--muted)}
+.support-band>a.external-inline{display:inline-flex;align-items:center;gap:8px}
+.topic-links .external-resource{grid-template-columns:auto 1fr auto}
+.topic-links .external-resource .external-favicon{width:20px;height:20px}
