@@ -43,7 +43,7 @@ a{color:inherit}
 .button.ghost:hover{background:var(--warm);color:#111}
 .text-link{font-size:.82rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:4px}
 .text-link span{color:var(--warm)}
-.pathways{padding:clamp(85px,10vw,135px) clamp(22px,6vw,78px);max-width:var(--max);margin:auto}
+.pathways{padding:clamp(64px,8vw,100px) clamp(22px,6vw,78px);max-width:var(--max);margin:auto}
 .section-kicker{color:var(--muted)}
 .path-list{border-top:1px solid var(--line)}
 .path-list a,.question-list a{display:grid;grid-template-columns:1.2fr .8fr auto;gap:24px;align-items:center;padding:27px 4px;border-bottom:1px solid var(--line);text-decoration:none}
@@ -52,18 +52,18 @@ a{color:inherit}
 .path-list span,.question-list span{font-family:"Source Serif 4",serif;font-size:clamp(1.5rem,2.5vw,2.3rem);letter-spacing:-.035em}
 .path-list small,.question-list small{color:var(--muted);font-size:.82rem}
 .path-list b,.question-list b,.next-grid b,.support-links b{font-weight:400;color:var(--warm)}
-.centerpiece{background:var(--paper);color:var(--ink);padding:clamp(95px,12vw,165px) clamp(22px,6vw,78px)}
+.centerpiece{background:var(--paper);color:var(--ink);padding:clamp(72px,9vw,120px) clamp(22px,6vw,78px)}
 .centerpiece-inner{max-width:var(--max);margin:auto}
-.centerpiece h2{font-size:clamp(3.5rem,7.3vw,7.8rem);line-height:.91;margin:0 0 72px}
+.centerpiece h2{font-size:clamp(3.5rem,7.3vw,7.8rem);line-height:.91;margin:0 0 48px}
 .centerpiece h2 em{font-style:italic;color:var(--warm2)}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(45px,9vw,130px);max-width:1080px}
 .two-col p{font-size:clamp(1.06rem,1.6vw,1.25rem);color:#4e4b45;margin-top:0}
 .centerpiece .text-link{border-color:rgba(0,0,0,.28)}
-.prayer-section{padding:clamp(95px,11vw,150px) clamp(22px,6vw,78px);max-width:var(--max);margin:auto}
-.prayer-intro{max-width:920px;margin-bottom:60px}
+.prayer-section{padding:clamp(72px,9vw,115px) clamp(22px,6vw,78px);max-width:var(--max);margin:auto}
+.prayer-intro{max-width:920px;margin-bottom:42px}
 .prayer-intro h2{font-size:clamp(3rem,6vw,6rem);line-height:.96;margin:0}
 .prayer-pair{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line)}
-.prayer-pair article{padding:clamp(30px,5vw,64px);min-height:330px;display:flex;flex-direction:column;justify-content:space-between}
+.prayer-pair article{padding:clamp(28px,4vw,48px);min-height:270px;display:flex;flex-direction:column;justify-content:space-between}
 .prayer-pair article+article{border-left:1px solid var(--line)}
 .prayer-pair small{text-transform:uppercase;letter-spacing:.14em;color:var(--muted);font-size:.66rem}
 .prayer-pair blockquote{font-family:"Source Serif 4",serif;font-weight:500;font-size:clamp(2.5rem,5vw,5.2rem);line-height:.98;letter-spacing:-.045em;margin:60px 0 0}
@@ -71,10 +71,10 @@ a{color:inherit}
 .salvation-note p{margin:0;color:#bbb7ad}
 .salvation-note strong{color:var(--text)}
 .salvation-note a{text-decoration:none;color:var(--warm);font-size:.8rem}
-.apparently{font-family:"Source Serif 4",serif;font-style:italic;font-size:clamp(2rem,4vw,4rem);margin:85px 0 0;color:#d3cec3}
-.question-section{background:var(--panel);padding:clamp(95px,11vw,150px) clamp(22px,6vw,78px)}
+.apparently{font-family:"Source Serif 4",serif;font-style:italic;font-size:clamp(2rem,4vw,4rem);margin:55px 0 0;color:#d3cec3}
+.question-section{background:var(--panel);padding:clamp(72px,9vw,115px) clamp(22px,6vw,78px)}
 .question-heading,.question-list,.question-section>.button{max-width:var(--max);margin-left:auto;margin-right:auto}
-.question-heading{display:grid;grid-template-columns:1.25fr .75fr;column-gap:8vw;align-items:end;margin-bottom:70px}
+.question-heading{display:grid;grid-template-columns:1.25fr .75fr;column-gap:8vw;align-items:end;margin-bottom:48px}
 .question-heading .eyebrow{grid-column:1/-1}
 .question-heading h2{font-size:clamp(3.2rem,6.7vw,6.6rem);line-height:.94;margin:0}
 .question-heading>p:last-child{color:var(--muted);max-width:380px}
@@ -93,9 +93,9 @@ a{color:inherit}
 .next-grid span{font-family:"Source Serif 4",serif;font-size:clamp(1.7rem,2.5vw,2.5rem);line-height:1.08;margin:auto 0 30px}
 .next-grid b{align-self:flex-end}
 .next-grid a:hover{background:var(--panel2)}
-.support{background:var(--paper);color:var(--ink);display:grid;grid-template-columns:1fr 1fr;gap:10vw;padding:clamp(95px,11vw,150px) max(22px,calc((100vw - var(--max))/2))}
+.support{background:var(--paper);color:var(--ink);display:grid;grid-template-columns:1fr 1fr;gap:8vw;padding:clamp(64px,8vw,96px) max(22px,calc((100vw - var(--max))/2))}
 .support .eyebrow{color:var(--warm2)}
-.support h2{font-size:clamp(4rem,8vw,8rem);line-height:.9;margin:0 0 30px}
+.support h2{font-size:clamp(3.6rem,7vw,6.5rem);line-height:.9;margin:0 0 24px}
 .support-copy>p{font-size:1.1rem;max-width:520px;color:#494640}
 .support-copy .muted{font-size:.95rem;color:#747068}
 .support-links{border-top:1px solid rgba(0,0,0,.22)}
