@@ -6,7 +6,7 @@
 <div class="question-search">
   <label for="question-filter">Find a question</label>
   <input id="question-filter" type="search" placeholder="Try “hell”, “resurrection”, “slavery”…" autocomplete="off">
-  <small id="question-count">50 questions</small>
+  <small id="question-count">50 questions</small><p id="question-empty" class="question-empty" hidden>No match yet. Try a broader word, or browse the categories below.</p>
 </div>
 
 <section class="question-categories" aria-label="Browse question categories">
@@ -28,29 +28,12 @@
 <span>Why does a loving, all-powerful God let children suffer?</span><b aria-hidden="true">+</b>
 </button>
 <div class="question-answer" id="answer-suffering-inline" hidden>
-<div class="question-answer-inner"><p>If God is good and powerful, why is there cancer, earthquakes, abuse, dementia, war, and children dying? Why do prayers go unanswered? Why are there losses that split your life into before and after?</p>
-<h2>There isn’t a neat explanation.</h2>
-<p>The Bible never gives one reason that covers all suffering, and I’d rather say that up front than pretend it does.</p>
-<p>Job demands an explanation. God answers him, but not with one (<a class="bible-ref" href="https://www.biblegateway.com/passage/?search=Job%2038%E2%80%9342&version=NLT" target="_blank" rel="noopener">Job 38–42</a>). Herod kills the children of Bethlehem, and Matthew quotes “Rachel weeping for her children” (<a class="bible-ref" href="https://www.biblegateway.com/passage/?search=Matthew%202%3A16%E2%80%9318&version=NLT" target="_blank" rel="noopener">Matthew 2:16–18</a>). Jesus cries at a grave (<a class="bible-ref" href="https://www.biblegateway.com/passage/?search=John%2011%3A35&version=NLT" target="_blank" rel="noopener">John 11:35</a>). He warns with frightening seriousness about harming children (<a class="bible-ref" href="https://www.biblegateway.com/passage/?search=Matthew%2018%3A6&version=NLT" target="_blank" rel="noopener">Matthew 18:6</a>) and tells His disciples to let children come to Him (<a class="bible-ref" href="https://www.biblegateway.com/passage/?search=Mark%2010%3A14%E2%80%9316&version=NLT" target="_blank" rel="noopener">Mark 10:14–16</a>).</p>
-
-<h2>The Bible says the world isn’t the way it’s supposed to be.</h2>
-<p><a class="bible-ref" href="https://www.biblegateway.com/passage/?search=Genesis%203&version=NLT" target="_blank" rel="noopener">Genesis 3</a> describes creation damaged by human rebellion. <a class="bible-ref" href="https://www.biblegateway.com/passage/?search=Romans%208%3A18%E2%80%9323&version=NLT" target="_blank" rel="noopener">Romans 8:18–23</a> says the whole creation is groaning and waiting to be set right.</p>
-<p>Human freedom explains some suffering: people choose to hurt each other. Stable natural laws explain some of the rest: a world where choices matter is also a world where earthquakes happen. Suffering sometimes produces courage or compassion, too. None of that explains every particular tragedy, and I wouldn’t try using it on someone in the middle of one.</p>
-
-
-<h2>It puts God on a cross.</h2>
-<p>Christians believe God went through human suffering Himself in Jesus: betrayal, humiliation, an unjust trial, torture, abandonment, and death.</p>
-<p>That doesn’t answer every “why.” It does mean Christianity can’t talk about suffering as though God stayed untouched by it.</p>
-
-<h2>It also makes a claim about the future.</h2>
-<p>Resurrection means death isn’t treated as a normal part of life. <a class="bible-ref" href="https://www.biblegateway.com/passage/?search=1%20Corinthians%2015%3A26&version=NLT" target="_blank" rel="noopener">1 Corinthians 15:26</a> calls it an enemy. <a class="bible-ref" href="https://www.biblegateway.com/passage/?search=Revelation%2021%3A4&version=NLT" target="_blank" rel="noopener">Revelation 21:4</a> promises a future in which God personally wipes away every tear.</p>
-<p>Christian hope isn’t that everything happens for a reason we can figure out. It’s that God can bring something out of suffering He never called good, and that He will judge evil, raise the dead, and finally put things right.</p>
-
-<h2 id="right-now">But what about right now?</h2>
-<p>Right now you can be angry. You can ask for help. You can ask God why. The Psalms do all of that, out loud.</p>
-<p>So there’s no neat reason for why a child suffers. Christians believe God takes evil seriously, entered human suffering in Jesus, and has promised to end it.</p>
-
-<div class="inline-prayer"><small>If that is all you have</small><p>God, I don’t understand this. Please don’t leave me in it.</p></div></div>
+<div class="question-answer-inner">
+<p><strong>Short answer:</strong> I do not think Christianity gives a neat explanation for why a particular child suffers. It says the world is not the way it is supposed to be, that God takes evil seriously, that He entered suffering in Jesus, and that death will not have the last word.</p>
+<p><strong>The strongest objection:</strong> that still leaves the immediate question: why did an all-powerful God allow this suffering in the first place?</p>
+<p><strong>What I’m not sure about:</strong> I do not know why God permits particular tragedies, and I do not trust explanations that make someone else’s pain sound tidy.</p>
+<p><a href="suffering.html">Read the full page on suffering →</a></p>
+</div>
 </div>
 </div>
 <div class="question-accordion" id="q-god-hidden">
@@ -600,12 +583,9 @@
 <footer class="site-footer"><a class="brand" href="index.html">Christianity, <span>apparently.</span></a><div><a href="basics.html">Basics</a><a href="gospel.html">Gospel</a><a href="questions.html">Questions</a><a href="life.html">Life Issues</a><a href="grow.html">Grow</a><a href="church.html">Find a Church</a><a href="https://www.youtube.com/@ChristianityApparently" target="_blank" rel="noopener">YouTube ↗</a></div><p><a href="about.html">About</a> · © 2026</p></footer>
 <script>
 (() => {
-  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-
   document.querySelectorAll('.question-accordion').forEach((item) => {
     const button = item.querySelector('.question-toggle');
     const answer = item.querySelector('.question-answer');
-    let pinned = false;
 
     const setOpen = (open) => {
       item.classList.toggle('is-open', open);
@@ -613,38 +593,36 @@
       answer.hidden = !open;
     };
 
-    if (window.location.hash === '#' + item.id) {
-      pinned = true;
-      setOpen(true);
-    }
+    if (window.location.hash === '#' + item.id) setOpen(true);
 
     button.addEventListener('click', () => {
-      pinned = !pinned;
-      setOpen(pinned);
+      setOpen(button.getAttribute('aria-expanded') !== 'true');
     });
-
-    if (canHover) {
-      item.addEventListener('mouseenter', () => setOpen(true));
-      item.addEventListener('mouseleave', () => {
-        if (!pinned) setOpen(false);
-      });
-    }
   });
 
   const filter = document.getElementById('question-filter');
   const count = document.getElementById('question-count');
-  if (filter && count) {
+  const empty = document.getElementById('question-empty');
+  const categories = document.querySelector('.question-categories');
+
+  if (filter && count && empty) {
     const items = [...document.querySelectorAll('.question-accordion')];
+
     const update = () => {
       const q = filter.value.trim().toLowerCase();
       let shown = 0;
+
       items.forEach((item) => {
         const match = !q || item.textContent.toLowerCase().includes(q);
         item.hidden = !match;
         if (match) shown += 1;
       });
+
       count.textContent = shown + (shown === 1 ? ' question' : ' questions');
+      empty.hidden = shown !== 0;
+      if (categories) categories.hidden = q.length > 0;
     };
+
     filter.addEventListener('input', update);
   }
 })();
