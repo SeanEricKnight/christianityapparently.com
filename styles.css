@@ -767,3 +767,19 @@ button{font:inherit}
   .next-related{grid-template-columns:1fr}
   .related-links{grid-template-columns:1fr}
 }
+
+
+/* standalone question pages */
+.question-permalink{margin-top:14px!important}
+.question-permalink a{
+  font-family:"DM Sans",sans-serif;
+  font-size:.72rem;
+  font-weight:700;
+  text-decoration:none;
+}
+.question-page-answer{
+  padding-left:0;
+  border-left:0;
+}
+.question-page-answer>p:first-child{margin-top:0}
+.question-page .next-related{margin-top:24px}
