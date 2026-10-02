@@ -293,6 +293,12 @@
       answer.hidden = !open;
     };
 
+    if (window.location.hash === '#' + item.id) {
+      pinned = true;
+      setOpen(true);
+      requestAnimationFrame(() => item.scrollIntoView({block:'start'}));
+    }
+
     button.addEventListener('click', () => {
       pinned = !pinned;
       setOpen(pinned);
