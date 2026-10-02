@@ -1,10 +1,23 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="You can take Jesus seriously and still have hard questions."><meta name="theme-color" content="#f7f3ea"><title>Questions — Christianity, apparently.</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;1,8..60,500;1,8..60,600&display=swap" rel="stylesheet"><link rel="icon" href="favicon.svg?v=11" type="image/svg+xml"><link rel="stylesheet" href="styles.css"></head><body>
 <header class="site-header"><a class="brand" href="index.html">Christianity, <span>apparently.</span></a><nav class="site-nav" aria-label="Primary navigation"><a href="basics.html">Basics</a><a href="gospel.html">Gospel</a><a href="questions.html">Questions</a><a href="life.html">Life Issues</a><a href="grow.html">Grow</a><a href="church.html">Find a Church</a><a href="https://www.youtube.com/@ChristianityApparently" target="_blank" rel="noopener">Videos ↗</a></nav><a class="nav-cta" href="decision.html">I want to follow Jesus</a></header>
-<main><section class="page-hero"><div class="inner-wrap"><p class="eyebrow">Questions worth asking</p><h1>Questions<br>worth asking.</h1><p>You can take Jesus seriously and still have hard questions.</p></div></section><article class="article">
+<main><section class="page-hero"><div class="inner-wrap"><p class="eyebrow">Questions</p><h1>Ask the actual question.</h1><p>You can take Jesus seriously and still have hard questions.</p></div></section><article class="article wide questions-hub">
 <p class="intro">Start with the question you actually have, not the one you think you’re supposed to ask.</p>
 
+<div class="question-search">
+  <label for="question-filter">Find a question</label>
+  <input id="question-filter" type="search" placeholder="Try “hell”, “resurrection”, “slavery”…" autocomplete="off">
+  <small id="question-count">20 questions</small>
+</div>
+
+<section class="question-categories" aria-label="Browse question categories">
+  <div><p class="kicker">God & belief</p><a href="#q-god-hidden">Why is God hard to find?</a><a href="#q-honest-unbelief">What if I honestly can’t believe?</a><a href="#q-free-will">If God knows everything, am I free?</a><a href="#q-morality">Where does morality come from?</a></div>
+  <div><p class="kicker">Jesus</p><a href="#q-resurrection-evidence">Did Jesus really rise?</a><a href="#q-why-die">Why did Jesus have to die?</a><a href="#q-atonement-justice">How is the cross just?</a><a href="#q-jesus-prays">If Jesus is God, why does He pray?</a></div>
+  <div><p class="kicker">Suffering & judgment</p><a href="#q-suffering-inline">Why does God allow children to suffer?</a><a href="#q-unanswered-prayer">Why do prayers go unanswered?</a><a href="#q-hell-finite-life">Is eternal punishment fair?</a><a href="#q-created-for-hell">Why create someone who ends up in hell?</a></div>
+  <div><p class="kicker">Bible & Christianity</p><a href="#q-old-testament-violence">What about Old Testament violence?</a><a href="#q-gospel-differences">Why do the Gospels differ?</a><a href="#q-slavery">Why doesn’t the Bible clearly condemn slavery?</a><a href="#q-christian-disagreement">Why do Christians disagree so much?</a></div>
+</section>
+
 <section class="question-group" id="questions-start">
-<h2>Most asked.</h2>
+<h2>All current questions.</h2>
 <div class="question-links question-accordions">
 <div class="question-accordion" id="q-suffering-inline">
 <button class="question-toggle" type="button" aria-expanded="false" aria-controls="answer-suffering-inline">
@@ -308,5 +321,22 @@
       });
     }
   });
+
+  const filter = document.getElementById('question-filter');
+  const count = document.getElementById('question-count');
+  if (filter && count) {
+    const items = [...document.querySelectorAll('.question-accordion')];
+    const update = () => {
+      const q = filter.value.trim().toLowerCase();
+      let shown = 0;
+      items.forEach((item) => {
+        const match = !q || item.textContent.toLowerCase().includes(q);
+        item.hidden = !match;
+        if (match) shown += 1;
+      });
+      count.textContent = shown + (shown === 1 ? ' question' : ' questions');
+    };
+    filter.addEventListener('input', update);
+  }
 })();
 </script></body></html>
