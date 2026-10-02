@@ -536,3 +536,13 @@ button{font:inherit}
   .life-alert,.life-group{grid-template-columns:1fr}
   .life-links{grid-template-columns:1fr}
 }
+
+
+/* Church finder options */
+.church-finders{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}
+.church-finder{min-height:190px;display:flex;flex-direction:column;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--paper);text-decoration:none;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}
+.church-finder:hover{transform:translateY(-3px);border-color:#b7cbd8;box-shadow:var(--shadow)}
+.church-finder small{text-transform:uppercase;letter-spacing:.1em;font-size:.62rem;font-weight:700;color:var(--accent)}
+.church-finder strong{margin:auto 0 10px;font-family:"Source Serif 4",serif;font-size:1.55rem;line-height:1.05}
+.church-finder span{color:var(--muted);font-size:.82rem;line-height:1.4}
+@media(max-width:760px){.church-finders{grid-template-columns:1fr}}
