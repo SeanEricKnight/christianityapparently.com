@@ -548,8 +548,10 @@ button{font:inherit}
 @media(max-width:760px){.church-finders{grid-template-columns:1fr}}
 
 
-/* compact spacing pass */
+/* Layout and type tuning */
 .home-feature{
+  min-height:270px;
+  padding:22px;
   text-decoration:none;
   color:#fff;
   cursor:pointer;
@@ -558,53 +560,63 @@ button{font:inherit}
 .home-feature:hover{transform:rotate(0deg) translateY(-3px);box-shadow:0 12px 26px rgba(31,95,139,.18)}
 
 .home-live main{padding-bottom:36px}
-.home-hero{
-  min-height:auto;
-  padding:42px 0 34px;
-  gap:32px;
-}
-.home-feature{min-height:270px;padding:22px}
+.home-hero{min-height:auto;padding:42px 0 34px;gap:32px}
+.home-hero h1{max-width:680px;font-size:clamp(2.3rem,3.8vw,4rem);line-height:1.04;letter-spacing:-.03em}
 .home-section{padding:32px 0}
 .section-head{margin-bottom:14px;gap:18px}
+.section-head h2{font-size:clamp(1.75rem,2.8vw,2.8rem);line-height:1.05}
 .where-card{min-height:112px;padding:16px}
 .where-card.wide{min-height:96px}
 .home-gospel{padding:22px;gap:22px}
+.home-gospel h2{font-size:clamp(1.8rem,2.8vw,2.65rem);line-height:1.04}
 .home-links{gap:10px}
 .home-link{min-height:145px;padding:16px}
-.home-link h3{margin:18px 0 6px}
+.home-link h3{margin:18px 0 6px;font-size:1.3rem}
 .split-band{gap:10px}
 .split-card{padding:20px}
+.split-card h3{font-size:1.65rem}
+.home-feature h2{font-size:2rem}
 
 .hub-page{padding-bottom:42px}
 .hub-hero{padding:44px 0 26px}
+.hub-hero h1{font-size:clamp(2.5rem,4.2vw,4.2rem);line-height:.98}
 .card-grid{gap:10px}
 .topic-card{min-height:175px;padding:18px}
+.topic-card h2{font-size:1.5rem}
 .callout,.help-band{margin-top:22px;padding:18px 0}
+.help-band h2{font-size:1.75rem}
 
 .grow-block{padding:18px 0}
 .life-alert{margin-bottom:22px;padding:18px}
+.life-alert h2{font-size:1.75rem}
 .life-groups{gap:10px}
 .life-group{gap:18px;padding:18px 0}
+.life-group h2{font-size:1.9rem}
 .life-links{gap:8px}
 .life-links a{min-height:92px;padding:14px}
 .life-more{margin-top:22px;padding:20px}
+.life-more h2{font-size:1.75rem}
 
 .gospel-page{padding-bottom:44px}
 .gospel-intro{padding:42px 0 20px}
+.gospel-intro h1{font-size:clamp(2.6rem,4.4vw,4.3rem);line-height:.98}
 .gospel-progress{margin-top:20px}
 .gospel-stage{padding-top:22px}
 .gospel-step{gap:24px}
-.gospel-step h2{margin-bottom:10px}
+.gospel-step h2{margin-bottom:10px;font-size:clamp(2rem,3.4vw,3.35rem);line-height:1}
 .gospel-controls{margin-top:20px;padding-top:14px}
 .gospel-choice{margin-top:26px;padding-top:22px}
+.gospel-choice h2{font-size:2rem}
 .choice-card{min-height:165px;padding:18px}
+.choice-card strong{font-size:1.65rem}
 
 .page-hero{padding:42px 22px 24px}
+.page-hero h1{font-size:clamp(2.35rem,4vw,4rem);line-height:.98}
 .page-hero p:last-child{margin-top:10px}
 .article,.article.wide{padding:24px 22px 42px}
 .article .intro{margin-top:0;margin-bottom:20px}
-.article h2{margin:24px 0 8px}
-.article h3{margin:20px 0 8px}
+.article h2{margin:24px 0 8px;font-size:1.7rem;line-height:1.1}
+.article h3{margin:20px 0 8px;font-size:1.22rem}
 .article p{margin:10px 0}
 .article blockquote{margin:20px 0;padding:14px 18px}
 .aside,.inline-prayer{margin:18px 0;padding:15px 18px}
@@ -616,9 +628,57 @@ button{font:inherit}
 .question-search{margin:8px 0 18px;padding:14px}
 .question-categories{gap:8px;margin-bottom:24px}
 .question-categories>div{padding:14px}
-.question-group>h2{margin-top:6px}
+.question-group>h2{margin-top:6px;font-size:1.7rem}
 .question-toggle{padding:11px 0}
 .question-answer{padding-bottom:12px}
+
+/* Basics hub */
+.basics-lead{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:24px;
+  padding:22px;
+  border-radius:14px;
+  background:var(--accent);
+  color:#fff;
+  text-decoration:none;
+  transition:transform .16s ease,box-shadow .16s ease;
+}
+.basics-lead:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(31,95,139,.16)}
+.basics-lead .kicker{color:#fff;opacity:.78}
+.basics-lead h2{margin:3px 0 6px;font-family:"Source Serif 4",serif;font-size:2rem;font-weight:500}
+.basics-lead p{margin:0;opacity:.88}
+.basics-lead>span{white-space:nowrap;font-size:.8rem;font-weight:700}
+.basics-section{
+  display:grid;
+  grid-template-columns:minmax(190px,.55fr) 1.45fr;
+  gap:24px;
+  padding:24px 0;
+  border-bottom:1px solid var(--line);
+}
+.basics-heading h2{margin:4px 0 0;font-family:"Source Serif 4",serif;font-size:1.85rem;line-height:1.05;font-weight:500}
+.basics-list{border-top:1px solid var(--line)}
+.basics-list a{
+  display:grid;
+  grid-template-columns:150px 1fr;
+  gap:18px;
+  padding:12px 0;
+  border-bottom:1px solid var(--line);
+  text-decoration:none;
+}
+.basics-list strong{font-family:"Source Serif 4",serif;font-size:1.08rem}
+.basics-list span{color:var(--muted);font-size:.82rem}
+.basics-list a:hover strong,.basics-list a:hover span{color:var(--accent)}
+.basics-question{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:24px;
+  padding:24px 0 0;
+}
+.basics-question h2{margin:4px 0 6px;font-family:"Source Serif 4",serif;font-size:1.85rem;font-weight:500}
+.basics-question p:last-child{max-width:700px;margin:0;color:var(--muted)}
 
 .site-footer,footer{padding-top:18px;padding-bottom:22px}
 
@@ -629,91 +689,17 @@ button{font:inherit}
   .hub-hero{padding:34px 0 22px}
   .page-hero{padding:34px 18px 22px}
   .article,.article.wide{padding:20px 18px 34px}
-}
-@media(max-width:560px){
-  .home-section{padding:22px 0}
-  .home-link{min-height:125px}
-  .topic-card{min-height:150px}
-  .home-feature{min-height:190px}
-}
-
-
-/* homepage headline readability */
-.home-hero h1{
-  max-width:720px;
-  font-size:clamp(2.65rem,4.8vw,4.9rem);
-  line-height:1.02;
-  letter-spacing:-.03em;
-}
-@media(max-width:560px){
-  .home-hero h1{font-size:clamp(2.4rem,11vw,3.5rem);line-height:1.04}
-}
-
-
-/* global heading scale pass */
-.home-hero h1{
-  max-width:680px;
-  font-size:clamp(2.3rem,3.8vw,4rem);
-  line-height:1.04;
-}
-.section-head h2{
-  font-size:clamp(1.75rem,2.8vw,2.8rem);
-  line-height:1.05;
-}
-.hub-hero h1{
-  font-size:clamp(2.5rem,4.2vw,4.2rem);
-  line-height:.98;
-}
-.gospel-intro h1{
-  font-size:clamp(2.6rem,4.4vw,4.3rem);
-  line-height:.98;
-}
-.gospel-step h2{
-  font-size:clamp(2rem,3.4vw,3.35rem);
-  line-height:1;
-}
-.page-hero h1{
-  font-size:clamp(2.35rem,4vw,4rem);
-  line-height:.98;
-}
-.article h2{
-  font-size:1.7rem;
-  line-height:1.1;
-}
-.article h3{
-  font-size:1.22rem;
-}
-.topic-card h2{
-  font-size:1.5rem;
-}
-.home-feature h2{
-  font-size:2rem;
-}
-.home-link h3{
-  font-size:1.3rem;
-}
-.split-card h3{
-  font-size:1.65rem;
-}
-.life-group h2{
-  font-size:1.9rem;
-}
-.life-more h2,
-.life-alert h2{
-  font-size:1.75rem;
-}
-.question-group>h2{
-  font-size:1.7rem;
-}
-.gospel-choice h2{
-  font-size:2rem;
-}
-.choice-card strong{
-  font-size:1.65rem;
+  .basics-section{grid-template-columns:1fr;gap:12px}
 }
 @media(max-width:560px){
   .home-hero h1{font-size:clamp(2.1rem,9vw,2.8rem)}
   .hub-hero h1,.gospel-intro h1,.page-hero h1{font-size:clamp(2.15rem,10vw,3rem)}
   .gospel-step h2{font-size:2.2rem}
   .section-head h2{font-size:1.85rem}
+  .home-section{padding:22px 0}
+  .home-link{min-height:125px}
+  .topic-card{min-height:150px}
+  .home-feature{min-height:190px}
+  .basics-lead,.basics-question{align-items:flex-start;flex-direction:column}
+  .basics-list a{grid-template-columns:1fr;gap:3px}
 }
