@@ -648,3 +648,72 @@ button{font:inherit}
 @media(max-width:560px){
   .home-hero h1{font-size:clamp(2.4rem,11vw,3.5rem);line-height:1.04}
 }
+
+
+/* global heading scale pass */
+.home-hero h1{
+  max-width:680px;
+  font-size:clamp(2.3rem,3.8vw,4rem);
+  line-height:1.04;
+}
+.section-head h2{
+  font-size:clamp(1.75rem,2.8vw,2.8rem);
+  line-height:1.05;
+}
+.hub-hero h1{
+  font-size:clamp(2.5rem,4.2vw,4.2rem);
+  line-height:.98;
+}
+.gospel-intro h1{
+  font-size:clamp(2.6rem,4.4vw,4.3rem);
+  line-height:.98;
+}
+.gospel-step h2{
+  font-size:clamp(2rem,3.4vw,3.35rem);
+  line-height:1;
+}
+.page-hero h1{
+  font-size:clamp(2.35rem,4vw,4rem);
+  line-height:.98;
+}
+.article h2{
+  font-size:1.7rem;
+  line-height:1.1;
+}
+.article h3{
+  font-size:1.22rem;
+}
+.topic-card h2{
+  font-size:1.5rem;
+}
+.home-feature h2{
+  font-size:2rem;
+}
+.home-link h3{
+  font-size:1.3rem;
+}
+.split-card h3{
+  font-size:1.65rem;
+}
+.life-group h2{
+  font-size:1.9rem;
+}
+.life-more h2,
+.life-alert h2{
+  font-size:1.75rem;
+}
+.question-group>h2{
+  font-size:1.7rem;
+}
+.gospel-choice h2{
+  font-size:2rem;
+}
+.choice-card strong{
+  font-size:1.65rem;
+}
+@media(max-width:560px){
+  .home-hero h1{font-size:clamp(2.1rem,9vw,2.8rem)}
+  .hub-hero h1,.gospel-intro h1,.page-hero h1{font-size:clamp(2.15rem,10vw,3rem)}
+  .gospel-step h2{font-size:2.2rem}
+  .section-head h2{font-size:1.85rem}
+}
