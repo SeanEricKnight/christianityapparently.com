@@ -867,6 +867,7 @@ body{
 }
 .question-accordion{
   border-bottom:1px solid var(--line);
+  scroll-margin-top:96px;
 }
 .question-toggle{
   width:100%;
