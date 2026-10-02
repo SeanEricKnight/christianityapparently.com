@@ -991,3 +991,39 @@ body{
     padding:2px 20px 1px 12px;
   }
 }
+
+
+/* hurting page actions */
+.hurting-actions{
+  margin:14px 0 18px;
+  border-top:1px solid var(--line);
+}
+.article .hurting-actions p{
+  margin:0!important;
+  padding:12px 0!important;
+  display:grid;
+  grid-template-columns:185px minmax(0,1fr);
+  gap:18px;
+  border-bottom:1px solid var(--line);
+}
+.hurting-actions strong{
+  color:var(--text);
+  font-family:"Source Serif 4",serif;
+  font-size:1.02rem;
+  font-weight:600;
+}
+.hurting-actions span{
+  color:var(--muted);
+  font-size:.92rem;
+  line-height:1.45;
+}
+.hurting-actions a{
+  color:var(--warm);
+}
+@media(max-width:700px){
+  .article .hurting-actions p{
+    grid-template-columns:1fr;
+    gap:4px;
+    padding:10px 0!important;
+  }
+}
