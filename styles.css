@@ -636,3 +636,15 @@ button{font:inherit}
   .topic-card{min-height:150px}
   .home-feature{min-height:190px}
 }
+
+
+/* homepage headline readability */
+.home-hero h1{
+  max-width:720px;
+  font-size:clamp(2.65rem,4.8vw,4.9rem);
+  line-height:1.02;
+  letter-spacing:-.03em;
+}
+@media(max-width:560px){
+  .home-hero h1{font-size:clamp(2.4rem,11vw,3.5rem);line-height:1.04}
+}
