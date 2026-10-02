@@ -717,7 +717,7 @@ footer{
 .question-group{margin-top:28px}
 .question-group h2{margin-bottom:10px!important}
 .question-links{border-top:1px solid var(--line)}
-.question-links a{
+.question-links > a{
   display:grid;
   grid-template-columns:1fr auto;
   gap:20px;
@@ -729,13 +729,13 @@ footer{
   color:var(--text);
   scroll-margin-top:70px;
 }
-.question-links span{
+.question-links > a > span{
   font-family:"Source Serif 4",serif;
   font-size:1.08rem;
   line-height:1.3;
 }
-.question-links b{color:var(--warm);font-weight:400}
-.question-links a:hover span{color:#fff}
+.question-links > a > b{color:var(--warm);font-weight:400}
+.question-links > a:hover > span{color:#fff}
 .question-surprise{margin:26px 0}
 .question-surprise button{
   appearance:none;
