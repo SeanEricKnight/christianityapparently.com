@@ -1162,3 +1162,40 @@ body.has-mobile-next{padding-bottom:0!important}
   .bare-questions>div a{min-height:54px}
   .bare-sean{padding-top:30px}
 }
+
+
+/* quiet secondary footer links */
+.footer-more{
+  grid-column:1 / -1;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 14px;
+  align-items:center;
+  padding-top:10px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:.68rem;
+}
+.footer-more span{
+  color:#77736c;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  margin-right:2px;
+}
+.footer-more a{
+  text-decoration:none;
+  color:#8f8a81;
+}
+.footer-more a:hover{color:var(--warm)}
+
+.bare-footer .footer-more{
+  margin-bottom:10px;
+  padding-top:12px;
+}
+
+@media(max-width:700px){
+  .footer-more{
+    gap:7px 11px;
+    font-size:.65rem;
+  }
+}
