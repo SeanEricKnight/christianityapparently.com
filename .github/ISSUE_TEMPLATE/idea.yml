@@ -1,0 +1,21 @@
+name: Suggest an idea
+description: Suggest a page, feature, resource, or improvement.
+title: "[Idea] "
+assignees:
+  - SeanEricKnight
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue will be public. Please do not include private or sensitive information.
+  - type: textarea
+    id: idea
+    attributes:
+      label: What's the idea?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would it help?
+      description: Optional, but useful.

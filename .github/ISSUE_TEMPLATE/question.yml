@@ -1,0 +1,30 @@
+name: Ask a question
+description: Ask a question Christianity, apparently. does not answer yet.
+title: "[Question] "
+assignees:
+  - SeanEricKnight
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks. If this belongs on the site, this issue is how I keep track of it instead of trusting my memory, which has made several interesting choices.
+        Please do not include private or sensitive information. This issue will be public.
+  - type: textarea
+    id: question
+    attributes:
+      label: What's your question?
+      description: Ask it as plainly as you can.
+      placeholder: "Why does...?"
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Is there a page that almost answered it?
+      description: Paste the URL if there is one.
+      placeholder: "https://christianityapparently.com/..."
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else that would help?
+      description: Optional. What made you ask, or what part are you trying to understand?

@@ -1,0 +1,29 @@
+name: Something is confusing
+description: Tell me where the site lost you.
+title: "[Confusing] "
+assignees:
+  - SeanEricKnight
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue will be public. Please do not include private or sensitive information.
+  - type: input
+    id: page
+    attributes:
+      label: Which page?
+      placeholder: "https://christianityapparently.com/..."
+    validations:
+      required: true
+  - type: textarea
+    id: confusing
+    attributes:
+      label: What was confusing?
+      description: Quote a short phrase if that helps, then tell me what did not make sense.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What were you hoping it would explain?
+      description: Optional, but useful.

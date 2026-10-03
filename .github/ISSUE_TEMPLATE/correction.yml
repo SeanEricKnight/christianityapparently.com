@@ -1,0 +1,28 @@
+name: Report something wrong
+description: Flag a factual error, broken link, misleading explanation, typo, or other problem.
+title: "[Correction] "
+assignees:
+  - SeanEricKnight
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue will be public. Please do not include private or sensitive information.
+  - type: input
+    id: page
+    attributes:
+      label: Which page?
+      placeholder: "https://christianityapparently.com/..."
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source or explanation
+      description: Optional. If this is a factual correction, a source is especially helpful.
