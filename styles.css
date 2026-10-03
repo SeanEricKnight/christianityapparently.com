@@ -840,17 +840,16 @@ button{font:inherit}
 /* Editorial photography — free Unsplash images, used sparingly.
    Sources:
    Shane Hoving: https://unsplash.com/photos/an-open-bible-on-a-table-in-the-sunlight-SZaxKdLwz6o
-   Ewan Z: https://unsplash.com/photos/person-walking-on-a-forest-path-at-sunrise-rwiUgwQyi5s
+   Mathew Antony: https://unsplash.com/photos/sunlight-streams-through-a-forest-path-covered-in-leaves-V1q4Npj3seQ
    studiopipin: https://unsplash.com/photos/empty-church-pews-with-sunlight-streaming-through-windows-6ge393BomYU
-   Inna Yashna: https://unsplash.com/photos/young-woman-looking-out-a-stained-glass-window-7aU-_8BW7F0
-   Yann Allegre: https://unsplash.com/photos/mountains-and-trees-2G7af5U3LqU
+   Kelly Sikkema: https://unsplash.com/photos/a-desk-with-a-notebook-headphones-and-a-potted-plant-T7yUACjd3hU
 */
 :root{
   --photo-bible:url("https://images.unsplash.com/photo-1650065045891-e3a7c96a4ad7?auto=format&fit=crop&w=1600&q=76");
-  --photo-journey:url("https://images.unsplash.com/photo-1766988460209-7fe0bc3833f1?auto=format&fit=crop&w=1600&q=76");
+  --photo-journey:url("https://images.unsplash.com/photo-1770750869369-5968806bbd82?auto=format&fit=crop&w=1600&q=76");
   --photo-church:url("https://images.unsplash.com/photo-1776851772656-adb80e4aa6cb?auto=format&fit=crop&w=1600&q=76");
-  --photo-thought:url("https://images.unsplash.com/photo-1763154303994-863cec2b896b?auto=format&fit=crop&w=1600&q=76");
-  --photo-mountain:url("https://images.unsplash.com/photo-1551837573-b3cf86554d6b?auto=format&fit=crop&w=1600&q=76");
+  --photo-thought:url("https://images.unsplash.com/photo-1711843250701-00d9ceac7fca?auto=format&fit=crop&w=1600&q=76");
+  --photo-mountain:url("https://images.unsplash.com/photo-1770750869369-5968806bbd82?auto=format&fit=crop&w=1600&q=76");
 }
 
 /* Give nearly every content page one quiet image without turning the site into stock-photo soup. */
@@ -873,7 +872,7 @@ button{font:inherit}
 .page-hero .inner-wrap{max-width:var(--max)}
 .page-hero::after{max-width:var(--max);margin-left:auto;margin-right:auto}
 
-/* Questions and hard-life pages feel more human with a person rather than another landscape. */
+/* Questions and hard-life pages use a quiet study image rather than a posed person. */
 body:has(.question-page) .page-hero::after,
 body:has(.questions-hub) .page-hero::after,
 body:has(.life-groups) .hub-hero::after,
@@ -894,7 +893,7 @@ body:has(.church-finders) .page-hero::after{
   background-position:center 54%;
 }
 
-/* Homepage: make the Gospel card visual instead of adding another giant block. */
+/* Homepage: a literal path through the woods rather than generic trees. */
 .home-feature{
   background-image:linear-gradient(180deg,rgba(22,36,45,.24),rgba(22,36,45,.78)),var(--photo-journey);
   background-size:cover;
