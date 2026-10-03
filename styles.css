@@ -835,3 +835,119 @@ button{font:inherit}
 .course-scripture{margin:10px 0!important;font-family:"DM Sans",sans-serif!important;font-size:.76rem!important}
 .course-scripture a{color:var(--accent);text-decoration:none;font-weight:700}
 .site-footer::after,footer::after{content:"Scripture quotations are taken from the Holy Bible, New Living Translation, copyright © 1996, 2004, 2015 by Tyndale House Foundation. Used by permission of Tyndale House Publishers, Carol Stream, Illinois 60188. All rights reserved.";grid-column:1/-1;margin-top:8px;padding-top:10px;border-top:1px solid var(--line);color:#7a7e78;font-size:.58rem;line-height:1.45}
+
+
+/* Editorial photography — free Unsplash images, used sparingly.
+   Sources:
+   Shane Hoving: https://unsplash.com/photos/an-open-bible-on-a-table-in-the-sunlight-SZaxKdLwz6o
+   Ewan Z: https://unsplash.com/photos/person-walking-on-a-forest-path-at-sunrise-rwiUgwQyi5s
+   studiopipin: https://unsplash.com/photos/empty-church-pews-with-sunlight-streaming-through-windows-6ge393BomYU
+   Inna Yashna: https://unsplash.com/photos/young-woman-looking-out-a-stained-glass-window-7aU-_8BW7F0
+   Yann Allegre: https://unsplash.com/photos/mountains-and-trees-2G7af5U3LqU
+*/
+:root{
+  --photo-bible:url("https://images.unsplash.com/photo-1650065045891-e3a7c96a4ad7?auto=format&fit=crop&w=1600&q=76");
+  --photo-journey:url("https://images.unsplash.com/photo-1766988460209-7fe0bc3833f1?auto=format&fit=crop&w=1600&q=76");
+  --photo-church:url("https://images.unsplash.com/photo-1776851772656-adb80e4aa6cb?auto=format&fit=crop&w=1600&q=76");
+  --photo-thought:url("https://images.unsplash.com/photo-1763154303994-863cec2b896b?auto=format&fit=crop&w=1600&q=76");
+  --photo-mountain:url("https://images.unsplash.com/photo-1551837573-b3cf86554d6b?auto=format&fit=crop&w=1600&q=76");
+}
+
+/* Give nearly every content page one quiet image without turning the site into stock-photo soup. */
+.page-hero::after,
+.hub-hero::after,
+.course-hero::after,
+.gospel-intro::after{
+  content:"";
+  display:block;
+  width:100%;
+  height:clamp(150px,20vw,240px);
+  margin-top:22px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.16)),var(--photo-mountain);
+  background-size:cover;
+  background-position:center;
+  box-shadow:0 8px 22px rgba(28,35,30,.06);
+}
+.page-hero .inner-wrap{max-width:var(--max)}
+.page-hero::after{max-width:var(--max);margin-left:auto;margin-right:auto}
+
+/* Questions and hard-life pages feel more human with a person rather than another landscape. */
+body:has(.question-page) .page-hero::after,
+body:has(.questions-hub) .page-hero::after,
+body:has(.life-groups) .hub-hero::after,
+body:has(.life-alert) .hub-hero::after{
+  background-image:linear-gradient(180deg,rgba(20,25,22,.03),rgba(20,25,22,.19)),var(--photo-thought);
+  background-position:center 42%;
+}
+
+/* Bible pages and anything centered on reading Scripture. */
+body:has(a[href*="biblegateway.com"]) .page-hero::after{
+  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.12)),var(--photo-bible);
+  background-position:center 55%;
+}
+
+/* Church page gets an actual church, which feels like an unreasonable but defensible choice. */
+body:has(.church-finders) .page-hero::after{
+  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.14)),var(--photo-church);
+  background-position:center 54%;
+}
+
+/* Homepage: make the Gospel card visual instead of adding another giant block. */
+.home-feature{
+  background-image:linear-gradient(180deg,rgba(22,36,45,.24),rgba(22,36,45,.78)),var(--photo-journey);
+  background-size:cover;
+  background-position:center 52%;
+  text-shadow:0 1px 2px rgba(0,0,0,.18);
+}
+
+/* Course hub: each course gets a visual lead-in, more like a real learning area. */
+.course-card{overflow:hidden}
+.course-card::before{
+  content:"";
+  height:118px;
+  margin:-22px -22px 18px;
+  background-size:cover;
+  background-position:center;
+  border-bottom:1px solid var(--line);
+}
+.course-card:nth-child(1)::before{background-image:linear-gradient(rgba(0,0,0,.03),rgba(0,0,0,.12)),var(--photo-mountain);background-position:center 45%}
+.course-card:nth-child(2)::before{background-image:linear-gradient(rgba(0,0,0,.02),rgba(0,0,0,.10)),var(--photo-bible);background-position:center 52%}
+.course-card:nth-child(3)::before{background-image:linear-gradient(rgba(0,0,0,.02),rgba(0,0,0,.10)),var(--photo-journey);background-position:center 52%}
+.course-card:nth-child(4)::before{background-image:linear-gradient(rgba(0,0,0,.03),rgba(0,0,0,.14)),var(--photo-church);background-position:center 54%}
+.course-card h2{margin-top:18px}
+
+/* Individual courses: a strong image at the top, then let the text breathe. */
+.course-hero::after{
+  height:clamp(190px,27vw,300px);
+  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.13)),var(--photo-journey);
+  background-position:center 52%;
+}
+body:has(.course-page a[href*="biblegateway.com"]) .course-hero::after{
+  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.11)),var(--photo-bible);
+  background-position:center 54%;
+}
+body:has(.course-page a[href="church.html"]) .course-hero::after{
+  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.12)),var(--photo-church);
+  background-position:center 54%;
+}
+
+/* Slightly richer course lesson rhythm without introducing more images. */
+.course-lesson:nth-of-type(even){
+  margin-left:-14px;
+  margin-right:-14px;
+  padding-left:14px;
+  padding-right:14px;
+  border-radius:12px;
+  background:rgba(255,253,248,.58);
+}
+
+@media(max-width:700px){
+  .page-hero::after,.hub-hero::after,.course-hero::after,.gospel-intro::after{
+    height:145px;
+    margin-top:18px;
+    border-radius:12px;
+  }
+  .course-card::before{height:100px}
+}
