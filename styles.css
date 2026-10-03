@@ -959,3 +959,104 @@ body[style*="--page-photo"] .gospel-intro::after{
   background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.15)),var(--page-photo);
   background-position:var(--page-photo-pos,center);
 }
+
+/* Unique page photos start */
+/* Every canonical content page gets a distinct free Unsplash photograph. */
+html:has(link[rel="canonical"][href="https://christianityapparently.com/about"]) body{--page-photo:url("https://unsplash.com/photos/CF5I-rfrJ4s/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/addiction"]) body{--page-photo:url("https://unsplash.com/photos/p-3K0zmSZKg/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/afterlife"]) body{--page-photo:url("https://unsplash.com/photos/LUpDjlJv4_c/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/anxiety"]) body{--page-photo:url("https://unsplash.com/photos/9Y8-9T5KiKY/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/baptism"]) body{--page-photo:url("https://unsplash.com/photos/FV7ghF0MknM/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/basics"]) body{--page-photo:url("https://unsplash.com/photos/VhcxuEGNXo4/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/bible"]) body{--page-photo:url("https://unsplash.com/photos/1dm0VJ8nZ2g/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/church"]) body{--page-photo:url("https://unsplash.com/photos/6QE1Fnq0d3Q/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/communion"]) body{--page-photo:url("https://unsplash.com/photos/qa74Yh6-xlc/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/course-bible"]) body{--page-photo:url("https://unsplash.com/photos/535Npq1wFG8/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/course-following"]) body{--page-photo:url("https://unsplash.com/photos/4uX_r8OhJ_o/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/course-share"]) body{--page-photo:url("https://unsplash.com/photos/U7HLzMO4SIY/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/course-start"]) body{--page-photo:url("https://unsplash.com/photos/3cHmnTxXSbU/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/courses"]) body{--page-photo:url("https://unsplash.com/photos/-gXDgi3u144/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/decision"]) body{--page-photo:url("https://unsplash.com/photos/Vjg3YUr09vI/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/doubt"]) body{--page-photo:url("https://unsplash.com/photos/a2H3497tbpY/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/following"]) body{--page-photo:url("https://unsplash.com/photos/pmiW630yDPE/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/god"]) body{--page-photo:url("https://unsplash.com/photos/odquMs4Jsbo/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/gospel"]) body{--page-photo:url("https://unsplash.com/photos/GVRRtaLj3LU/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/grief"]) body{--page-photo:url("https://unsplash.com/photos/372uM1cIQqE/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/grow"]) body{--page-photo:url("https://unsplash.com/photos/23J27gRsAIw/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/holy-spirit"]) body{--page-photo:url("https://unsplash.com/photos/mOxTEQ0oznU/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/hurting"]) body{--page-photo:url("https://unsplash.com/photos/FT-I_VxodFs/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/jesus"]) body{--page-photo:url("https://unsplash.com/photos/8QGvwrV_Bx0/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/life"]) body{--page-photo:url("https://unsplash.com/photos/9UW_8aVN8mA/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/loneliness"]) body{--page-photo:url("https://unsplash.com/photos/VjGksXPHnXA/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/marriage"]) body{--page-photo:url("https://unsplash.com/photos/Ncn1jiEe-Wc/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/point-people-to-jesus"]) body{--page-photo:url("https://unsplash.com/photos/KoKAXLKJwhk/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/prayer"]) body{--page-photo:url("https://unsplash.com/photos/TNlHf4m4gpI/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions"]) body{--page-photo:url("https://unsplash.com/photos/CvnVk7GGQCg/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/saved"]) body{--page-photo:url("https://unsplash.com/photos/ci1F55HaVWQ/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/scripture"]) body{--page-photo:url("https://unsplash.com/photos/qls4Edt9UbE/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/shame"]) body{--page-photo:url("https://unsplash.com/photos/LooDj2Julu0/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/suffering"]) body{--page-photo:url("https://unsplash.com/photos/Fq_BFd52cSU/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/trinity"]) body{--page-photo:url("https://unsplash.com/photos/fqa7yvnx280/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/walked-away"]) body{--page-photo:url("https://unsplash.com/photos/SgN2eHyy1iM/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/what-i-believe"]) body{--page-photo:url("https://unsplash.com/photos/XqXJJhK-c08/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/404"]) body{--page-photo:url("https://unsplash.com/photos/ARAsw7zFx6w/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/all-religions"]) body{--page-photo:url("https://unsplash.com/photos/oQC81OHcl4Q/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/atonement-justice"]) body{--page-photo:url("https://unsplash.com/photos/AXos3O7fRGk/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/bible-changed"]) body{--page-photo:url("https://unsplash.com/photos/9zsHNt5OpqE/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/canon"]) body{--page-photo:url("https://unsplash.com/photos/bIwFwR2fSsA/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/children-die"]) body{--page-photo:url("https://unsplash.com/photos/U_b-eSviHvs/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/christian-disagreement"]) body{--page-photo:url("https://unsplash.com/photos/QSa-uv4WJ0k/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/christian-evolution"]) body{--page-photo:url("https://unsplash.com/photos/ZySVEbGBNxA/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/christian-violence"]) body{--page-photo:url("https://unsplash.com/photos/npl_R94xGZA/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/created-for-hell"]) body{--page-photo:url("https://unsplash.com/photos/aHW6JZQ_yvg/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/different-bibles"]) body{--page-photo:url("https://unsplash.com/photos/DRgrzQQsJDA/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/emotional-crutch"]) body{--page-photo:url("https://unsplash.com/photos/rvJBpwEX-1Y/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/evolution-god"]) body{--page-photo:url("https://unsplash.com/photos/FAU2NI1Uixg/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/faith-required"]) body{--page-photo:url("https://unsplash.com/photos/sZywLgEB8Vo/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/free-will"]) body{--page-photo:url("https://unsplash.com/photos/fIVkJJpMSEA/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/geography"]) body{--page-photo:url("https://unsplash.com/photos/RAZQiZOX3mU/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/god-exists"]) body{--page-photo:url("https://unsplash.com/photos/payOjEt5qYY/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/god-hidden"]) body{--page-photo:url("https://unsplash.com/photos/nzag76y-GjE/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/gospel-differences"]) body{--page-photo:url("https://unsplash.com/photos/c7YYeMemTzw/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/gospels-anonymous"]) body{--page-photo:url("https://unsplash.com/photos/_HzRfyw7BuA/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/hell-finite-life"]) body{--page-photo:url("https://unsplash.com/photos/RA3f0b26qwE/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/honest-unbelief"]) body{--page-photo:url("https://unsplash.com/photos/bBNabN9R_ac/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/hypocrites"]) body{--page-photo:url("https://unsplash.com/photos/FF049vNP1eg/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/jesus-claimed-god"]) body{--page-photo:url("https://unsplash.com/photos/jBI220z-cU4/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/jesus-doesnt-know"]) body{--page-photo:url("https://unsplash.com/photos/v0PWN7Z38ag/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/jesus-existed"]) body{--page-photo:url("https://unsplash.com/photos/vV1a1Leq-dQ/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/jesus-prays"]) body{--page-photo:url("https://unsplash.com/photos/4V1dC_eoCwg/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/jesus-wrote-nothing"]) body{--page-photo:url("https://unsplash.com/photos/-uj3Y7r1BeM/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/lose-salvation"]) body{--page-photo:url("https://unsplash.com/photos/25TdvIG_G6s/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/loving-judge"]) body{--page-photo:url("https://unsplash.com/photos/QDP10NbwcyE/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/miracles"]) body{--page-photo:url("https://unsplash.com/photos/-2so-ry3Hjg/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/morality"]) body{--page-photo:url("https://unsplash.com/photos/qvkU34fX17g/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/more-evidence"]) body{--page-photo:url("https://unsplash.com/photos/jebCcyX6hfs/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/never-hear"]) body{--page-photo:url("https://unsplash.com/photos/ivqGyYLtBI8/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/no-better"]) body{--page-photo:url("https://unsplash.com/photos/0KhSrXnZl7o/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/old-testament-violence"]) body{--page-photo:url("https://unsplash.com/photos/dEkXDo6hcv8/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/real-contradictions"]) body{--page-photo:url("https://unsplash.com/photos/UIib0bAvWfs/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/resurrection-evidence"]) body{--page-photo:url("https://unsplash.com/photos/qXTGr9m3oUc/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/resurrection-hallucination"]) body{--page-photo:url("https://unsplash.com/photos/VVzJ7oD6RqE/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/resurrection-legend"]) body{--page-photo:url("https://unsplash.com/photos/B92vUB0rFuY/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/science-obsolete"]) body{--page-photo:url("https://unsplash.com/photos/D1J_OHn1uCE/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/slavery"]) body{--page-photo:url("https://unsplash.com/photos/pOOpWTrzgUE/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/stolen-body"]) body{--page-photo:url("https://unsplash.com/photos/EfUmP_YwRrI/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/unanswered-prayer"]) body{--page-photo:url("https://unsplash.com/photos/1Ro6GapUmVE/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/want-it-true"]) body{--page-photo:url("https://unsplash.com/photos/q8E0m78DVo4/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/why-anything"]) body{--page-photo:url("https://unsplash.com/photos/HEkSMrNfaJk/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/why-christianity"]) body{--page-photo:url("https://unsplash.com/photos/sOo0kwPPALU/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/why-create"]) body{--page-photo:url("https://unsplash.com/photos/dSbfYNeDeiM/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/why-die"]) body{--page-photo:url("https://unsplash.com/photos/4I6VIZI79HE/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/why-does-god-allow-suffering"]) body{--page-photo:url("https://unsplash.com/photos/LQEk8okbEOw/download?force=true&w=1600")}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/worship"]) body{--page-photo:url("https://unsplash.com/photos/KU66acygwIY/download?force=true&w=1600")}
+
+/* Apply the page-specific photo after all category defaults above. */
+html:has(link[rel="canonical"]) .page-hero::after,
+html:has(link[rel="canonical"]) .hub-hero::after,
+html:has(link[rel="canonical"]) .course-hero::after,
+html:has(link[rel="canonical"]) .gospel-intro::after{
+  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.15)),var(--page-photo,var(--photo-journey));
+  background-position:var(--page-photo-pos,center);
+}
+/* Unique page photos end */
