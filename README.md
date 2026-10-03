@@ -21,3 +21,12 @@ node scripts/build-questions.js
 The generated pages include their own canonical URL, social metadata, Article structured data, and related-question links.
 
 When questions are added or removed, also update the searchable index and `sitemap.xml`.
+
+
+## Questions
+
+The searchable library at `questions.html` and all standalone question pages are generated from `questions-data.json`.
+
+Regenerate both with:
+
+`node scripts/build-questions.js`
