@@ -850,8 +850,18 @@ button{font:inherit}
    https://unsplash.com/photos/an-open-bible-on-a-table-in-the-sunlight-SZaxKdLwz6o
    Church — Unsplash:
    https://unsplash.com/photos/interior-of-a-church-with-pews-and-arched-doorways-KljTlrb971I
-   Life issues / quiet room — Xiaohan Feng:
-   https://unsplash.com/photos/empty-chair-in-sunlit-slatted-room-Ah4284iI_KQ
+   Life issues — one image per topic (all free Unsplash License; picks chosen from descriptions,
+   crops not yet checked by eye):
+   Life hub (default)  — Greg Rosenke: https://unsplash.com/photos/1dnMXxhJT_g   open door, morning light
+   Grief               — Xiaohan Feng: https://unsplash.com/photos/ufDkcI_U-Xo   single chair, sunlit room
+   Anxiety             — Kelly Sikkema: https://unsplash.com/photos/LNXU7dmMqBE   hands holding a white mug
+   Loneliness          — Andrew Krotov: https://unsplash.com/photos/qXJ77NsG478   bench over a foggy lake
+   Shame               — Phil Hearing: https://unsplash.com/photos/KmItTOoBDuw    hand holding a mended bowl
+   Addiction           — Angelo Abear: https://unsplash.com/photos/IXqt3DS3h8E    glass of water on a table
+   Marriage            — Florian Siedl: https://unsplash.com/photos/GPWpmI-7KXw   two mugs on a table
+   Suffering / Hurting — Suhyeon Choi: https://unsplash.com/photos/HCDugQDdtfc    rain on a window
+   Backups if a crop looks wrong: Grief UzndKc9FBwo, Anxiety c-8winJ3vNs, Loneliness ecq46sG0o80,
+   Shame 1dnMXxhJT_g, Addiction -kD-r3oKt3g, Marriage dyPsip8hnn4, Suffering jy-uS8iJhX4.
 
    Do not add per-page photo overrides merely to make pages look different.
    Repeating a strong image within a section is intentional.
@@ -862,7 +872,14 @@ button{font:inherit}
   --photo-study:url("https://unsplash.com/photos/SsGglvy7Cm8/download?force=true&w=1600");
   --photo-bible:url("https://unsplash.com/photos/SZaxKdLwz6o/download?force=true&w=1600");
   --photo-church:url("https://unsplash.com/photos/KljTlrb971I/download?force=true&w=1600");
-  --photo-life:url("https://unsplash.com/photos/Ah4284iI_KQ/download?force=true&w=1600");
+  --photo-life:url("https://images.unsplash.com/photo-1726804550899-f0e01f066031?auto=format&fit=crop&w=1600&q=74");
+  --photo-grief:url("https://images.unsplash.com/photo-1764776502863-7383c59b0bac?auto=format&fit=crop&w=1600&q=74");
+  --photo-anxiety:url("https://images.unsplash.com/photo-1764974012597-ef8ee8c806f0?auto=format&fit=crop&w=1600&q=74");
+  --photo-loneliness:url("https://images.unsplash.com/photo-1756212231818-e68dccf620db?auto=format&fit=crop&w=1600&q=74");
+  --photo-shame:url("https://images.unsplash.com/photo-1790021581912-37d944f8dfaa?auto=format&fit=crop&w=1600&q=74");
+  --photo-addiction:url("https://images.unsplash.com/photo-1618683133131-3c8907882c7c?auto=format&fit=crop&w=1600&q=74");
+  --photo-marriage:url("https://images.unsplash.com/photo-1787998861220-4cc8c0cb25ea?auto=format&fit=crop&w=1600&q=74");
+  --photo-suffering:url("https://images.unsplash.com/photo-1509635022432-0220ac12960b?auto=format&fit=crop&w=1600&q=74");
 }
 
 /* One significant image near the top of a page. Journey is the quiet default. */
@@ -880,6 +897,8 @@ button{font:inherit}
   background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.16)),var(--photo-journey);
   background-size:cover;
   background-position:center 54%;
+  background-color:#dfe4dc;
+  filter:saturate(.82) contrast(.97); /* muted, editorial */
   box-shadow:0 8px 22px rgba(28,35,30,.06);
 }
 .page-hero .inner-wrap{max-width:var(--max)}
@@ -922,6 +941,37 @@ html:has(link[rel="canonical"][href="https://christianityapparently.com/hurting"
   background-position:center 50%;
 }
 
+/* Life issues, by topic. Do not point two topics at the same photo unless it is deliberate. */
+html:has(link[rel="canonical"][href="https://christianityapparently.com/grief"]) body .page-hero::after{
+  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.15)),var(--photo-grief);
+  background-position:center 50%;
+}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/anxiety"]) body .page-hero::after{
+  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.15)),var(--photo-anxiety);
+  background-position:center 55%;
+}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/loneliness"]) body .page-hero::after{
+  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.15)),var(--photo-loneliness);
+  background-position:center 60%;
+}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/shame"]) body .page-hero::after{
+  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.15)),var(--photo-shame);
+  background-position:center 45%;
+}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/addiction"]) body .page-hero::after{
+  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.15)),var(--photo-addiction);
+  background-position:center 55%;
+}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/marriage"]) body .page-hero::after{
+  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.15)),var(--photo-marriage);
+  background-position:center 55%;
+}
+html:has(link[rel="canonical"][href="https://christianityapparently.com/suffering"]) body .page-hero::after,
+html:has(link[rel="canonical"][href="https://christianityapparently.com/hurting"]) body .page-hero::after{
+  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.15)),var(--photo-suffering);
+  background-position:center 50%;
+}
+
 /* Homepage / Grow / Following keep the literal path motif. */
 .home-feature{
   background-image:linear-gradient(180deg,rgba(22,36,45,.24),rgba(22,36,45,.78)),var(--photo-journey);
@@ -936,7 +986,8 @@ html:has(link[rel="canonical"][href="https://christianityapparently.com/followin
 }
 
 /* Courses: the visual language is study, not landscapes. */
-html:has(link[rel="canonical"][href="https://christianityapparently.com/courses"]) body .page-hero::after{
+html:has(link[rel="canonical"][href="https://christianityapparently.com/courses"]) body .page-hero::after,
+html:has(link[rel="canonical"][href="https://christianityapparently.com/courses"]) body .hub-hero::after{
   background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.12)),var(--photo-study);
   background-position:center 52%;
 }
