@@ -837,21 +837,46 @@ button{font:inherit}
 .site-footer::after,footer::after{content:"Scripture quotations are taken from the Holy Bible, New Living Translation, copyright © 1996, 2004, 2015 by Tyndale House Foundation. Used by permission of Tyndale House Publishers, Carol Stream, Illinois 60188. All rights reserved.";grid-column:1/-1;margin-top:8px;padding-top:10px;border-top:1px solid var(--line);color:#7a7e78;font-size:.58rem;line-height:1.45}
 
 
-/* Editorial photography — free Unsplash images, used sparingly.
-   Sources:
-   Shane Hoving: https://unsplash.com/photos/an-open-bible-on-a-table-in-the-sunlight-SZaxKdLwz6o
-   Mathew Antony: https://unsplash.com/photos/sunlight-streams-through-a-forest-path-covered-in-leaves-V1q4Npj3seQ
-   studiopipin: https://unsplash.com/photos/empty-church-pews-with-sunlight-streaming-through-windows-6ge393BomYU
-   Kelly Sikkema: https://unsplash.com/photos/a-desk-with-a-notebook-headphones-and-a-potted-plant-T7yUACjd3hU
-*/
+/* ==========================================================================
+   Photography — one quiet image per page, chosen by SECTION, not by page.
+   Relevance and coherence beat uniqueness: a section may reuse its image.
+   All photos: free Unsplash License (https://unsplash.com/license). Credit here and in README.md.
+
+   PATH    (journey: home, Basics, Gospel, Grow, Following, Decision, Saved, Prayer, About…)
+           Rosalie Gdy — https://unsplash.com/photos/qPwkRwfxJjY
+   INQUIRY (Questions hub, every /questions/ page, Doubt)
+           Yen Vu — https://unsplash.com/photos/tdLECRb5r6E
+   STUDY   (Courses hub and every course-* page)
+           Derek Prince Ministries — https://unsplash.com/photos/mQ6ijrKO2I0
+   BIBLE   (Bible, Scripture, Jesus, God, Trinity, Holy Spirit, Afterlife, What I Believe)
+           Shane Hoving — https://unsplash.com/photos/SZaxKdLwz6o
+   CHURCH  (Church, Baptism, Communion)
+           studiopipin — https://unsplash.com/photos/6ge393BomYU
+   LIFE ISSUES, by topic:
+     rain window   Suhyeon Choi — https://unsplash.com/photos/HCDugQDdtfc  (Grief, Suffering, Hurting)
+     quiet window  Tīna Sāra — https://unsplash.com/photos/jy-uS8iJhX4     (Life hub, Anxiety, Shame)
+     lakeside bench Andrew Krotov — https://unsplash.com/photos/qXJ77NsG478 (Loneliness)
+     two mugs      Florian Siedl — https://unsplash.com/photos/GPWpmI-7KXw   (Marriage)
+     empty street  C — https://unsplash.com/photos/uf-qkYmbczA               (Addiction)
+   To change a section's image, change one variable below.
+   ========================================================================== */
 :root{
-  --photo-bible:url("https://images.unsplash.com/photo-1650065045891-e3a7c96a4ad7?auto=format&fit=crop&w=1600&q=76");
-  --photo-journey:url("https://unsplash.com/photos/fIVkJJpMSEA/download?force=true&w=1600");
-  --photo-church:url("https://images.unsplash.com/photo-1776851772656-adb80e4aa6cb?auto=format&fit=crop&w=1600&q=76");
-  --photo-thought:url("https://images.unsplash.com/photo-1711843250701-00d9ceac7fca?auto=format&fit=crop&w=1600&q=76");
+  --photo-path:url("https://images.unsplash.com/photo-1784889825434-9895d73ffb38?auto=format&fit=crop&w=1600&q=74");
+  --photo-inquiry:url("https://images.unsplash.com/photo-1769794371008-954a71d95ce8?auto=format&fit=crop&w=1600&q=74");
+  --photo-study:url("https://images.unsplash.com/photo-1639705124314-1003e8d1bec5?auto=format&fit=crop&w=1600&q=74");
+  --photo-bible:url("https://images.unsplash.com/photo-1650065045891-e3a7c96a4ad7?auto=format&fit=crop&w=1600&q=74");
+  --photo-church:url("https://images.unsplash.com/photo-1776851772656-adb80e4aa6cb?auto=format&fit=crop&w=1600&q=74");
+  --photo-rain:url("https://images.unsplash.com/photo-1509635022432-0220ac12960b?auto=format&fit=crop&w=1600&q=74");
+  --photo-window:url("https://images.unsplash.com/photo-1631816591249-ba33dde81a23?auto=format&fit=crop&w=1600&q=74");
+  --photo-bench:url("https://images.unsplash.com/photo-1756212231818-e68dccf620db?auto=format&fit=crop&w=1600&q=74");
+  --photo-mugs:url("https://images.unsplash.com/photo-1787998861220-4cc8c0cb25ea?auto=format&fit=crop&w=1600&q=74");
+  --photo-street:url("https://images.unsplash.com/photo-1777836423206-dbb2c601bac5?auto=format&fit=crop&w=1600&q=74");
 }
 
-/* Give nearly every content page one quiet image without turning the site into stock-photo soup. */
+/* Default: the path. Every section below overrides --page-photo on <body>. */
+body{--page-photo:var(--photo-path);--page-photo-pos:center 58%}
+
+.page-hero .inner-wrap{max-width:var(--max)}
 .page-hero::after,
 .hub-hero::after,
 .course-hero::after,
@@ -863,73 +888,35 @@ button{font:inherit}
   margin-top:22px;
   border:1px solid var(--line);
   border-radius:16px;
-  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.16)),var(--photo-journey);
+  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.15)),var(--page-photo);
   background-size:cover;
-  background-position:center;
+  background-position:var(--page-photo-pos,center);
+  background-color:#dfe4dc;
+  filter:saturate(.82) contrast(.97); /* keep it muted and editorial */
   box-shadow:0 8px 22px rgba(28,35,30,.06);
 }
-.page-hero .inner-wrap{max-width:var(--max)}
 .page-hero::after{max-width:var(--max);margin-left:auto;margin-right:auto}
+.course-hero::after{height:clamp(190px,27vw,300px)}
 
-/* Questions and hard-life pages use a quiet study image rather than a posed person. */
-body:has(.question-page) .page-hero::after,
-body:has(.questions-hub) .page-hero::after,
-body:has(.life-groups) .hub-hero::after,
-body:has(.life-alert) .hub-hero::after{
-  background-image:linear-gradient(180deg,rgba(20,25,22,.03),rgba(20,25,22,.19)),var(--photo-thought);
-  background-position:center 42%;
-}
-
-/* Bible pages and anything centered on reading Scripture. */
-body:has(a[href*="biblegateway.com"]) .page-hero::after{
-  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.12)),var(--photo-bible);
-  background-position:center 55%;
-}
-
-/* Church page gets an actual church, which feels like an unreasonable but defensible choice. */
-body:has(.church-finders) .page-hero::after{
-  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.14)),var(--photo-church);
-  background-position:center 54%;
-}
-
-/* Homepage: a literal path through the woods rather than generic trees. */
+/* Homepage: the one image is the path, inside the Gospel card. */
 .home-feature{
-  background-image:linear-gradient(180deg,rgba(22,36,45,.24),rgba(22,36,45,.78)),var(--photo-journey);
+  background-image:linear-gradient(180deg,rgba(22,36,45,.24),rgba(22,36,45,.78)),var(--photo-path);
   background-size:cover;
-  background-position:center 52%;
+  background-position:center 58%;
   text-shadow:0 1px 2px rgba(0,0,0,.18);
 }
 
-/* Course hub: each course gets a visual lead-in, more like a real learning area. */
-.course-card{overflow:hidden}
-.course-card::before{
-  content:"";
-  height:118px;
-  margin:-22px -22px 18px;
-  background-size:cover;
-  background-position:center;
-  border-bottom:1px solid var(--line);
-}
-.course-card:nth-child(1)::before{background-image:linear-gradient(rgba(0,0,0,.03),rgba(0,0,0,.12)),var(--photo-journey);background-position:center 45%}
-.course-card:nth-child(2)::before{background-image:linear-gradient(rgba(0,0,0,.02),rgba(0,0,0,.10)),var(--photo-bible);background-position:center 52%}
-.course-card:nth-child(3)::before{background-image:linear-gradient(rgba(0,0,0,.02),rgba(0,0,0,.10)),var(--photo-journey);background-position:center 52%}
-.course-card:nth-child(4)::before{background-image:linear-gradient(rgba(0,0,0,.03),rgba(0,0,0,.14)),var(--photo-church);background-position:center 54%}
-.course-card h2{margin-top:18px}
-
-/* Individual courses: a strong image at the top, then let the text breathe. */
-.course-hero::after{
-  height:clamp(190px,27vw,300px);
-  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.13)),var(--photo-journey);
-  background-position:center 52%;
-}
-body:has(.course-page a[href*="biblegateway.com"]) .course-hero::after{
-  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.11)),var(--photo-bible);
-  background-position:center 54%;
-}
-body:has(.course-page a[href="church.html"]) .course-hero::after{
-  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.12)),var(--photo-church);
-  background-position:center 54%;
-}
+/* Section → photo. Matches on each page's canonical URL, so no HTML changes are needed. */
+html:has(link[rel="canonical"]:is([href*="/questions"],[href$="/doubt"])) body{--page-photo:var(--photo-inquiry);--page-photo-pos:center 50%}
+html:has(link[rel="canonical"][href*="/course"]) body{--page-photo:var(--photo-study);--page-photo-pos:center 55%}
+html:has(link[rel="canonical"]:is([href$="/bible"],[href$="/scripture"],[href$="/jesus"],[href$="/god"],[href$="/trinity"],[href$="/holy-spirit"],[href$="/afterlife"],[href$="/what-i-believe"])) body{--page-photo:var(--photo-bible);--page-photo-pos:center 55%}
+html:has(link[rel="canonical"]:is([href$="/church"],[href$="/baptism"],[href$="/communion"])) body{--page-photo:var(--photo-church);--page-photo-pos:center 54%}
+/* Life Issues */
+html:has(link[rel="canonical"]:is([href$="/grief"],[href$="/suffering"],[href$="/hurting"])) body{--page-photo:var(--photo-rain);--page-photo-pos:center 50%}
+html:has(link[rel="canonical"]:is([href$="/life"],[href$="/anxiety"],[href$="/shame"])) body{--page-photo:var(--photo-window);--page-photo-pos:center 50%}
+html:has(link[rel="canonical"][href$="/loneliness"]) body{--page-photo:var(--photo-bench);--page-photo-pos:center 60%}
+html:has(link[rel="canonical"][href$="/marriage"]) body{--page-photo:var(--photo-mugs);--page-photo-pos:center 55%}
+html:has(link[rel="canonical"][href$="/addiction"]) body{--page-photo:var(--photo-street);--page-photo-pos:center 55%}
 
 /* Slightly richer course lesson rhythm without introducing more images. */
 .course-lesson:nth-of-type(even){
@@ -947,116 +934,4 @@ body:has(.course-page a[href="church.html"]) .course-hero::after{
     margin-top:18px;
     border-radius:12px;
   }
-  .course-card::before{height:100px}
 }
-
-
-/* Per-page unique photo override */
-body[style*="--page-photo"] .page-hero::after,
-body[style*="--page-photo"] .hub-hero::after,
-body[style*="--page-photo"] .course-hero::after,
-body[style*="--page-photo"] .gospel-intro::after{
-  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.15)),var(--page-photo);
-  background-position:var(--page-photo-pos,center);
-}
-
-/* Unique page photos start */
-/* Every canonical content page gets a distinct free Unsplash photograph. */
-html:has(link[rel="canonical"][href="https://christianityapparently.com/about"]) body{--page-photo:url("https://unsplash.com/photos/CF5I-rfrJ4s/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/addiction"]) body{--page-photo:url("https://unsplash.com/photos/p-3K0zmSZKg/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/afterlife"]) body{--page-photo:url("https://unsplash.com/photos/LUpDjlJv4_c/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/anxiety"]) body{--page-photo:url("https://unsplash.com/photos/9Y8-9T5KiKY/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/baptism"]) body{--page-photo:url("https://unsplash.com/photos/FV7ghF0MknM/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/basics"]) body{--page-photo:url("https://unsplash.com/photos/VhcxuEGNXo4/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/bible"]) body{--page-photo:url("https://unsplash.com/photos/1dm0VJ8nZ2g/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/church"]) body{--page-photo:url("https://unsplash.com/photos/6QE1Fnq0d3Q/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/communion"]) body{--page-photo:url("https://unsplash.com/photos/qa74Yh6-xlc/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/course-bible"]) body{--page-photo:url("https://unsplash.com/photos/535Npq1wFG8/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/course-following"]) body{--page-photo:url("https://unsplash.com/photos/4uX_r8OhJ_o/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/course-share"]) body{--page-photo:url("https://unsplash.com/photos/U7HLzMO4SIY/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/course-start"]) body{--page-photo:url("https://unsplash.com/photos/3cHmnTxXSbU/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/courses"]) body{--page-photo:url("https://unsplash.com/photos/-gXDgi3u144/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/decision"]) body{--page-photo:url("https://unsplash.com/photos/Vjg3YUr09vI/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/doubt"]) body{--page-photo:url("https://unsplash.com/photos/a2H3497tbpY/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/following"]) body{--page-photo:url("https://unsplash.com/photos/pmiW630yDPE/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/god"]) body{--page-photo:url("https://unsplash.com/photos/odquMs4Jsbo/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/gospel"]) body{--page-photo:url("https://unsplash.com/photos/GVRRtaLj3LU/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/grief"]) body{--page-photo:url("https://unsplash.com/photos/372uM1cIQqE/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/grow"]) body{--page-photo:url("https://unsplash.com/photos/23J27gRsAIw/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/holy-spirit"]) body{--page-photo:url("https://unsplash.com/photos/mOxTEQ0oznU/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/hurting"]) body{--page-photo:url("https://unsplash.com/photos/FT-I_VxodFs/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/jesus"]) body{--page-photo:url("https://unsplash.com/photos/8QGvwrV_Bx0/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/life"]) body{--page-photo:url("https://unsplash.com/photos/9UW_8aVN8mA/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/loneliness"]) body{--page-photo:url("https://unsplash.com/photos/VjGksXPHnXA/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/marriage"]) body{--page-photo:url("https://unsplash.com/photos/Ncn1jiEe-Wc/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/point-people-to-jesus"]) body{--page-photo:url("https://unsplash.com/photos/KoKAXLKJwhk/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/prayer"]) body{--page-photo:url("https://unsplash.com/photos/TNlHf4m4gpI/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions"]) body{--page-photo:url("https://unsplash.com/photos/CvnVk7GGQCg/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/saved"]) body{--page-photo:url("https://unsplash.com/photos/ci1F55HaVWQ/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/scripture"]) body{--page-photo:url("https://unsplash.com/photos/qls4Edt9UbE/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/shame"]) body{--page-photo:url("https://unsplash.com/photos/LooDj2Julu0/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/suffering"]) body{--page-photo:url("https://unsplash.com/photos/Fq_BFd52cSU/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/trinity"]) body{--page-photo:url("https://unsplash.com/photos/fqa7yvnx280/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/walked-away"]) body{--page-photo:url("https://unsplash.com/photos/SgN2eHyy1iM/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/what-i-believe"]) body{--page-photo:url("https://unsplash.com/photos/XqXJJhK-c08/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/404"]) body{--page-photo:url("https://unsplash.com/photos/ARAsw7zFx6w/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/all-religions"]) body{--page-photo:url("https://unsplash.com/photos/oQC81OHcl4Q/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/atonement-justice"]) body{--page-photo:url("https://unsplash.com/photos/AXos3O7fRGk/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/bible-changed"]) body{--page-photo:url("https://unsplash.com/photos/9zsHNt5OpqE/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/canon"]) body{--page-photo:url("https://unsplash.com/photos/bIwFwR2fSsA/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/children-die"]) body{--page-photo:url("https://unsplash.com/photos/U_b-eSviHvs/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/christian-disagreement"]) body{--page-photo:url("https://unsplash.com/photos/QSa-uv4WJ0k/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/christian-evolution"]) body{--page-photo:url("https://unsplash.com/photos/ZySVEbGBNxA/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/christian-violence"]) body{--page-photo:url("https://unsplash.com/photos/npl_R94xGZA/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/created-for-hell"]) body{--page-photo:url("https://unsplash.com/photos/aHW6JZQ_yvg/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/different-bibles"]) body{--page-photo:url("https://unsplash.com/photos/DRgrzQQsJDA/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/emotional-crutch"]) body{--page-photo:url("https://unsplash.com/photos/rvJBpwEX-1Y/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/evolution-god"]) body{--page-photo:url("https://unsplash.com/photos/FAU2NI1Uixg/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/faith-required"]) body{--page-photo:url("https://unsplash.com/photos/sZywLgEB8Vo/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/free-will"]) body{--page-photo:url("https://unsplash.com/photos/fIVkJJpMSEA/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/geography"]) body{--page-photo:url("https://unsplash.com/photos/RAZQiZOX3mU/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/god-exists"]) body{--page-photo:url("https://unsplash.com/photos/payOjEt5qYY/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/god-hidden"]) body{--page-photo:url("https://unsplash.com/photos/nzag76y-GjE/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/gospel-differences"]) body{--page-photo:url("https://unsplash.com/photos/c7YYeMemTzw/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/gospels-anonymous"]) body{--page-photo:url("https://unsplash.com/photos/_HzRfyw7BuA/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/hell-finite-life"]) body{--page-photo:url("https://unsplash.com/photos/RA3f0b26qwE/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/honest-unbelief"]) body{--page-photo:url("https://unsplash.com/photos/bBNabN9R_ac/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/hypocrites"]) body{--page-photo:url("https://unsplash.com/photos/FF049vNP1eg/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/jesus-claimed-god"]) body{--page-photo:url("https://unsplash.com/photos/jBI220z-cU4/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/jesus-doesnt-know"]) body{--page-photo:url("https://unsplash.com/photos/v0PWN7Z38ag/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/jesus-existed"]) body{--page-photo:url("https://unsplash.com/photos/vV1a1Leq-dQ/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/jesus-prays"]) body{--page-photo:url("https://unsplash.com/photos/4V1dC_eoCwg/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/jesus-wrote-nothing"]) body{--page-photo:url("https://unsplash.com/photos/-uj3Y7r1BeM/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/lose-salvation"]) body{--page-photo:url("https://unsplash.com/photos/25TdvIG_G6s/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/loving-judge"]) body{--page-photo:url("https://unsplash.com/photos/QDP10NbwcyE/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/miracles"]) body{--page-photo:url("https://unsplash.com/photos/-2so-ry3Hjg/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/morality"]) body{--page-photo:url("https://unsplash.com/photos/qvkU34fX17g/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/more-evidence"]) body{--page-photo:url("https://unsplash.com/photos/jebCcyX6hfs/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/never-hear"]) body{--page-photo:url("https://unsplash.com/photos/ivqGyYLtBI8/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/no-better"]) body{--page-photo:url("https://unsplash.com/photos/0KhSrXnZl7o/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/old-testament-violence"]) body{--page-photo:url("https://unsplash.com/photos/dEkXDo6hcv8/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/real-contradictions"]) body{--page-photo:url("https://unsplash.com/photos/UIib0bAvWfs/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/resurrection-evidence"]) body{--page-photo:url("https://unsplash.com/photos/qXTGr9m3oUc/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/resurrection-hallucination"]) body{--page-photo:url("https://unsplash.com/photos/VVzJ7oD6RqE/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/resurrection-legend"]) body{--page-photo:url("https://unsplash.com/photos/B92vUB0rFuY/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/science-obsolete"]) body{--page-photo:url("https://unsplash.com/photos/D1J_OHn1uCE/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/slavery"]) body{--page-photo:url("https://unsplash.com/photos/pOOpWTrzgUE/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/stolen-body"]) body{--page-photo:url("https://unsplash.com/photos/EfUmP_YwRrI/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/unanswered-prayer"]) body{--page-photo:url("https://unsplash.com/photos/1Ro6GapUmVE/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/want-it-true"]) body{--page-photo:url("https://unsplash.com/photos/q8E0m78DVo4/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/why-anything"]) body{--page-photo:url("https://unsplash.com/photos/HEkSMrNfaJk/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/why-christianity"]) body{--page-photo:url("https://unsplash.com/photos/sOo0kwPPALU/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/why-create"]) body{--page-photo:url("https://unsplash.com/photos/dSbfYNeDeiM/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/why-die"]) body{--page-photo:url("https://unsplash.com/photos/4I6VIZI79HE/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/why-does-god-allow-suffering"]) body{--page-photo:url("https://unsplash.com/photos/LQEk8okbEOw/download?force=true&w=1600")}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions/worship"]) body{--page-photo:url("https://unsplash.com/photos/KU66acygwIY/download?force=true&w=1600")}
-
-/* Apply the page-specific photo after all category defaults above. */
-html:has(link[rel="canonical"]) .page-hero::after,
-html:has(link[rel="canonical"]) .hub-hero::after,
-html:has(link[rel="canonical"]) .course-hero::after,
-html:has(link[rel="canonical"]) .gospel-intro::after{
-  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.15)),var(--page-photo,var(--photo-journey));
-  background-position:var(--page-photo-pos,center);
-}
-/* Unique page photos end */
