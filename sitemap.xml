@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://christianityapparently.com/</loc><lastmod>2026-10-02</lastmod></url>
-  <url><loc>https://christianityapparently.com/about</loc><lastmod>2026-10-02</lastmod></url>
+  <url><loc>https://christianityapparently.com/about</loc><lastmod>2026-10-03</lastmod></url>
   <url><loc>https://christianityapparently.com/basics</loc><lastmod>2026-10-02</lastmod></url>
-  <url><loc>https://christianityapparently.com/bible</loc><lastmod>2026-10-02</lastmod></url>
+  <url><loc>https://christianityapparently.com/bible</loc><lastmod>2026-10-03</lastmod></url>
   <url><loc>https://christianityapparently.com/church</loc><lastmod>2026-10-02</lastmod></url>
   <url><loc>https://christianityapparently.com/decision</loc><lastmod>2026-10-02</lastmod></url>
   <url><loc>https://christianityapparently.com/doubt</loc><lastmod>2026-10-02</lastmod></url>
@@ -87,4 +87,5 @@
   <url><loc>https://christianityapparently.com/course-bible</loc><lastmod>2026-10-03</lastmod></url>
   <url><loc>https://christianityapparently.com/course-following</loc><lastmod>2026-10-03</lastmod></url>
   <url><loc>https://christianityapparently.com/course-share</loc><lastmod>2026-10-03</lastmod></url>
+  <url><loc>https://christianityapparently.com/scripture</loc><lastmod>2026-10-03</lastmod></url>
 </urlset>
