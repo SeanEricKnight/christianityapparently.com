@@ -846,7 +846,7 @@ button{font:inherit}
 */
 :root{
   --photo-bible:url("https://images.unsplash.com/photo-1650065045891-e3a7c96a4ad7?auto=format&fit=crop&w=1600&q=76");
-  --photo-journey:url("https://images.unsplash.com/photo-1770750869369-5968806bbd82?auto=format&fit=crop&w=1600&q=76");
+  --photo-journey:url("https://unsplash.com/photos/fIVkJJpMSEA/download?force=true&w=1600");
   --photo-church:url("https://images.unsplash.com/photo-1776851772656-adb80e4aa6cb?auto=format&fit=crop&w=1600&q=76");
   --photo-thought:url("https://images.unsplash.com/photo-1711843250701-00d9ceac7fca?auto=format&fit=crop&w=1600&q=76");
 }
@@ -948,4 +948,14 @@ body:has(.course-page a[href="church.html"]) .course-hero::after{
     border-radius:12px;
   }
   .course-card::before{height:100px}
+}
+
+
+/* Per-page unique photo override */
+body[style*="--page-photo"] .page-hero::after,
+body[style*="--page-photo"] .hub-hero::after,
+body[style*="--page-photo"] .course-hero::after,
+body[style*="--page-photo"] .gospel-intro::after{
+  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.15)),var(--page-photo);
+  background-position:var(--page-photo-pos,center);
 }
