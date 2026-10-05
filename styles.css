@@ -974,6 +974,7 @@ html:has(link[rel="canonical"][href="https://christianityapparently.com/hurting"
 
 /* Homepage / Grow / Following keep the literal path motif. */
 .home-feature{
+  background-color:#dfe4dc;
   background-image:linear-gradient(180deg,rgba(22,36,45,.24),rgba(22,36,45,.78)),var(--photo-journey);
   background-size:cover;
   background-position:center 54%;
