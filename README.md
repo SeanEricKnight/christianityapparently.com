@@ -4,7 +4,7 @@ Static source for [christianityapparently.com](https://christianityapparently.co
 
 ## Questions
 
-The searchable library lives in `questions.html`. Each of the 50 questions also has its own generated page under `questions/`.
+The searchable library lives in `questions.html`. Each of the 51 questions also has its own generated page under `questions/`.
 
 The single source of question content is:
 
