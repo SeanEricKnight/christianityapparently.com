@@ -1035,3 +1035,93 @@ html:has(link[rel="canonical"][href="https://christianityapparently.com/course-b
   }
   .course-card::before{height:100px}
 }
+
+
+/* Christianity Apparently · Sitewide cinematic editorial design · 2026 */
+/* Shared across existing pages. Homepage owns its separate immersive layout. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{
+  --bg:#f3efe7;--paper:#fcfaf5;--ink:#18242b;--muted:#656864;
+  --line:#d5d0c6;--accent:#304fb6;--accent-dark:#263f91;
+  --accent-soft:#e8e5dc;--warm:#bd5d40;--green:#47695f;
+  --max:1280px;--shadow:0 20px 58px rgba(24,36,43,.1);
+  --editorial-serif:"DM Serif Display",Georgia,serif;
+  --editorial-sans:"Space Grotesk","DM Sans",Arial,sans-serif;
+}
+html{scroll-padding-top:84px}
+body{background:var(--bg);color:var(--ink);line-height:1.6}
+.site-header,.nav{
+  min-height:76px;background:rgba(247,244,237,.97);border-bottom:1px solid var(--line);
+  backdrop-filter:blur(20px);gap:18px;padding-inline:clamp(18px,4vw,66px);
+  box-shadow:none;
+}
+.brand{font-family:var(--editorial-sans);font-size:clamp(1rem,1.5vw,1.24rem);font-weight:700;letter-spacing:-.055em;line-height:1.1}
+.brand span{color:var(--warm)}
+.site-nav,.nav nav{gap:0;min-width:0}
+.site-nav>a,.nav nav>a,.mega summary{
+  font-family:var(--editorial-sans);color:var(--ink);font-size:.67rem;
+  letter-spacing:.11em;font-weight:700;padding:12px 10px;transition:color .2s,background .2s;
+}
+.site-nav>a:hover,.nav nav>a:hover,.mega summary:hover{color:var(--warm)}
+.nav-cta,.site-header .nav-cta{border-radius:0!important;background:var(--ink)!important;color:var(--paper)!important;font-family:var(--editorial-sans);letter-spacing:.06em}
+.nav-cta:hover,.site-header .nav-cta:hover{background:var(--warm)!important;color:#fff!important}
+.page-hero,.hub-hero,.course-hero,.gospel-intro{
+  background:linear-gradient(115deg,#e6d9c7 0%,#f3eee4 52%,#eee5d7 100%);
+  padding:clamp(48px,6vw,100px) clamp(20px,5vw,80px) clamp(40px,5vw,70px);
+  border-bottom:1px solid #cabfae;position:relative;overflow:hidden;
+}
+.page-hero:before,.hub-hero:before,.course-hero:before,.gospel-intro:before{
+  content:"";position:absolute;pointer-events:none;right:-7%;top:-58%;
+  width:min(68vw,760px);height:min(68vw,760px);border:1px solid rgba(189,93,64,.19);
+  border-radius:50%;
+}
+.page-hero .inner-wrap{max-width:var(--max);position:relative;z-index:1}
+.page-hero h1,.hub-hero h1,.course-hero h1,.gospel-intro h1{
+  font-family:var(--editorial-sans);font-weight:700;
+  font-size:clamp(3.3rem,7vw,7.5rem);line-height:.96;letter-spacing:-.075em;
+  color:var(--ink);max-width:980px;
+}
+.page-hero p:last-child,.hub-hero p:last-child{color:#45535a;font-size:clamp(1rem,1.6vw,1.2rem);max-width:730px;line-height:1.55}
+.eyebrow,.kicker{font-family:var(--editorial-sans);letter-spacing:.15em;font-weight:700;color:var(--warm)}
+.article,.article.wide{max-width:960px;padding:clamp(28px,4vw,55px) 24px 66px}
+.article .intro{font-family:var(--editorial-serif);font-size:clamp(1.45rem,2.4vw,2rem);line-height:1.35;color:#31414a}
+.article h2,.article h3,.section-head h2,.question-index-heading h2,
+.questions-gospel h2,.choice-card strong,.topic-links span{
+  font-family:var(--editorial-sans);letter-spacing:-.045em;color:var(--ink)
+}
+.article h2{font-size:clamp(2rem,3.2vw,3.25rem);line-height:1.05;margin:36px 0 14px}
+.article h3{font-size:clamp(1.4rem,2vw,2rem);line-height:1.1}
+.article p,.article li{font-family:"DM Sans",Arial,sans-serif;font-size:1.03rem;line-height:1.78;color:#38464a}
+.article a:not(.btn):not(.button){color:var(--accent)}
+.article blockquote{background:#e8ddd0;border-left:4px solid var(--warm);border-radius:0;font-family:var(--editorial-serif)}
+.aside,.inline-prayer,.questions-gospel{background:#e8e1d6;border-radius:2px;border-color:var(--line)}
+.question-index-group{gap:clamp(18px,3vw,45px);padding:25px 0;border-color:#c6c0b5}
+.question-index-heading h2{font-size:clamp(1.5rem,2.3vw,2.5rem)}
+.question-index-item{padding:18px 5px;transition:background .2s}
+.question-index-item:hover{background:rgba(189,93,64,.065)}
+.question-index-item strong{font-family:var(--editorial-sans);font-size:1.08rem}
+.question-index-item b,.topic-links b{color:var(--warm)}
+.question-category-nav a{border-radius:0}
+.question-search input,.search-input,input[type="search"]{border-radius:3px;background:var(--paper);border-color:#c9c1b3}
+.question-search input:focus,input[type="search"]:focus{outline:2px solid var(--warm);outline-offset:2px}
+.card,.topic-card,.course-card,.choice-card{border-radius:3px;box-shadow:none;border-color:#d1c7b9}
+.card:hover,.topic-card:hover,.course-card:hover,.choice-card:hover{box-shadow:var(--shadow)}
+.btn,.button,.pill-link{border-radius:2px}
+.site-footer,footer{max-width:var(--max);color:#546068}
+.site-footer a:hover,footer a:hover{color:var(--warm)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
+  outline:3px solid var(--warm);outline-offset:3px
+}
+@media(max-width:900px){
+  .site-header,.nav{min-height:66px;padding:12px 18px;flex-wrap:wrap}
+  .site-nav,.nav nav{gap:4px;flex-wrap:wrap}
+  .site-nav>a,.nav nav>a{padding:7px;font-size:.63rem}
+}
+@media(max-width:600px){
+  .page-hero,.hub-hero,.course-hero,.gospel-intro{padding:42px 18px 36px}
+  .page-hero h1,.hub-hero h1,.course-hero h1,.gospel-intro h1{font-size:clamp(2.65rem,11vw,4.5rem)}
+  .article,.article.wide{padding:30px 19px 48px}
+  .article h2{margin-top:28px}
+  .question-index-group{padding:19px 0}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
