@@ -1145,3 +1145,20 @@ html{scroll-padding-top:90px}body{background:var(--bg);color:var(--ink);font-fam
 .btn,.button,.cta,.nav-cta{border-radius:0!important;font-family:"Space Grotesk",Arial,sans-serif!important;font-weight:750!important}
 footer,.site-footer{border-top:1px solid #d7d1c8}
 @media(max-width:820px){.site-header{min-height:66px!important;padding:11px 18px!important;flex-wrap:wrap!important}.site-header>.brand{font-size:12px!important}.site-header>.brand span{font-size:15px!important}.site-nav{width:100%;order:3;display:flex!important;justify-content:flex-start!important;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;flex-wrap:nowrap!important;padding:0 0 4px;margin:0}.site-nav a{font-size:12px!important;padding:8px 6px!important}.page-hero,.hub-hero,.course-hero,.gospel-intro{padding:36px 20px 30px!important}.page-hero h1,.hub-hero h1,.course-hero h1,.gospel-intro h1{font-size:clamp(37px,10vw,62px)!important}}
+
+/* Compact layout on every shared-style page: keep meaningful content, eliminate empty art blocks */
+:root{--max:1020px}
+.site-header{min-height:64px!important}
+.page-hero,.hub-hero,.course-hero,.gospel-intro{padding-top:30px!important;padding-bottom:26px!important}
+.page-hero h1,.hub-hero h1,.course-hero h1,.gospel-intro h1{font-size:clamp(34px,4.8vw,62px)!important}
+.article,.article.wide,.course-main,.questions-hub{padding-top:24px!important;padding-bottom:34px!important}
+.article p,.article li{line-height:1.55}
+.article h2{margin-top:22px!important;margin-bottom:10px!important}
+.article h3{margin-top:17px!important;margin-bottom:8px!important}
+section.content-section,.section,.feature-section,.pathway-section,.course-section{padding-top:28px!important;padding-bottom:28px!important}
+.cards,.grid,.question-grid,.feature-grid,.course-grid{gap:12px!important}
+.card,.feature-card,.course-card,.question-card{padding:16px!important}
+.article .spacer,.empty-placeholder,.photo-placeholder,.image-placeholder{display:none!important}
+.hero-photo:empty,.hero-visual:empty,.section-image:empty,.feature-photo:empty,.artwork:empty,.photo-frame:empty{display:none!important}
+.hero-photo:not(:has(img)):not([style*="background"]),.hero-visual:not(:has(img)):not([style*="background"]){display:none!important}
+@media(max-width:820px){.site-header{min-height:62px!important}.page-hero,.hub-hero,.course-hero,.gospel-intro{padding:25px 18px!important}.article,.article.wide,.course-main,.questions-hub{padding-top:19px!important;padding-bottom:28px!important}}
