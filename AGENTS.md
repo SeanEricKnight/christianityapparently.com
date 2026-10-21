@@ -37,3 +37,7 @@ Protect the owner's time, token budget, and actual outcomes. **Do not optimize f
 - **Risk exception:** never abandon potentially serious security, privacy, accessibility, data-integrity, or production issues merely to save tokens. Report meaningful unresolved risk plainly.
 
 Example: the 2026-10-21 CI header screenshot failures were traced to 3 color-channel-level pixels out of a 390×70 screenshot. That tiny rasterization difference should not consume an open-ended investigation or block an otherwise validated site change. This is a lesson about proportionality, not blanket permission to ignore CI.
+
+## Standing authorization from site owner (2026-10-21)
+
+Read the private ops repo's `DECISIONS.md` and `README.md` for the full approved three-tier authorization. Short version: **act independently within already approved scope; ask only for material changes in risk, cost, exposure or direction.** Routine investigations/tests/documentation/ops handoffs and ordinary commits are preapproved. Branches, fixes and PR creation within approved objectives are preapproved. Explicit owner approval is still required for merging to `main`, production deployments/configuration, security/privacy/secrets/exposure changes, sensitive or unapproved editorial publishing, protected `CONTEXT.md` or identity changes, and major strategy/cost decisions. Never bypass service-level permission requests. A passing PR is not permission to merge.
