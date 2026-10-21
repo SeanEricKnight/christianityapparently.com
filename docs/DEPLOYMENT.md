@@ -8,6 +8,7 @@ The `site-rebuild` branch uses Cloudflare Workers static assets. `wrangler.jsonc
 - Preview build command: `npm run build:dist && node scripts/check-dist.js`.
 - Preview deployment command: `npx wrangler preview`.
 - `previews: {}` in Wrangler configuration is required by the Workers Previews workflow.
+- `build.command` in `wrangler.jsonc` runs `npm run build:dist && node scripts/check-dist.js` before Wrangler uploads assets, including when an existing branch preview skips the dashboard build step.
 - Production remains on `main` with deployment command `npx wrangler deploy`. Its build command must be reviewed before merging the rebuild into production.
 
 The preview build command is saved in the Cloudflare dashboard's Builds → Previews Base settings. Production settings were not changed. Preview branch builds are enabled, so pushing a branch can automatically build its preview. Previews are public by default; private previews require Cloudflare Access / Zero Trust setup.
