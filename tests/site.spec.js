@@ -188,3 +188,43 @@ test('links: every internal href resolves to the intended page', async ({ page, 
     }
   }
 });
+
+test('questions hub: category filter, search, and combination work together', async ({ page }) => {
+  await page.goto('/questions.html');
+  const visible = () => page.locator('.question-index-item:not([hidden])').count();
+  const total = await page.locator('.question-index-item').count();
+  expect(total).toBeGreaterThanOrEqual(55);
+  expect(await visible()).toBe(total);
+  const btn = page.locator('.question-category-nav a[data-cat="bible"]');
+  await btn.click();
+  await expect(btn).toHaveAttribute('aria-pressed', 'true');
+  const inBible = await visible();
+  expect(inBible).toBeGreaterThan(5);
+  expect(inBible).toBeLessThan(total);
+  expect(await page.locator('.question-index-group:not([hidden])').count()).toBe(1);
+  // search inside the category narrows further
+  await page.fill('#question-filter', 'canon');
+  const both = await visible();
+  expect(both).toBeGreaterThan(0);
+  expect(both).toBeLessThan(inBible);
+  // a term from another category finds nothing while Bible is selected
+  await page.fill('#question-filter', 'hell');
+  expect(await visible()).toBe(0);
+  await expect(page.locator('#question-empty')).toBeVisible();
+  // switching back to All finds it
+  await page.locator('.question-category-nav a[data-cat="all"]').click();
+  expect(await visible()).toBeGreaterThan(0);
+  await expect(page.locator('#question-count')).toHaveText(/\d+ questions?/);
+  // deep link
+  await page.goto('/questions.html#other-religions-and-salvation');
+  await expect(page.locator('.question-category-nav a[data-cat="other-religions-and-salvation"]')).toHaveAttribute('aria-pressed', 'true');
+});
+
+test('homepage footer links and secondary routes resolve', async ({ page, request }) => {
+  await page.goto('/index.html');
+  const hrefs = await page.locator('.footer-links a').evaluateAll(a => a.map(x => x.getAttribute('href')));
+  expect(hrefs.length).toBeGreaterThanOrEqual(12);
+  for (const need of ['basics.html', 'life.html', 'grow.html', 'church.html']) expect(hrefs).toContain(need);
+  for (const h of hrefs) expect((await request.get('/' + h.split('#')[0])).ok(), h).toBeTruthy();
+  await expect(page.locator('.ca-next-also a')).toHaveCount(3);
+});
