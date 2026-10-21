@@ -46,5 +46,10 @@ const sigs=new Set(canon.values());if(sigs.size>1)fail(ROOT,'header markup diffe
 // sitemap covers every indexable page
 const sm=read(path.join(ROOT,'sitemap.xml'));
 for(const p of pages){const r=rel(p);if(r==='404.html')continue;const u='https://christianityapparently.com/'+(r==='index.html'?'':r.replace(/\.html$/,''));if(!sm.includes('<loc>'+u+'</loc>'))fail(p,'not in sitemap')}
+// stylesheets: no stock photography or external photo backgrounds (HTML-only checks missed these once)
+for(const f of fs.readdirSync(ROOT).filter(f=>f.endsWith('.css'))){const c=fs.readFileSync(path.join(ROOT,f),'utf8');
+  if(/unsplash/i.test(c))fail(f,'Unsplash reference in CSS');
+  if(/--photo-/.test(c))fail(f,'photo custom property in CSS');
+  for(const m of c.matchAll(/url\(\s*["']?(https?:[^)"']+)/g))if(!/fonts\.(googleapis|gstatic)\.com/.test(m[1]))fail(f,'external url() in CSS: '+m[1].slice(0,80))}
 if(fails.length){console.error(fails.length+' static check failure(s):\n'+fails.join('\n'));process.exit(1)}
 console.log('static checks passed for '+pages.length+' pages (header identical, links, anchors, JS parse, images alt, content rules, sitemap)');
