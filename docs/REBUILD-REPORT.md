@@ -135,7 +135,9 @@ Sources used (checked this session through search and fetched pages where possib
 All Scripture quotations are paraphrased, not quoted from a translation.
 
 ### Stage 3: sensitive topics
-`docs/PROPOSED-SENSITIVE-TOPICS-OUTLINE.md`: proposal only; 7 separate pages (sexuality in general, same-sex relationships, gay Christians and pastoral care, transgender, marriage and divorce, singleness, women's roles), framing decisions for you, sources to verify, risks. No page exists, nothing is in the sitemap or hub. Note that anything under `docs/` is in the repository and would be served if the site root is deployed as is; confirm whether `docs/` should be excluded from deployment.
+Proposal only. To keep it out of anything Cloudflare Pages serves, the outline is **not in the repository**; it lives in a Google Doc ("Christianity Apparently — Proposed Outline: Sensitive Topics (NOT PUBLISHED)", https://docs.google.com/document/d/1agzBl35XaYiiUWmEOlLadOnT_xdyhxK9eYvrKgYOcz8/edit). It records the owner's framing (evidence-first, biblically serious, broadly Protestant; four labelled layers; no speaking for the owner's convictions; `[EDITORIAL REVIEW]` flags). No pages drafted; none published. Sequencing decision: nothing in Stage 3 is drafted until the five new questions are verified and approved.
+
+**Deployment caution:** the whole repository root is served, so `docs/` (including this report), `tests/`, `scripts/` and `questions-data.json` are publicly reachable after merge unless Cloudflare is configured to publish a build subdirectory or these are removed. Needs a decision before merge.
 
 ### Testing, this round
 - `node scripts/check-static.js`: PASS, 100 pages.
