@@ -114,3 +114,8 @@
 /* Hobby site: calm hero instead of continuously drifting manuscript cutouts. */
 .hero .art,.hero .orbit{animation:none!important}
 .hero .art.one,.hero .art.two{transition:none}
+
+/* Generated illustration hero: one calm full-bleed image; paper gradient (below) keeps the headline readable. */
+.hero-images .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:78% 50%}
+.hero-images::after{background:linear-gradient(90deg,#f3efe7 0%,#f3efe7f2 34%,#f3efe7a6 58%,#f3efe726 100%)}
+@media(max-width:760px){.hero-images{opacity:1}.hero-images::after{background:linear-gradient(180deg,#f3efe7f0,#f3efe7e0 60%,#f3efe7b8)}}
