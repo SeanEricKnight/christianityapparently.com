@@ -98,3 +98,11 @@ ONLINE=1 npm run test:browser  # also require Wikimedia images/fonts
 - Gospel page keeps its numbered stepper buttons ("1 God, 2 Broken…") as functional navigation; only the large decorative numerals were removed. Say if you want those gone too.
 - Footers are not unified (only the header is shared); question-page footers are generated.
 - Live deployment/Cloudflare behavior (clean-URL redirects) not checked.
+
+## Additional independent source-record audit — 20 October 2026
+
+ChatGPT independently retrieved Wikimedia Commons file description and license pages for the 19 images already listed in `credits.html`. The credits page now provides source-specific creator, origin, copyright/license notes for every listed image, along with direct links to relevant Creative Commons license terms, and disclosure that images may be cropped or darkened for layout. Specific records checked include the Sea of Galilee aerial photo (Itamar Grinberg/israeltourism, CC BY-SA 2.0), Garden Tomb by Beko (CC BY-SA 4.0), Garden Tomb by Gary Todd (CC0), the Gary Todd crucifixion museum display (CC0), Codex Sinaiticus British Library image by PotatoCow25 (CC0), Dale Gillard's scroll artifacts photo (CC BY 2.5), and public-domain manuscripts/Surikov artworks. Verified Commons source-page records are **not** equivalent to verifying every live image download, the actual visual crop, or rendered typography.
+
+The Billy Graham Evangelistic Association's June 16, 2023 article independently supports the prayer line 888-388-2683; current operation of the number was not call-tested.
+
+**Files changed after the earlier 300/300 browser run:** `credits.html` only. The complete browser suite has **not** been rerun for these source-note additions, nor has the live site been browser-tested with third-party resources loading. **Recommendation remains NOT READY TO MERGE** until external image/font rendering, production appearance, and final tests are confirmed. No changes were made to `main`.
