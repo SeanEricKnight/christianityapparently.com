@@ -1,0 +1,2092 @@
+{
+ "commit": "636d8ad",
+ "stats": {
+  "expected": 297,
+  "unexpected": 0,
+  "flaky": 0,
+  "skipped": 0
+ },
+ "duration_s": 210.2,
+ "online": false,
+ "results": [
+  {
+   "project": "desktop-1440",
+   "test": "page: 404.html",
+   "status": "passed",
+   "ms": 5036,
+   "scrollHeight": 900
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: about.html",
+   "status": "passed",
+   "ms": 3995,
+   "scrollHeight": 1433
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: addiction.html",
+   "status": "passed",
+   "ms": 4101,
+   "scrollHeight": 1672
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: afterlife.html",
+   "status": "passed",
+   "ms": 5571,
+   "scrollHeight": 1445
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: anxiety.html",
+   "status": "passed",
+   "ms": 2545,
+   "scrollHeight": 1557
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: baptism.html",
+   "status": "passed",
+   "ms": 2669,
+   "scrollHeight": 1353
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: basics.html",
+   "status": "passed",
+   "ms": 2990,
+   "scrollHeight": 1898
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: bible-problems.html",
+   "status": "passed",
+   "ms": 2844,
+   "scrollHeight": 8998
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: bible.html",
+   "status": "passed",
+   "ms": 2648,
+   "scrollHeight": 2577
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: church.html",
+   "status": "passed",
+   "ms": 3375,
+   "scrollHeight": 1742
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: communion.html",
+   "status": "passed",
+   "ms": 2386,
+   "scrollHeight": 1419
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: councils.html",
+   "status": "passed",
+   "ms": 3422,
+   "scrollHeight": 3579
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: course-bible.html",
+   "status": "passed",
+   "ms": 2559,
+   "scrollHeight": 2678
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: course-following.html",
+   "status": "passed",
+   "ms": 2685,
+   "scrollHeight": 2892
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: course-share.html",
+   "status": "passed",
+   "ms": 2841,
+   "scrollHeight": 2644
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: course-start.html",
+   "status": "passed",
+   "ms": 2656,
+   "scrollHeight": 2556
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: courses.html",
+   "status": "passed",
+   "ms": 2021,
+   "scrollHeight": 1734
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: decision.html",
+   "status": "passed",
+   "ms": 3307,
+   "scrollHeight": 1467
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: doubt.html",
+   "status": "passed",
+   "ms": 2911,
+   "scrollHeight": 1437
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: following.html",
+   "status": "passed",
+   "ms": 2856,
+   "scrollHeight": 1745
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: god.html",
+   "status": "passed",
+   "ms": 2462,
+   "scrollHeight": 1445
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: gospel.html",
+   "status": "passed",
+   "ms": 2585,
+   "scrollHeight": 3271
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: grief.html",
+   "status": "passed",
+   "ms": 3162,
+   "scrollHeight": 1516
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: grow.html",
+   "status": "passed",
+   "ms": 2344,
+   "scrollHeight": 2100
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: holy-spirit.html",
+   "status": "passed",
+   "ms": 2736,
+   "scrollHeight": 1306
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: hurting.html",
+   "status": "passed",
+   "ms": 2843,
+   "scrollHeight": 1700
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: index.html",
+   "status": "passed",
+   "ms": 9406,
+   "scrollHeight": 9491
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: jesus.html",
+   "status": "passed",
+   "ms": 2959,
+   "scrollHeight": 1647
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: life.html",
+   "status": "passed",
+   "ms": 3372,
+   "scrollHeight": 2355
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: loneliness.html",
+   "status": "passed",
+   "ms": 3161,
+   "scrollHeight": 1445
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: marriage.html",
+   "status": "passed",
+   "ms": 2508,
+   "scrollHeight": 1575
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: original-experience.html",
+   "status": "passed",
+   "ms": 5023,
+   "scrollHeight": 3311
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: point-people-to-jesus.html",
+   "status": "passed",
+   "ms": 2427,
+   "scrollHeight": 2650
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: prayer.html",
+   "status": "passed",
+   "ms": 2413,
+   "scrollHeight": 1375
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: privacy.html",
+   "status": "passed",
+   "ms": 1771,
+   "scrollHeight": 1907
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions.html",
+   "status": "passed",
+   "ms": 2132,
+   "scrollHeight": 6524
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/all-religions.html",
+   "status": "passed",
+   "ms": 2306,
+   "scrollHeight": 1253
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/atonement-justice.html",
+   "status": "passed",
+   "ms": 2082,
+   "scrollHeight": 1314
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/bible-changed.html",
+   "status": "passed",
+   "ms": 2183,
+   "scrollHeight": 1207
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/canon.html",
+   "status": "passed",
+   "ms": 2286,
+   "scrollHeight": 1197
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/children-die.html",
+   "status": "passed",
+   "ms": 2033,
+   "scrollHeight": 1192
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/christian-disagreement.html",
+   "status": "passed",
+   "ms": 2120,
+   "scrollHeight": 1294
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/christian-evolution.html",
+   "status": "passed",
+   "ms": 1888,
+   "scrollHeight": 1172
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/christian-violence.html",
+   "status": "passed",
+   "ms": 2549,
+   "scrollHeight": 1330
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/created-for-hell.html",
+   "status": "passed",
+   "ms": 2219,
+   "scrollHeight": 1314
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/different-bibles.html",
+   "status": "passed",
+   "ms": 2152,
+   "scrollHeight": 1233
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/emotional-crutch.html",
+   "status": "passed",
+   "ms": 2160,
+   "scrollHeight": 1259
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/evolution-god.html",
+   "status": "passed",
+   "ms": 2349,
+   "scrollHeight": 1197
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/faith-required.html",
+   "status": "passed",
+   "ms": 2747,
+   "scrollHeight": 1192
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/free-will.html",
+   "status": "passed",
+   "ms": 2750,
+   "scrollHeight": 1314
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/geography.html",
+   "status": "passed",
+   "ms": 2305,
+   "scrollHeight": 1365
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/god-exists.html",
+   "status": "passed",
+   "ms": 2173,
+   "scrollHeight": 1304
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/god-hidden.html",
+   "status": "passed",
+   "ms": 2364,
+   "scrollHeight": 1217
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/gospel-differences.html",
+   "status": "passed",
+   "ms": 2514,
+   "scrollHeight": 1253
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/gospels-anonymous.html",
+   "status": "passed",
+   "ms": 2106,
+   "scrollHeight": 1376
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/hell-finite-life.html",
+   "status": "passed",
+   "ms": 2140,
+   "scrollHeight": 1253
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/honest-unbelief.html",
+   "status": "passed",
+   "ms": 2517,
+   "scrollHeight": 1259
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/hypocrites.html",
+   "status": "passed",
+   "ms": 2126,
+   "scrollHeight": 1217
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/jesus-claimed-god.html",
+   "status": "passed",
+   "ms": 2101,
+   "scrollHeight": 1243
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/jesus-doesnt-know.html",
+   "status": "passed",
+   "ms": 1930,
+   "scrollHeight": 1314
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/jesus-existed.html",
+   "status": "passed",
+   "ms": 2710,
+   "scrollHeight": 1192
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/jesus-prays.html",
+   "status": "passed",
+   "ms": 2313,
+   "scrollHeight": 1289
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/jesus-wrote-nothing.html",
+   "status": "passed",
+   "ms": 2393,
+   "scrollHeight": 1314
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/lose-salvation.html",
+   "status": "passed",
+   "ms": 2440,
+   "scrollHeight": 1207
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/loving-judge.html",
+   "status": "passed",
+   "ms": 2708,
+   "scrollHeight": 1217
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/miracles.html",
+   "status": "passed",
+   "ms": 2251,
+   "scrollHeight": 1172
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/morality.html",
+   "status": "passed",
+   "ms": 2663,
+   "scrollHeight": 1401
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/more-evidence.html",
+   "status": "passed",
+   "ms": 2373,
+   "scrollHeight": 1279
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/never-hear.html",
+   "status": "passed",
+   "ms": 1913,
+   "scrollHeight": 1192
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/no-better.html",
+   "status": "passed",
+   "ms": 2465,
+   "scrollHeight": 1315
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/old-testament-violence.html",
+   "status": "passed",
+   "ms": 2247,
+   "scrollHeight": 1300
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/real-contradictions.html",
+   "status": "passed",
+   "ms": 2258,
+   "scrollHeight": 1197
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/resurrection-evidence.html",
+   "status": "passed",
+   "ms": 2000,
+   "scrollHeight": 1314
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/resurrection-hallucination.html",
+   "status": "passed",
+   "ms": 2083,
+   "scrollHeight": 1279
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/resurrection-legend.html",
+   "status": "passed",
+   "ms": 2356,
+   "scrollHeight": 1253
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/science-obsolete.html",
+   "status": "passed",
+   "ms": 2312,
+   "scrollHeight": 1166
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/slavery.html",
+   "status": "passed",
+   "ms": 2091,
+   "scrollHeight": 1259
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/stolen-body.html",
+   "status": "passed",
+   "ms": 2348,
+   "scrollHeight": 1217
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/unanswered-prayer.html",
+   "status": "passed",
+   "ms": 2954,
+   "scrollHeight": 1314
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/want-it-true.html",
+   "status": "passed",
+   "ms": 2093,
+   "scrollHeight": 1243
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/why-anything.html",
+   "status": "passed",
+   "ms": 2384,
+   "scrollHeight": 1217
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/why-christianity.html",
+   "status": "passed",
+   "ms": 2505,
+   "scrollHeight": 1340
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/why-create.html",
+   "status": "passed",
+   "ms": 2298,
+   "scrollHeight": 1279
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/why-die.html",
+   "status": "passed",
+   "ms": 2553,
+   "scrollHeight": 1289
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/why-does-god-allow-suffering.html",
+   "status": "passed",
+   "ms": 2345,
+   "scrollHeight": 1289
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: questions/worship.html",
+   "status": "passed",
+   "ms": 2254,
+   "scrollHeight": 1192
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: saved.html",
+   "status": "passed",
+   "ms": 2676,
+   "scrollHeight": 1427
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: scripture.html",
+   "status": "passed",
+   "ms": 2457,
+   "scrollHeight": 1391
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: shame.html",
+   "status": "passed",
+   "ms": 2278,
+   "scrollHeight": 1348
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: suffering.html",
+   "status": "passed",
+   "ms": 2558,
+   "scrollHeight": 2153
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: suggest.html",
+   "status": "passed",
+   "ms": 2590,
+   "scrollHeight": 1568
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: trinity.html",
+   "status": "passed",
+   "ms": 2188,
+   "scrollHeight": 1368
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: walked-away.html",
+   "status": "passed",
+   "ms": 2434,
+   "scrollHeight": 1427
+  },
+  {
+   "project": "desktop-1440",
+   "test": "page: what-i-believe.html",
+   "status": "passed",
+   "ms": 3121,
+   "scrollHeight": 1942
+  },
+  {
+   "project": "desktop-1440",
+   "test": "home: \"Is There a Creator?\" scenes pair heading+image in order",
+   "status": "passed",
+   "ms": 11384,
+   "scrollHeight": null
+  },
+  {
+   "project": "desktop-1440",
+   "test": "home: reduced motion disables transforms and transitions",
+   "status": "passed",
+   "ms": 1692,
+   "scrollHeight": null
+  },
+  {
+   "project": "desktop-1440",
+   "test": "original-experience: hero visible, dots navigate, tiles go to the right pages",
+   "status": "passed",
+   "ms": 13224,
+   "scrollHeight": null
+  },
+  {
+   "project": "desktop-1440",
+   "test": "councils: list renders, search filters, modal opens and closes",
+   "status": "passed",
+   "ms": 2577,
+   "scrollHeight": null
+  },
+  {
+   "project": "desktop-1440",
+   "test": "links: every internal href resolves to the intended page",
+   "status": "passed",
+   "ms": 3636,
+   "scrollHeight": null
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: 404.html",
+   "status": "passed",
+   "ms": 5238,
+   "scrollHeight": 1024
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: about.html",
+   "status": "passed",
+   "ms": 4357,
+   "scrollHeight": 1261
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: addiction.html",
+   "status": "passed",
+   "ms": 4403,
+   "scrollHeight": 1537
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: afterlife.html",
+   "status": "passed",
+   "ms": 2255,
+   "scrollHeight": 1330
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: anxiety.html",
+   "status": "passed",
+   "ms": 2240,
+   "scrollHeight": 1398
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: baptism.html",
+   "status": "passed",
+   "ms": 3347,
+   "scrollHeight": 1279
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: basics.html",
+   "status": "passed",
+   "ms": 2365,
+   "scrollHeight": 1896
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: bible-problems.html",
+   "status": "passed",
+   "ms": 2345,
+   "scrollHeight": 8627
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: bible.html",
+   "status": "passed",
+   "ms": 2575,
+   "scrollHeight": 2607
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: church.html",
+   "status": "passed",
+   "ms": 2048,
+   "scrollHeight": 1572
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: communion.html",
+   "status": "passed",
+   "ms": 2306,
+   "scrollHeight": 1310
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: councils.html",
+   "status": "passed",
+   "ms": 2251,
+   "scrollHeight": 3781
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: course-bible.html",
+   "status": "passed",
+   "ms": 2259,
+   "scrollHeight": 2588
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: course-following.html",
+   "status": "passed",
+   "ms": 2299,
+   "scrollHeight": 2784
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: course-share.html",
+   "status": "passed",
+   "ms": 2518,
+   "scrollHeight": 2562
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: course-start.html",
+   "status": "passed",
+   "ms": 2161,
+   "scrollHeight": 2525
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: courses.html",
+   "status": "passed",
+   "ms": 2513,
+   "scrollHeight": 1619
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: decision.html",
+   "status": "passed",
+   "ms": 2095,
+   "scrollHeight": 1414
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: doubt.html",
+   "status": "passed",
+   "ms": 2190,
+   "scrollHeight": 1329
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: following.html",
+   "status": "passed",
+   "ms": 1910,
+   "scrollHeight": 1705
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: god.html",
+   "status": "passed",
+   "ms": 1910,
+   "scrollHeight": 1310
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: gospel.html",
+   "status": "passed",
+   "ms": 1939,
+   "scrollHeight": 2969
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: grief.html",
+   "status": "passed",
+   "ms": 2178,
+   "scrollHeight": 1331
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: grow.html",
+   "status": "passed",
+   "ms": 2245,
+   "scrollHeight": 2259
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: holy-spirit.html",
+   "status": "passed",
+   "ms": 2260,
+   "scrollHeight": 1269
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: hurting.html",
+   "status": "passed",
+   "ms": 2224,
+   "scrollHeight": 1698
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: index.html",
+   "status": "passed",
+   "ms": 8381,
+   "scrollHeight": 10916
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: jesus.html",
+   "status": "passed",
+   "ms": 2133,
+   "scrollHeight": 1553
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: life.html",
+   "status": "passed",
+   "ms": 2510,
+   "scrollHeight": 2308
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: loneliness.html",
+   "status": "passed",
+   "ms": 2144,
+   "scrollHeight": 1289
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: marriage.html",
+   "status": "passed",
+   "ms": 2353,
+   "scrollHeight": 1386
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: original-experience.html",
+   "status": "passed",
+   "ms": 5074,
+   "scrollHeight": 3826
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: point-people-to-jesus.html",
+   "status": "passed",
+   "ms": 2466,
+   "scrollHeight": 2592
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: prayer.html",
+   "status": "passed",
+   "ms": 2533,
+   "scrollHeight": 1267
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: privacy.html",
+   "status": "passed",
+   "ms": 2134,
+   "scrollHeight": 2064
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions.html",
+   "status": "passed",
+   "ms": 2516,
+   "scrollHeight": 7430
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/all-religions.html",
+   "status": "passed",
+   "ms": 2011,
+   "scrollHeight": 1150
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/atonement-justice.html",
+   "status": "passed",
+   "ms": 2124,
+   "scrollHeight": 1237
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/bible-changed.html",
+   "status": "passed",
+   "ms": 1958,
+   "scrollHeight": 1217
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/canon.html",
+   "status": "passed",
+   "ms": 2370,
+   "scrollHeight": 1156
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/children-die.html",
+   "status": "passed",
+   "ms": 2020,
+   "scrollHeight": 1105
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/christian-disagreement.html",
+   "status": "passed",
+   "ms": 2098,
+   "scrollHeight": 1324
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/christian-evolution.html",
+   "status": "passed",
+   "ms": 2213,
+   "scrollHeight": 1130
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/christian-violence.html",
+   "status": "passed",
+   "ms": 1835,
+   "scrollHeight": 1273
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/created-for-hell.html",
+   "status": "passed",
+   "ms": 2318,
+   "scrollHeight": 1217
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/different-bibles.html",
+   "status": "passed",
+   "ms": 1876,
+   "scrollHeight": 1192
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/emotional-crutch.html",
+   "status": "passed",
+   "ms": 1994,
+   "scrollHeight": 1130
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/evolution-god.html",
+   "status": "passed",
+   "ms": 1914,
+   "scrollHeight": 1130
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/faith-required.html",
+   "status": "passed",
+   "ms": 2112,
+   "scrollHeight": 1176
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/free-will.html",
+   "status": "passed",
+   "ms": 1998,
+   "scrollHeight": 1237
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/geography.html",
+   "status": "passed",
+   "ms": 2185,
+   "scrollHeight": 1262
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/god-exists.html",
+   "status": "passed",
+   "ms": 2281,
+   "scrollHeight": 1156
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/god-hidden.html",
+   "status": "passed",
+   "ms": 2470,
+   "scrollHeight": 1176
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/gospel-differences.html",
+   "status": "passed",
+   "ms": 2292,
+   "scrollHeight": 1262
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/gospels-anonymous.html",
+   "status": "passed",
+   "ms": 2022,
+   "scrollHeight": 1249
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/hell-finite-life.html",
+   "status": "passed",
+   "ms": 1932,
+   "scrollHeight": 1217
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/honest-unbelief.html",
+   "status": "passed",
+   "ms": 2020,
+   "scrollHeight": 1192
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/hypocrites.html",
+   "status": "passed",
+   "ms": 2357,
+   "scrollHeight": 1170
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/jesus-claimed-god.html",
+   "status": "passed",
+   "ms": 2042,
+   "scrollHeight": 1139
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/jesus-doesnt-know.html",
+   "status": "passed",
+   "ms": 1815,
+   "scrollHeight": 1237
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/jesus-existed.html",
+   "status": "passed",
+   "ms": 1760,
+   "scrollHeight": 1150
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/jesus-prays.html",
+   "status": "passed",
+   "ms": 4215,
+   "scrollHeight": 1272
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/jesus-wrote-nothing.html",
+   "status": "passed",
+   "ms": 1740,
+   "scrollHeight": 1247
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/lose-salvation.html",
+   "status": "passed",
+   "ms": 1839,
+   "scrollHeight": 1149
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/loving-judge.html",
+   "status": "passed",
+   "ms": 2093,
+   "scrollHeight": 1156
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/miracles.html",
+   "status": "passed",
+   "ms": 1959,
+   "scrollHeight": 1130
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/morality.html",
+   "status": "passed",
+   "ms": 2126,
+   "scrollHeight": 1279
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/more-evidence.html",
+   "status": "passed",
+   "ms": 2075,
+   "scrollHeight": 1156
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/never-hear.html",
+   "status": "passed",
+   "ms": 2315,
+   "scrollHeight": 1176
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/no-better.html",
+   "status": "passed",
+   "ms": 2140,
+   "scrollHeight": 1232
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/old-testament-violence.html",
+   "status": "passed",
+   "ms": 2026,
+   "scrollHeight": 1329
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/real-contradictions.html",
+   "status": "passed",
+   "ms": 1968,
+   "scrollHeight": 1130
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/resurrection-evidence.html",
+   "status": "passed",
+   "ms": 2179,
+   "scrollHeight": 1242
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/resurrection-hallucination.html",
+   "status": "passed",
+   "ms": 2004,
+   "scrollHeight": 1176
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/resurrection-legend.html",
+   "status": "passed",
+   "ms": 2070,
+   "scrollHeight": 1176
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/science-obsolete.html",
+   "status": "passed",
+   "ms": 1795,
+   "scrollHeight": 1130
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/slavery.html",
+   "status": "passed",
+   "ms": 1906,
+   "scrollHeight": 1242
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/stolen-body.html",
+   "status": "passed",
+   "ms": 1937,
+   "scrollHeight": 1114
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/unanswered-prayer.html",
+   "status": "passed",
+   "ms": 1991,
+   "scrollHeight": 1227
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/want-it-true.html",
+   "status": "passed",
+   "ms": 1836,
+   "scrollHeight": 1166
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/why-anything.html",
+   "status": "passed",
+   "ms": 1940,
+   "scrollHeight": 1130
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/why-christianity.html",
+   "status": "passed",
+   "ms": 1969,
+   "scrollHeight": 1288
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/why-create.html",
+   "status": "passed",
+   "ms": 2034,
+   "scrollHeight": 1237
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/why-die.html",
+   "status": "passed",
+   "ms": 1922,
+   "scrollHeight": 1272
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/why-does-god-allow-suffering.html",
+   "status": "passed",
+   "ms": 1784,
+   "scrollHeight": 1166
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: questions/worship.html",
+   "status": "passed",
+   "ms": 2027,
+   "scrollHeight": 1130
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: saved.html",
+   "status": "passed",
+   "ms": 1772,
+   "scrollHeight": 1343
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: scripture.html",
+   "status": "passed",
+   "ms": 2098,
+   "scrollHeight": 1254
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: shame.html",
+   "status": "passed",
+   "ms": 1996,
+   "scrollHeight": 1233
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: suffering.html",
+   "status": "passed",
+   "ms": 2374,
+   "scrollHeight": 2085
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: suggest.html",
+   "status": "passed",
+   "ms": 2282,
+   "scrollHeight": 1598
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: trinity.html",
+   "status": "passed",
+   "ms": 2485,
+   "scrollHeight": 1330
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: walked-away.html",
+   "status": "passed",
+   "ms": 2853,
+   "scrollHeight": 1355
+  },
+  {
+   "project": "tablet-768",
+   "test": "page: what-i-believe.html",
+   "status": "passed",
+   "ms": 2480,
+   "scrollHeight": 1868
+  },
+  {
+   "project": "tablet-768",
+   "test": "home: \"Is There a Creator?\" scenes pair heading+image in order",
+   "status": "passed",
+   "ms": 7906,
+   "scrollHeight": null
+  },
+  {
+   "project": "tablet-768",
+   "test": "home: reduced motion disables transforms and transitions",
+   "status": "passed",
+   "ms": 1193,
+   "scrollHeight": null
+  },
+  {
+   "project": "tablet-768",
+   "test": "original-experience: hero visible, dots navigate, tiles go to the right pages",
+   "status": "passed",
+   "ms": 12834,
+   "scrollHeight": null
+  },
+  {
+   "project": "tablet-768",
+   "test": "councils: list renders, search filters, modal opens and closes",
+   "status": "passed",
+   "ms": 2462,
+   "scrollHeight": null
+  },
+  {
+   "project": "tablet-768",
+   "test": "links: every internal href resolves to the intended page",
+   "status": "passed",
+   "ms": 1721,
+   "scrollHeight": null
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: 404.html",
+   "status": "passed",
+   "ms": 4027,
+   "scrollHeight": 844
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: about.html",
+   "status": "passed",
+   "ms": 4623,
+   "scrollHeight": 1495
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: addiction.html",
+   "status": "passed",
+   "ms": 5715,
+   "scrollHeight": 2197
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: afterlife.html",
+   "status": "passed",
+   "ms": 2996,
+   "scrollHeight": 1850
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: anxiety.html",
+   "status": "passed",
+   "ms": 2917,
+   "scrollHeight": 1943
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: baptism.html",
+   "status": "passed",
+   "ms": 2355,
+   "scrollHeight": 1689
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: basics.html",
+   "status": "passed",
+   "ms": 4249,
+   "scrollHeight": 2502
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: bible-problems.html",
+   "status": "passed",
+   "ms": 2278,
+   "scrollHeight": 12716
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: bible.html",
+   "status": "passed",
+   "ms": 2054,
+   "scrollHeight": 3907
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: church.html",
+   "status": "passed",
+   "ms": 2455,
+   "scrollHeight": 2536
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: communion.html",
+   "status": "passed",
+   "ms": 2396,
+   "scrollHeight": 1777
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: councils.html",
+   "status": "passed",
+   "ms": 2857,
+   "scrollHeight": 4660
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: course-bible.html",
+   "status": "passed",
+   "ms": 2156,
+   "scrollHeight": 3229
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: course-following.html",
+   "status": "passed",
+   "ms": 2212,
+   "scrollHeight": 3638
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: course-share.html",
+   "status": "passed",
+   "ms": 2271,
+   "scrollHeight": 3359
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: course-start.html",
+   "status": "passed",
+   "ms": 2150,
+   "scrollHeight": 3267
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: courses.html",
+   "status": "passed",
+   "ms": 2089,
+   "scrollHeight": 2400
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: decision.html",
+   "status": "passed",
+   "ms": 1987,
+   "scrollHeight": 1853
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: doubt.html",
+   "status": "passed",
+   "ms": 2259,
+   "scrollHeight": 1814
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: following.html",
+   "status": "passed",
+   "ms": 2211,
+   "scrollHeight": 2163
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: god.html",
+   "status": "passed",
+   "ms": 2080,
+   "scrollHeight": 1846
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: gospel.html",
+   "status": "passed",
+   "ms": 2087,
+   "scrollHeight": 3961
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: grief.html",
+   "status": "passed",
+   "ms": 2186,
+   "scrollHeight": 1823
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: grow.html",
+   "status": "passed",
+   "ms": 2393,
+   "scrollHeight": 2891
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: holy-spirit.html",
+   "status": "passed",
+   "ms": 2096,
+   "scrollHeight": 1698
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: hurting.html",
+   "status": "passed",
+   "ms": 2423,
+   "scrollHeight": 2405
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: index.html",
+   "status": "passed",
+   "ms": 7043,
+   "scrollHeight": 14825
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: jesus.html",
+   "status": "passed",
+   "ms": 2643,
+   "scrollHeight": 2234
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: life.html",
+   "status": "passed",
+   "ms": 2684,
+   "scrollHeight": 3809
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: loneliness.html",
+   "status": "passed",
+   "ms": 2174,
+   "scrollHeight": 1805
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: marriage.html",
+   "status": "passed",
+   "ms": 2429,
+   "scrollHeight": 1909
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: original-experience.html",
+   "status": "passed",
+   "ms": 3973,
+   "scrollHeight": 3861
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: point-people-to-jesus.html",
+   "status": "passed",
+   "ms": 2908,
+   "scrollHeight": 3632
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: prayer.html",
+   "status": "passed",
+   "ms": 2230,
+   "scrollHeight": 1613
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: privacy.html",
+   "status": "passed",
+   "ms": 3070,
+   "scrollHeight": 2812
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions.html",
+   "status": "passed",
+   "ms": 2438,
+   "scrollHeight": 10320
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/all-religions.html",
+   "status": "passed",
+   "ms": 2476,
+   "scrollHeight": 1582
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/atonement-justice.html",
+   "status": "passed",
+   "ms": 2456,
+   "scrollHeight": 1674
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/bible-changed.html",
+   "status": "passed",
+   "ms": 2338,
+   "scrollHeight": 1581
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/canon.html",
+   "status": "passed",
+   "ms": 2986,
+   "scrollHeight": 1605
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/children-die.html",
+   "status": "passed",
+   "ms": 2328,
+   "scrollHeight": 1457
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/christian-disagreement.html",
+   "status": "passed",
+   "ms": 2261,
+   "scrollHeight": 1835
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/christian-evolution.html",
+   "status": "passed",
+   "ms": 2420,
+   "scrollHeight": 1457
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/christian-violence.html",
+   "status": "passed",
+   "ms": 2088,
+   "scrollHeight": 1690
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/created-for-hell.html",
+   "status": "passed",
+   "ms": 2429,
+   "scrollHeight": 1679
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/different-bibles.html",
+   "status": "passed",
+   "ms": 2327,
+   "scrollHeight": 1595
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/emotional-crutch.html",
+   "status": "passed",
+   "ms": 2521,
+   "scrollHeight": 1525
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/evolution-god.html",
+   "status": "passed",
+   "ms": 2158,
+   "scrollHeight": 1482
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/faith-required.html",
+   "status": "passed",
+   "ms": 2009,
+   "scrollHeight": 1602
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/free-will.html",
+   "status": "passed",
+   "ms": 2307,
+   "scrollHeight": 1648
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/geography.html",
+   "status": "passed",
+   "ms": 2204,
+   "scrollHeight": 1770
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/god-exists.html",
+   "status": "passed",
+   "ms": 2610,
+   "scrollHeight": 1638
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/god-hidden.html",
+   "status": "passed",
+   "ms": 2100,
+   "scrollHeight": 1573
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/gospel-differences.html",
+   "status": "passed",
+   "ms": 2300,
+   "scrollHeight": 1737
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/gospels-anonymous.html",
+   "status": "passed",
+   "ms": 3076,
+   "scrollHeight": 1663
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/hell-finite-life.html",
+   "status": "passed",
+   "ms": 2865,
+   "scrollHeight": 1750
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/honest-unbelief.html",
+   "status": "passed",
+   "ms": 2420,
+   "scrollHeight": 1609
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/hypocrites.html",
+   "status": "passed",
+   "ms": 2652,
+   "scrollHeight": 1548
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/jesus-claimed-god.html",
+   "status": "passed",
+   "ms": 2340,
+   "scrollHeight": 1571
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/jesus-doesnt-know.html",
+   "status": "passed",
+   "ms": 2351,
+   "scrollHeight": 1674
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/jesus-existed.html",
+   "status": "passed",
+   "ms": 2562,
+   "scrollHeight": 1553
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/jesus-prays.html",
+   "status": "passed",
+   "ms": 2571,
+   "scrollHeight": 1676
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/jesus-wrote-nothing.html",
+   "status": "passed",
+   "ms": 2351,
+   "scrollHeight": 1676
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/lose-salvation.html",
+   "status": "passed",
+   "ms": 2083,
+   "scrollHeight": 1524
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/loving-judge.html",
+   "status": "passed",
+   "ms": 2597,
+   "scrollHeight": 1528
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/miracles.html",
+   "status": "passed",
+   "ms": 2307,
+   "scrollHeight": 1508
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/morality.html",
+   "status": "passed",
+   "ms": 2424,
+   "scrollHeight": 1792
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/more-evidence.html",
+   "status": "passed",
+   "ms": 2203,
+   "scrollHeight": 1587
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/never-hear.html",
+   "status": "passed",
+   "ms": 2333,
+   "scrollHeight": 1568
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/no-better.html",
+   "status": "passed",
+   "ms": 2210,
+   "scrollHeight": 1649
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/old-testament-violence.html",
+   "status": "passed",
+   "ms": 2331,
+   "scrollHeight": 1894
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/real-contradictions.html",
+   "status": "passed",
+   "ms": 1918,
+   "scrollHeight": 1528
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/resurrection-evidence.html",
+   "status": "passed",
+   "ms": 2395,
+   "scrollHeight": 1750
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/resurrection-hallucination.html",
+   "status": "passed",
+   "ms": 2227,
+   "scrollHeight": 1587
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/resurrection-legend.html",
+   "status": "passed",
+   "ms": 1954,
+   "scrollHeight": 1587
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/science-obsolete.html",
+   "status": "passed",
+   "ms": 2018,
+   "scrollHeight": 1482
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/slavery.html",
+   "status": "passed",
+   "ms": 2133,
+   "scrollHeight": 1793
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/stolen-body.html",
+   "status": "passed",
+   "ms": 2164,
+   "scrollHeight": 1494
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/unanswered-prayer.html",
+   "status": "passed",
+   "ms": 1985,
+   "scrollHeight": 1752
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/want-it-true.html",
+   "status": "passed",
+   "ms": 2118,
+   "scrollHeight": 1521
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/why-anything.html",
+   "status": "passed",
+   "ms": 2187,
+   "scrollHeight": 1528
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/why-christianity.html",
+   "status": "passed",
+   "ms": 2252,
+   "scrollHeight": 1821
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/why-create.html",
+   "status": "passed",
+   "ms": 2135,
+   "scrollHeight": 1745
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/why-die.html",
+   "status": "passed",
+   "ms": 2176,
+   "scrollHeight": 1755
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/why-does-god-allow-suffering.html",
+   "status": "passed",
+   "ms": 2253,
+   "scrollHeight": 1597
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: questions/worship.html",
+   "status": "passed",
+   "ms": 2271,
+   "scrollHeight": 1528
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: saved.html",
+   "status": "passed",
+   "ms": 2133,
+   "scrollHeight": 1757
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: scripture.html",
+   "status": "passed",
+   "ms": 2147,
+   "scrollHeight": 1611
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: shame.html",
+   "status": "passed",
+   "ms": 2169,
+   "scrollHeight": 1699
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: suffering.html",
+   "status": "passed",
+   "ms": 2212,
+   "scrollHeight": 3194
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: suggest.html",
+   "status": "passed",
+   "ms": 2048,
+   "scrollHeight": 2101
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: trinity.html",
+   "status": "passed",
+   "ms": 2098,
+   "scrollHeight": 1696
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: walked-away.html",
+   "status": "passed",
+   "ms": 2284,
+   "scrollHeight": 1762
+  },
+  {
+   "project": "mobile-390",
+   "test": "page: what-i-believe.html",
+   "status": "passed",
+   "ms": 3006,
+   "scrollHeight": 2572
+  },
+  {
+   "project": "mobile-390",
+   "test": "home: \"Is There a Creator?\" scenes pair heading+image in order",
+   "status": "passed",
+   "ms": 5928,
+   "scrollHeight": null
+  },
+  {
+   "project": "mobile-390",
+   "test": "home: reduced motion disables transforms and transitions",
+   "status": "passed",
+   "ms": 1088,
+   "scrollHeight": null
+  },
+  {
+   "project": "mobile-390",
+   "test": "original-experience: hero visible, dots navigate, tiles go to the right pages",
+   "status": "passed",
+   "ms": 10438,
+   "scrollHeight": null
+  },
+  {
+   "project": "mobile-390",
+   "test": "councils: list renders, search filters, modal opens and closes",
+   "status": "passed",
+   "ms": 979,
+   "scrollHeight": null
+  },
+  {
+   "project": "mobile-390",
+   "test": "links: every internal href resolves to the intended page",
+   "status": "passed",
+   "ms": 2436,
+   "scrollHeight": null
+  }
+ ]
+}

@@ -1,9 +1,26 @@
 # Site rebuild — branch `site-rebuild` (not merged)
 
-Base: `main` @ `389ac39`. Branch: 5 commits, `main` untouched. **No merge has been done and none should be until the browser suite below passes.**
+Base: `main` @ `389ac39`. `main` untouched. **Do not merge until the screenshots have been reviewed by eye and the `ONLINE=1` run is done.**
 
 ## Status in one line
-Built and statically verified. **NOT rendered-tested** — this environment has no browser, so there are no screenshots and no browser test results. Conditions 5 and 7 are **not met yet**.
+**Browser suite run on commit `636d8ad`: 297 of 297 passed, 0 failed, 0 flaky, 3.5 minutes** (Chromium via Playwright 1.56, 4 workers, local static server that mimics Cloudflare's extensionless URLs). Not merged; `main` untouched. Raw results: `docs/test-run/results.json`. Representative screenshots: `docs/test-run/screens/`.
+
+### What the run found and fixed (first runs: 21/297, then 295/297)
+1. Header nav line-height differed from the homepage on every other page (`normal` vs inherited 17.6px) -> pinned in `site-header.css`.
+2. Header was 94% opaque, so it rendered grey over Original Experience's dark page -> now solid cream.
+3. `bible-problems.html` carried dead bare `nav{...}` CSS that pushed the shared nav 72px out of place -> removed.
+
+### Browser-verified (297 tests = 94 pages x 3 widths + 15 behaviour tests)
+At 1440 / 768 / 390 px, every one of the 94 pages: loads with HTTP < 400; no page errors or same-origin failed requests; header computed styles match the homepage **and the rendered header is pixel-identical to the homepage header**; header is sticky after scrolling; no horizontal overflow; no empty image containers; every **same-origin** image loads, has a rendered height and stays inside the viewport. At 390 px: menu button opens 5 links, Tab/Shift+Tab/Escape focus behaviour, closed links not focusable. Also: homepage "Is There a Creator?" pairs each of 5 headings with the right image in order and exposes at most one focusable link; reduced motion disables transforms; Original Experience hero visible, side dots navigate to the right chapter and photo, tiles reach the right pages; councils list renders 21 rows, search filters, modal opens/closes; every internal link on every page returns 200.
+
+### NOT verified
+- **External images (Wikimedia/Commons, Google Fonts) never loaded**: this environment blocks them, so the run was offline for third parties. `ONLINE=1` was not used. Whether those images appear, and whether they match their headings, is unconfirmed beyond the code. Re-run with `ONLINE=1` on a networked machine.
+- **"All 94 pages look good" is not established.** Tests prove structure and behaviour, not aesthetics. Review screenshots by eye.
+- Screenshots in the repo are a subset (homepage, councils, Original Experience, two question pages, bible-problems, homepage cinematic scenes at 1440/390). The run produced 297; the rest are in `test-results/screens/` locally only.
+- Cloudflare production behaviour (redirects, caching) not checked.
+- Animation timing/smoothness is not measured; only end states are asserted.
+
+Mobile page heights at 390 px (px): index 14825, bible-problems 12716, questions 10320, councils 4660, gospel 3961 (all in results.json).
 
 ## What changed
 | Area | Change |
@@ -22,16 +39,14 @@ Built and statically verified. **NOT rendered-tested** — this environment has 
 `node scripts/check-static.js` → **PASS on all 94 pages**: exactly one shared header, identical across pages; no competing header classes; every internal link and `#anchor` resolves; inline JS parses and every `getElementById` target exists; every `<img>` has `alt`; no profanity; no numbering elements; no Unsplash; sitemap covers all pages; canonicals extensionless.
 `bash regen check` → generator output identical to committed files (0 differences).
 
-## NOT verified (needs a real browser) — run this
+## To re-run
 ```bash
-git fetch && git checkout site-rebuild
-npm install && npx playwright install chromium
-npm run test:browser          # 94 pages x 1440/768/390 + cinematic, OE, councils, link crawl
-ONLINE=1 npm run test:browser # also require Wikimedia images/fonts to load
+git checkout site-rebuild && npm install && npx playwright install chromium
+npm run test:browser           # offline for third parties
+ONLINE=1 npm run test:browser  # also require Wikimedia images/fonts
 ```
-The suite (`tests/site.spec.js`, written but **never executed**) checks per page and width: console/page errors, failed same-origin requests, header computed-style/size/position equality with the homepage, sticky after scroll, mobile menu open/close/Escape, horizontal overflow, image load, empty image containers, page height; plus homepage heading↔image pairing for all 5 scenes, only-visible-control focus, reduced motion, Original Experience hero/dots/tiles, councils search/modal, and an internal link crawl. Screenshots land in `test-results/screens/`, HTML report in `test-report/`. The tests themselves are untested and may need small fixes.
 
-## Highest-risk spots to look at first when it renders
+## Where to look by eye (tests cannot judge these)
 1. Legacy interior pages after deleting `.site-header` CSS: top spacing under the new header.
 2. Original Experience: sticky stage now starts below the header (`top/height` use `--ca-header-h`); scroll math changed.
 3. Homepage after moving inline CSS to `home.css` (should be identical; check hero and ticker).
