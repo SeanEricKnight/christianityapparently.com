@@ -18,7 +18,7 @@ const measure = () => {
     brandLeft: Math.round(br.left), brand: cs(b), em: cs(em), linkText: links.map(a => a.textContent.trim()),
     navFont: links[0] ? cs(links[0]) : null };
 };
-const ref = {};  // per-viewport homepage reference
+const ref = {}, refShot = {};  // per-viewport homepage reference
 
 async function open(page, file) {
   const errors = [], failed = [];
@@ -44,7 +44,7 @@ for (const file of pages) {
     expect(failed, 'failed requests').toEqual([]);
 
     // 2. header identical to the homepage reference at this viewport
-    if (!ref[vw]) { const p2 = await browser.newPage({ viewport: info.project.use.viewport }); await p2.goto('/index.html'); ref[vw] = await p2.evaluate(measure); await p2.close(); }
+    if (!ref[vw]) { const p2 = await browser.newPage({ viewport: info.project.use.viewport }); await p2.goto('/index.html'); await p2.evaluate(() => document.fonts.ready); await p2.waitForTimeout(300); ref[vw] = await p2.evaluate(measure); refShot[vw] = await p2.locator('header.ca-global-header').screenshot({ animations: 'disabled' }); await p2.close(); }
     const m = await page.evaluate(measure);
     expect(m, 'shared header present').not.toBeNull();
     expect(m.height).toBe(ref[vw].height);
@@ -54,6 +54,11 @@ for (const file of pages) {
     expect(m.navFont).toEqual(ref[vw].navFont);
     expect(m.linkText).toEqual(ref[vw].linkText);
     expect(m.position).toBe('sticky');
+    // visual: the rendered header must be pixel-identical to the homepage's at this width
+    await page.evaluate(() => document.fonts.ready);
+    const shot = await page.locator('header.ca-global-header').screenshot({ animations: 'disabled' });
+    if (!shot.equals(refShot[vw])) { await info.attach('header-' + slug(file), { body: shot, contentType: 'image/png' }); await info.attach('header-home', { body: refShot[vw], contentType: 'image/png' }); }
+    expect(shot.equals(refShot[vw]), 'header pixels differ from homepage').toBeTruthy();
 
     // 3. sticky: after scrolling 1200px the header is still at the top
     await page.evaluate(() => scrollTo(0, 1200)); await page.waitForTimeout(300);
@@ -66,8 +71,16 @@ for (const file of pages) {
       const btn = page.locator('.ca-menu-btn'); await expect(btn).toBeVisible();
       await btn.click(); await expect(btn).toHaveAttribute('aria-expanded', 'true');
       await expect(page.locator('.ca-site-nav a:visible')).toHaveCount(5);
+      // focus: Tab from the button reaches the first nav link; Shift+Tab walks back; Escape closes and returns focus to the button
+      await btn.focus(); await page.keyboard.press('Tab');
+      expect(await page.evaluate(() => document.activeElement.closest('.ca-site-nav') !== null), 'Tab from menu button enters the nav').toBeTruthy();
+      await page.keyboard.press('Shift+Tab');
+      expect(await page.evaluate(() => document.activeElement.classList.contains('ca-menu-btn')), 'Shift+Tab returns to menu button').toBeTruthy();
       await page.keyboard.press('Escape'); await expect(btn).toHaveAttribute('aria-expanded', 'false');
       await expect(page.locator('.ca-site-nav')).toBeHidden();
+      expect(await page.evaluate(() => document.activeElement.classList.contains('ca-menu-btn')), 'Escape returns focus to the menu button').toBeTruthy();
+      // closed menu links must not be focusable
+      expect(await page.evaluate(() => [...document.querySelectorAll('.ca-site-nav a')].some(a => a.offsetParent !== null)), 'closed nav links hidden').toBeFalsy();
     } else {
       await expect(page.locator('.ca-menu-btn')).toBeHidden();
       await expect(page.locator('.ca-site-nav a:visible')).toHaveCount(5);
@@ -77,9 +90,24 @@ for (const file of pages) {
     const ov = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
     expect(ov, 'horizontal overflow px').toBeLessThanOrEqual(1);
 
-    // 6. images that exist must load (third-party only if ONLINE=1); no empty image containers
-    const imgs = await page.evaluate(() => [...document.images].map(i => ({ src: i.currentSrc || i.src, ok: i.complete && i.naturalWidth > 0, lazy: i.loading === 'lazy' })));
-    for (const i of imgs) if (i.src.startsWith('http://localhost') || ONLINE) expect(i.ok || i.lazy, 'image failed: ' + i.src).toBeTruthy();
+    // 6. images: scroll every image into view (forces lazy-loading), then require it to have loaded
+    //    (same-origin always; third-party only if ONLINE=1), be visibly sized, and stay inside the viewport width.
+    await page.evaluate(async () => {
+      for (const i of document.images) { i.scrollIntoView({ block: 'center' }); await new Promise(r => setTimeout(r, 60)); }
+      await Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.addEventListener('load', r, { once: true }); i.addEventListener('error', r, { once: true }); setTimeout(r, 8000); })));
+      scrollTo(0, 0);
+    });
+    const imgs = await page.evaluate(() => [...document.images].map(i => { const r = i.getBoundingClientRect(), cs = getComputedStyle(i);
+      return { src: i.currentSrc || i.src, ok: i.complete && i.naturalWidth > 0, hidden: cs.display === 'none' || cs.visibility === 'hidden' || !!i.closest('[inert],[hidden]'),
+        w: Math.round(r.width), h: Math.round(r.height), right: Math.round(r.right + scrollX) }; }));
+    for (const i of imgs) {
+      if (!(i.src.startsWith('http://localhost') || ONLINE)) continue;
+      expect(i.ok, 'image failed to load: ' + i.src).toBeTruthy();
+      if (!i.hidden && i.w > 0) {
+        expect(i.h, 'image has no rendered height: ' + i.src).toBeGreaterThan(8);
+        expect(i.right, 'image overflows viewport: ' + i.src).toBeLessThanOrEqual(vw + 1);
+      }
+    }
     const empties = await page.evaluate(() => [...document.querySelectorAll('figure,.hero-photo,.hero-visual,.section-image,.council-art')].filter(f => !f.querySelector('img,svg,picture,video') && !f.textContent.trim()).length);
     expect(empties, 'empty image containers').toBe(0);
 
