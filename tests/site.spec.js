@@ -70,7 +70,7 @@ for (const file of pages) {
     if (vw <= 700) {
       const btn = page.locator('.ca-menu-btn'); await expect(btn).toBeVisible();
       await btn.click(); await expect(btn).toHaveAttribute('aria-expanded', 'true');
-      await expect(page.locator('.ca-site-nav a:visible')).toHaveCount(5);
+      await expect(page.locator('.ca-site-nav a:visible')).toHaveCount(6);
       // focus: Tab from the button reaches the first nav link; Shift+Tab walks back; Escape closes and returns focus to the button
       await btn.focus(); await page.keyboard.press('Tab');
       expect(await page.evaluate(() => document.activeElement.closest('.ca-site-nav') !== null), 'Tab from menu button enters the nav').toBeTruthy();
@@ -83,7 +83,7 @@ for (const file of pages) {
       expect(await page.evaluate(() => [...document.querySelectorAll('.ca-site-nav a')].some(a => a.offsetParent !== null)), 'closed nav links hidden').toBeFalsy();
     } else {
       await expect(page.locator('.ca-menu-btn')).toBeHidden();
-      await expect(page.locator('.ca-site-nav a:visible')).toHaveCount(5);
+      await expect(page.locator('.ca-site-nav a:visible')).toHaveCount(6);
     }
 
     // 5. no horizontal overflow

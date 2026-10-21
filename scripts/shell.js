@@ -1,5 +1,5 @@
 // Single source for the shared site shell (header + head assets). Used by build-shell.js and build-questions.js.
-const NAV=[['questions.html','Questions ↗'],['index.html#bible','Bible'],['index.html#jesus','Jesus'],['index.html#history','History'],['councils.html','Councils ↗']];
+const NAV=[['basics.html','Start here'],['questions.html','Questions ↗'],['index.html#bible','Bible'],['index.html#jesus','Jesus'],['index.html#history','History'],['councils.html','Councils ↗']];
 const FONT='https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap';
 const START='<!--SHELL:HEADER-->',END='<!--/SHELL:HEADER-->';
 function header(root,{home=false}={}){

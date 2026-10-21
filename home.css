@@ -92,3 +92,12 @@
 /* Page headings that stand in for the section h2 style */
 .council-top h1{font-family:'Space Grotesk',sans-serif;letter-spacing:-.065em;font-size:clamp(40px,5.5vw,76px);line-height:.94;margin:19px 0 19px;font-weight:700}
 .img-caption{margin:0;padding:8px 18px 0;font-size:11px;line-height:1.5;color:#656864;letter-spacing:.02em}
+
+/* Mobile compaction (spacing only; image crops and content unchanged) */
+@media(max-width:700px){
+  .evidence-card{min-height:300px}
+  .story-copy{padding-top:14px!important;padding-bottom:14px!important}
+  .story-copy h3{margin-top:10px!important;margin-bottom:10px!important}
+  .story-copy p{margin-bottom:10px!important}
+  .story-copy a{margin-top:10px!important}
+}
