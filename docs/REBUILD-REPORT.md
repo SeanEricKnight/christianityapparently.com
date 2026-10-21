@@ -1,0 +1,155 @@
+# Site rebuild — branch `site-rebuild` (not merged)
+
+Base: `main` @ `389ac39`. `main` untouched. **Do not merge until the screenshots have been reviewed by eye and the `ONLINE=1` run is done.**
+
+## Latest round: tested commit `1987349` (full SHA 19873496ae8c433c1de53e736b0dbc7568a07d11)
+Final recommendation: **NOT READY TO MERGE**, because external image and font verification is **BLOCKED** (no internet access or linked browser in the build environment). Everything else passes.
+
+| Task | Status |
+|---|---|
+| 1. Verify external images, captions, credits, licences, Google Fonts | **BLOCKED.** `curl` to commons.wikimedia.org, upload.wikimedia.org, fonts.googleapis.com, fonts.gstatic.com, images.unsplash.com and even example.com returns no response; the web-fetch tool refuses Commons pages; no browser is linked. Nothing in this task was verified. `credits.html` still attributes by link only. |
+| 2. Homepage length | Done. Not inflated by whitespace: section padding was already 32px; the length is 17 story cards, 3 evidence tiles, 3 case cards and a 2,194px scroll-driven section. Spacing-only trims (evidence tiles 360->300px, story-card padding/margins) cut mobile from 14,841 to **14,409 px** (-2.9%); desktop unchanged at 9,491 px. Image crops were not touched because the real photos could not be seen. Larger savings would need a restructure (e.g. horizontal card rows on mobile), not done. |
+| 3. First-visitor navigation | Done. **"Start here"** (links to `basics.html`) is now the first item in the shared header on all 95 pages. Verified: no wrapping or overflow at 1440/1280/1100/1051/1050/1000/900/800/768/720/701 px; mobile menu (<=700px) lists six links. Header still pixel-identical across pages. Tests updated from 5 to 6 nav links (a genuine spec change, not a loosened check). |
+| 4. Production testing | Static checks pass (95 pages); generator and shell regeneration produce no changes; full Playwright suite **300/300 passed, 0 failed, 0 flaky, 3.2 min** at desktop/tablet/mobile. Screenshots with real images and fonts were **not possible** (offline). |
+| 5. Reports | This file, plus a Google Doc (link given in the hand-off message). |
+
+Evidence: `docs/test-run/results.json`, `docs/test-run/screens/` (46 offline screenshots + `header-start-here-1440-768-390.png`).
+
+## RECOMMENDATION: NOT READY TO MERGE (one gate left)
+Everything that can be verified without internet passes. The one gate left is **a pass with real internet access**: this environment blocks Wikimedia, Unsplash and Google Fonts, so no external image or font has ever been loaded or looked at in this work. Merge once someone with internet has (1) run `ONLINE=1 npm run test:browser` and (2) looked at the pages with the real images and fonts loaded (checklist under "Needs a networked pass").
+
+**Browser suite, final run: 300 of 300 passed, 0 failed, 0 flaky, 3.2 min** (Chromium via Playwright 1.56, 4 workers, offline for third parties). 300 = 95 pages x 3 widths (1440/768/390) + 15 behaviour tests. Raw results `docs/test-run/results.json`; screenshots `docs/test-run/screens/`. `main` untouched, nothing merged.
+
+### Progression
+First browser run 21/297 -> 295/297 -> 297/297 -> after the final-review changes below 300/300 (three more pages/tests were added: credits page).
+
+### Three review areas, kept separate
+
+**1. Historical / content accuracy** (read all 95 pages; checked high-risk claims against sources)
+Verified OK: Bible references on the 50 question pages and the main pages point to the passages they name; council dates and decisions match standard chronology; textual-criticism claims on `bible-problems` (Mark 16:8 ending, John 7:53-8:11, 1 John 5:7-8, P52 dating) match scholarly consensus; "18 problems" count is correct.
+Fixed:
+- **Wrong phone number**: `hurting.html` listed the Billy Graham prayer line as 855-255-PRAY (7729); no source supports that. The ministry's own article (June 2023) gives **888-388-2683**; replaced. Worth a human re-check since numbers change.
+- **Heel bone image is a replica**: Biblical Archaeology Review says the displayed Givat ha-Mivtar heel bone at the Israel Museum is a replica; captions/alt/homepage text now say so, and mention that the find's date and interpretation are debated.
+- **Garden Tomb**: "most archaeologists date it before the first century" was stronger than sources support; now "archaeologists such as Gabriel Barkay date it centuries earlier, to the Iron Age" (Barkay: 8th-7th c. BCE).
+- **Book of Kells** (c. 800 AD) was shown under "Did Jesus actually exist? Historical sources" with a generic alt; the tile now says it is later medieval art, not evidence.
+- **Hell and fairness**: already covered by six question pages (`hell-finite-life`, `created-for-hell`, `never-hear`, `loving-judge`, `honest-unbelief`, `geography`), linked from the afterlife page. The short answer on `hell-finite-life` was thin, so I added one paragraph on how each position answers the fairness objection (eternal conscious punishment; conditional immortality, citing Stott's tentative 1988 view; hopeful/universal-restoration, with Origenist forms condemned in the 6th century) and links to the never-heard / honest-unbelief pages. No new page or section.
+- **Image credits**: new small `credits.html` (linked from About, in sitemap) lists all 19 external images with what each is (photo / replica / painting / medieval art) and a link to its Commons file page, where author and licence are recorded. **Licences and authors were not verified** (Commons is unreachable from here); attribution is by link, which may not satisfy every CC licence's attribution wording.
+Not verified: whether each Wikimedia image actually depicts what its caption claims (never loaded). Judged from filenames, captions and general knowledge only. Known imperfect pairing kept and captioned: the Chalcedon painting under "Why did the churches divide?" (East-West schism was 1054).
+
+**2. Functionality**: 300/300 browser tests (above); static checks pass for 95 pages (identical header, every internal link and anchor resolves, JS parses, alt text, no profanity, no numbering, sitemap coverage, **and now CSS checks**); regenerating the 50 question pages changes nothing.
+
+**3. Visual design** (screenshots viewed; offline, so photos absent)
+Found and fixed:
+- **Stock photography was still on the site.** Every interior page carried a 150-240px decorative banner under its title, drawn by CSS from 13 Unsplash photos. My earlier "no Unsplash" check only scanned HTML. All of it removed (46 rules, 13 custom properties, the Unsplash credit comment), plus the course-card photo strips. Question pages are ~260px shorter on desktop. `check-static` now fails on any Unsplash/photo reference or external `url()` in CSS; confirmed it fails on the old stylesheet.
+- **Inconsistent heroes**: question/Bible/About pages had full-width bands; Life, Courses, Grow, Basics, Gospel and course pages had narrower inset boxes (820px inside a 976px column). All are now full-width bands with text aligned to the content column (measured at 1440/768/390, zero horizontal overflow).
+- Header: identical across all 95 pages (pixel-compared to the homepage).
+Judged fine: Councils layout, homepage cards, question pages, footers.
+Not changed (noted): homepage is the longest page (9,491 px desktop, 14,841 px mobile). Cards are already compacted on mobile (210px image cap); the rest is content (5 card sections + the scroll-driven section). Further shortening means restructuring, which I did not do.
+Minor, left alone: hero text sits 26px right of body text on question pages; the Original Experience photo caption sits tight above the scroll cue on mobile; Original Experience's scroll sequence can't be judged from static screenshots (tests confirm its end states only).
+
+### Visitor experience (read through, navigating as a first-time visitor)
+Works: homepage "Where do you start?" routes to Basics, Questions and the Gospel; Basics lists every doctrine page; evidence, manuscript and Bible-problem material is reachable from homepage cards; the Jesus / resurrection path (jesus -> resurrection evidence question) is clear; practical following-Jesus pages are reachable from Gospel -> "I did this" -> Grow, and from the footer.
+Friction (documented, not changed; these are structural decisions for the owner):
+- **Header nav has no Basics / Gospel / Life / Grow entry.** "What does Christianity teach?" and "how do I follow Jesus?" are reachable only from the homepage's last section or the footer of inner pages. Adding "Start here" to the nav is the single most useful change.
+- Overlap: `grow`, `following` and the four `course-*` pages cover similar ground.
+- Homepage repeats some destinations (e.g. "Has the Bible been changed?" appears as an evidence tile and again in the Bible section).
+- `bible-problems` (12.7k px mobile) is long by design (18 case files); a table of contents or accordions would help.
+
+### Needs a networked pass (cannot be done here)
+1. `ONLINE=1 npm run test:browser`.
+2. Look at the homepage, Councils, Original Experience and a few question pages with real images: each image matches its heading/caption; fonts (Space Grotesk, Source Serif) render; no broken Wikimedia links (`Special:FilePath` hotlinks can be rate-limited).
+3. Confirm each image's author/licence on its Commons page and adjust `credits.html` attribution wording if needed.
+4. Re-confirm the prayer-line number.
+
+## What changed
+| Area | Change |
+|---|---|
+| Shared header | One header (homepage values) generated by `scripts/shell.js`, injected into all 94 pages between `<!--SHELL:HEADER-->` markers by `scripts/build-shell.js`. Styles in `site-header.css`, menu in `site-header.js`. Container width, border, ≤1050px compaction, mobile hamburger now match the homepage. Skip link added. |
+| Legacy header code | Deleted 48 `.site-header/.site-nav/.nav-cta` selectors from `styles.css` (`!important` 114→71), the homepage's own header CSS/JS, the Original Experience topbar + overlay menu. |
+| Generator | `scripts/build-questions.js` now finishes by applying the shell; question footer/hub footer templates match the committed ones. **Regenerating gives 0 changed files** (checked in a scratch copy). |
+| Homepage | CSS moved to shared `home.css`. Cinematic: photo-as-link overlays removed, inactive scenes/panels `inert`, ticker duplicates hidden from keyboard/AT, sticky stage offset for the header, `svh` units, dead CSS (nail/tomb/etc.) removed, heights 250svh/260svh. Copy: "WAS THE TOMB EMPTY?", hedged heel-bone and Garden Tomb text, CTA "EXAMINE THE ROMAN SOURCES". |
+| Story cards | Every image now has a caption saying artifact / location / later artwork; crucifixion card uses the heel-bone photo instead of Rembrandt; image link no longer a duplicate tab stop. |
+| Councils | `councils.html` rebuilt (64 KB → 19 KB): real council list/search/modal/regional cases + labelled Surikov paintings, shared header, same `home.css`. All 12 Unsplash stock photos gone. Added to sitemap. |
+| Original Experience | Shared header; overlay removed (mobile now has the 5 site links); side dots scroll to their scenes; **fixed hero text being opacity 0 at top of page** (scene 1 `data-start` was 0); chapter/text fades aligned; reduced-motion handled live; dead book/nail/tomb markup+CSS removed; one `.journey` height (270svh); lower-section padding compacted; meta description + canonical. |
+| Content | Numbering elements removed (`gospel`, 4 course pages, `bible-problems`) with their grid columns; sitemap +3; `bible-problems` canonical extensionless. (Profanity and the 2 dead links were already fixed on `main` by ChatGPT.) |
+| Tooling | `npm run build`, `npm run check` (build + `git diff --exit-code` + static checks), `npm run test:browser`. |
+
+## Verified (static, run in this session)
+`node scripts/check-static.js` → **PASS on all 94 pages**: exactly one shared header, identical across pages; no competing header classes; every internal link and `#anchor` resolves; inline JS parses and every `getElementById` target exists; every `<img>` has `alt`; no profanity; no numbering elements; no Unsplash; sitemap covers all pages; canonicals extensionless.
+`bash regen check` → generator output identical to committed files (0 differences).
+
+## To re-run
+```bash
+git checkout site-rebuild && npm install && npx playwright install chromium
+npm run test:browser           # offline for third parties
+ONLINE=1 npm run test:browser  # also require Wikimedia images/fonts
+```
+
+## Where to look by eye (tests cannot judge these)
+1. Legacy interior pages after deleting `.site-header` CSS: top spacing under the new header.
+2. Original Experience: sticky stage now starts below the header (`top/height` use `--ca-header-h`); scroll math changed.
+3. Homepage after moving inline CSS to `home.css` (should be identical; check hero and ticker).
+4. Councils row grid (4 columns, no id column).
+
+## Decisions / things I did not do
+- **Images not self-hosted** (downloads are blocked here). All imagery still hot-links Wikimedia; no credits page yet.
+- **"Why did the churches divide?"** still shows the 1876 Chalcedon painting (now honestly captioned). A better image (e.g. Hagia Sophia) needs a verified Commons file; I did not guess a URL. Same for Hammurabi/Muratorian/Constantine-head ideas from the audit.
+- Heel-bone photo: confirm whether the museum object is original or a replica.
+- Gospel page keeps its numbered stepper buttons ("1 God, 2 Broken…") as functional navigation; only the large decorative numerals were removed. Say if you want those gone too.
+- Footers are not unified (only the header is shared); question-page footers are generated.
+- Live deployment/Cloudflare behavior (clean-URL redirects) not checked.
+
+## Additional independent source-record audit — 20 October 2026
+
+ChatGPT independently retrieved Wikimedia Commons file description and license pages for the 19 images already listed in `credits.html`. The credits page now provides source-specific creator, origin, copyright/license notes for every listed image, along with direct links to relevant Creative Commons license terms, and disclosure that images may be cropped or darkened for layout. Specific records checked include the Sea of Galilee aerial photo (Itamar Grinberg/israeltourism, CC BY-SA 2.0), Garden Tomb by Beko (CC BY-SA 4.0), Garden Tomb by Gary Todd (CC0), the Gary Todd crucifixion museum display (CC0), Codex Sinaiticus British Library image by PotatoCow25 (CC0), Dale Gillard's scroll artifacts photo (CC BY 2.5), and public-domain manuscripts/Surikov artworks. Verified Commons source-page records are **not** equivalent to verifying every live image download, the actual visual crop, or rendered typography.
+
+The Billy Graham Evangelistic Association's June 16, 2023 article independently supports the prayer line 888-388-2683; current operation of the number was not call-tested.
+
+**Files changed after the earlier 300/300 browser run:** `credits.html` only. The complete browser suite has **not** been rerun for these source-note additions, nor has the live site been browser-tested with third-party resources loading. **Recommendation remains NOT READY TO MERGE** until external image/font rendering, production appearance, and final tests are confirmed. No changes were made to `main`.
+
+---
+
+## Round 3: navigation and new questions (Stages 1 to 3)
+
+**Branch `site-rebuild` only. `main` untouched. This work is for review; it is not merged.**
+
+### Stage 1: navigation
+| Change | Detail |
+|---|---|
+| Questions hub category filters | Generated by `scripts/build-questions.js`. "All" plus the 8 existing categories, each with a count. Combines with the search box (AND), shows "N questions", supports deep links (`questions.html#bible`) and back/forward. Without JavaScript the buttons are plain `#anchor` links. |
+| Homepage footer | Four compact link groups (Explore / When life is hard / Keep going / This site) so Life issues, Grow, Find a church, Start here, I just decided, Courses are reachable from the footer. Same footer on `councils.html`. |
+| Homepage secondary route | One line under "Where do you start?": "Already following Jesus, or going through something hard? Life issues · Grow · Find a church". No new section, so no extra scrolling. |
+| Shared header | Unchanged (6 links). Nothing added to it. |
+| Grow / I just decided / Courses | Reviewed. They are not duplicates: Grow is the hub, `following.html` is the one-page version, `course-following.html` is the five-lesson version. They did not cross-link, so each now has one sentence pointing to the others. No content removed. |
+
+### Stage 2: new questions (draft, for editorial review)
+Added to `questions-data.json`, generated as pages, added to the sitemap and the hub. Count is now 55.
+1. `pagan-myths`: Was Jesus copied from older pagan myths? (Jesus & resurrection)
+2. `gnostic-gospels`: Why aren't the Gnostic gospels in the Bible? (Bible)
+3. `which-church`: Which Christian church or denomination should I join? (Christians & church)
+4. `only-way`: Is Jesus really the only way to God? (Other religions & salvation)
+5. `unlike-jesus`: Why do Christians sometimes behave nothing like Jesus? (Christians & church). It overlaps with `hypocrites` and `no-better`. I wrote it from a different angle (what the New Testament itself says about this, and how to read it) and cross-linked all three. Merge or drop if you prefer.
+
+Sources used (checked this session through search and fetched pages where possible; **not** checked against the primary books): Gospel of Thomas dating range, Oxyrhynchus fragments, Nag Hammadi codices c. AD 340 (Wikipedia, "Gospel of Thomas"); Mithras and Dec 25, Sol Invictus c. AD 274 and mid-4th-century calendar, Beck 1987 (badancient.com summary); Irenaeus, Muratorian Fragment, Diatessaron (christian-history.org; dates differ between sources, so I used "around AD 180" and said the Fragment's date is disputed); Smith and Mettinger (Vridar blog summary). **Not independently verified from the originals:** Aeschylus *Eumenides* 647-648, Justin *1 Apology* 21, Wright 2003, Bauer 1934, Pagels 1979, Williams 1996, *Lumen Gentium* 16, Hick 1989, Lewis 1956, Athanasius's Easter letter of AD 367, Hippolytus's date. These are standard citations I know, but they need a check by someone with the books before these pages are treated as final. The "as far as I can tell" claim about Horus, Mithras and Krishna rests on the absence of ancient sources in what I could read, not a survey of all of them.
+
+All Scripture quotations are paraphrased, not quoted from a translation.
+
+### Stage 3: sensitive topics
+Proposal only. To keep it out of anything Cloudflare Pages serves, the outline is **not in the repository**; it lives in a Google Doc ("Christianity Apparently — Proposed Outline: Sensitive Topics (NOT PUBLISHED)", https://docs.google.com/document/d/1agzBl35XaYiiUWmEOlLadOnT_xdyhxK9eYvrKgYOcz8/edit). It records the owner's framing (evidence-first, biblically serious, broadly Protestant; four labelled layers; no speaking for the owner's convictions; `[EDITORIAL REVIEW]` flags). No pages drafted; none published. Sequencing decision: nothing in Stage 3 is drafted until the five new questions are verified and approved.
+
+**Deployment caution:** the whole repository root is served, so `docs/` (including this report), `tests/`, `scripts/` and `questions-data.json` are publicly reachable after merge unless Cloudflare is configured to publish a build subdirectory or these are removed. Needs a decision before merge.
+
+### Testing, this round
+- `node scripts/check-static.js`: PASS, 100 pages.
+- Playwright (desktop 1440, tablet 768, mobile 390): see the result line in the final message; two new tests (hub filter plus search plus deep link; footer links and secondary route).
+- Bugs found by those tests or by eye and fixed: deep link did not update the filter on in-page hash change; deep link scrolled past the end of the filtered list; active filter button text was unreadable.
+
+### Still BLOCKED / NOT VERIFIED
+External Wikimedia images and fonts, image licenses and authors, live Cloudflare behavior. Unchanged from earlier rounds.
+
+
+## Round 4: consolidation and deployment directory
+
+- **Hypocrisy pages:** `unlike-jesus` merged into `hypocrites` (the strongest New Testament material and the "no true Christian" caution were added; the page stays short). `no-better` is unchanged. `unlike-jesus` removed from the hub, sitemap and generator; `_redirects` sends `/questions/unlike-jesus` to `/questions/hypocrites` (301). Library is now 54 questions.
+- **Deployment:** only `dist/` is published. See `docs/DEPLOYMENT.md` for the configuration, the manual dashboard changes, and what is and is not verified. Cloudflare project type: **Workers** (static assets), not Pages. Verification against a real deployment is **NOT DONE**; the local test proves `dist/` does not contain the excluded paths, not how Cloudflare will serve them.
+- Note: the earlier statement in this report that the outline lives in `docs/` is superseded: it lives in a Google Doc.

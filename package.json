@@ -1,0 +1,15 @@
+{
+  "name": "christianityapparently.com",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-questions.js && node scripts/build-shell.js",
+    "check": "npm run build && git diff --exit-code && node scripts/check-static.js",
+    "test:browser": "npx playwright test",
+    "build:dist": "npm run build && node scripts/build-dist.js",
+    "check:dist": "node scripts/build-dist.js && node scripts/check-dist.js",
+    "verify:deployment": "node scripts/verify-deployment.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0"
+  }
+}

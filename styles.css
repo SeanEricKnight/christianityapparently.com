@@ -20,7 +20,7 @@ button{font:inherit}
 ::selection{background:var(--accent);color:white}
 
 /* header */
-.site-header,.nav{
+.nav{
   min-height:64px;
   position:sticky;
   top:0;
@@ -36,8 +36,8 @@ button{font:inherit}
 }
 .brand{font-weight:700;text-decoration:none;letter-spacing:-.03em;white-space:nowrap}
 .brand span{color:var(--accent)}
-.site-nav,.nav nav{display:flex;align-items:center;gap:18px}
-.site-nav>a,.nav nav>a,.mega summary{
+.nav nav{display:flex;align-items:center;gap:18px}
+.nav nav>a,.mega summary{
   color:#444a43;
   text-decoration:none;
   text-transform:uppercase;
@@ -46,7 +46,7 @@ button{font:inherit}
   font-weight:700;
   cursor:pointer;
 }
-.site-nav>a:hover,.nav nav>a:hover,.mega summary:hover{color:var(--accent)}
+.nav nav>a:hover,.mega summary:hover{color:var(--accent)}
 .mega{position:relative}
 .mega summary{list-style:none;display:flex;align-items:center;gap:6px}
 .mega summary::-webkit-details-marker{display:none}
@@ -130,21 +130,6 @@ button{font:inherit}
 }
 .home-hero-copy>p:last-of-type{max-width:660px;margin:22px 0 0;color:var(--muted);font-size:1.04rem}
 .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-.home-feature{
-  min-height:360px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  padding:28px;
-  border-radius:20px 20px 80px 20px;
-  background:var(--accent);
-  color:white;
-  transform:rotate(1deg);
-}
-.home-feature small{text-transform:uppercase;letter-spacing:.12em;opacity:.78;font-size:.65rem}
-.home-feature h2{margin:10px 0 8px;font-family:"Source Serif 4",serif;font-size:2.5rem;line-height:1}
-.home-feature p{margin:0 0 18px;opacity:.86}
-.home-feature a{font-weight:700;text-decoration:none}
 .home-section{padding:54px 0;border-bottom:1px solid var(--line)}
 .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:22px}
 .section-head h2{margin:0;font-family:"Source Serif 4",serif;font-size:clamp(2.2rem,4vw,3.8rem);font-weight:500;line-height:1}
@@ -211,8 +196,7 @@ button{font:inherit}
 .step-dot span{display:block;margin-top:3px;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em}
 .step-dot.active{border-color:var(--accent);color:var(--accent)}
 .gospel-stage{border-top:1px solid var(--line);padding-top:34px}
-.gospel-step{display:grid;grid-template-columns:100px 1fr;gap:34px;animation:fadeUp .24s ease}
-.step-number{font-family:"Source Serif 4",serif;font-size:3rem;color:#a8bbc6}
+.gospel-step{display:grid;grid-template-columns:1fr;gap:34px;animation:fadeUp .24s ease}
 .gospel-step h2{margin:0 0 16px;font-family:"Source Serif 4",serif;font-size:clamp(2.5rem,5vw,4.7rem);line-height:.96;font-weight:500}
 .gospel-step p{max-width:700px;color:#505750;font-family:"Source Serif 4",serif;font-size:1.08rem;line-height:1.6}
 .scripture a{font-family:"DM Sans",sans-serif;font-size:.76rem;font-weight:700;color:var(--accent);text-decoration:none}
@@ -300,21 +284,20 @@ button{font:inherit}
 .mobile-next,.next-step{display:none!important}
 
 @media(max-width:820px){
-  .site-header,.nav{min-height:58px;padding:0 14px}
-  .site-nav,.nav nav{gap:11px}
-  .site-nav>a,.nav nav>a,.mega summary{font-size:.62rem;letter-spacing:.06em}
-  .site-nav>a:nth-last-child(1),.nav nav>a:nth-last-child(1){display:none}
+  .nav{min-height:58px;padding:0 14px}
+  .nav nav{gap:11px}
+  .nav nav>a,.mega summary{font-size:.62rem;letter-spacing:.06em}
+  .nav nav>a:nth-last-child(1){display:none}
   .mega-panel{position:fixed;top:58px;left:12px;right:12px;width:auto;grid-template-columns:1fr 1fr;padding:18px}
   .home-hero{grid-template-columns:1fr;gap:26px;min-height:auto;padding:58px 0 42px}
-  .home-feature{min-height:250px;transform:none;border-radius:18px 18px 60px 18px}
   .home-links,.card-grid{grid-template-columns:1fr 1fr}
   .topic-card.feature,.topic-card.feature-blue{grid-column:span 2}
   .section-head{align-items:start;flex-direction:column;gap:8px}
-  .gospel-step{grid-template-columns:60px 1fr;gap:18px}
+  .gospel-step{gap:18px}
 }
 @media(max-width:560px){
   .brand{font-size:.86rem}
-  .site-nav>a:nth-of-type(2),.nav nav>a:nth-of-type(2){display:none}
+  .nav nav>a:nth-of-type(2){display:none}
   .mega-panel{grid-template-columns:1fr;max-height:75vh;overflow:auto}
   .home-live main,.hub-page,.gospel-page{padding-left:16px;padding-right:16px}
   .home-hero h1,.hub-hero h1,.gospel-intro h1{font-size:clamp(3rem,15vw,4.6rem)}
@@ -325,7 +308,6 @@ button{font:inherit}
   .step-dot{font-size:.72rem}
   .step-dot span{font-size:.56rem}
   .gospel-step{grid-template-columns:1fr}
-  .step-number{font-size:2rem}
   .gospel-step h2{font-size:2.6rem}
   .hurting-actions p{grid-template-columns:1fr!important;gap:5px}
   .romans-road section{grid-template-columns:1fr}.romans-road p{grid-column:1;margin:0}
@@ -333,25 +315,6 @@ button{font:inherit}
   .footer-more{grid-column:1}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
-
-
-/* architecture pass: exact nav + visitor-state homepage */
-.site-header{gap:18px}
-.site-nav{margin-left:auto}
-.nav-cta{
-  display:inline-flex;
-  align-items:center;
-  min-height:38px;
-  padding:0 13px;
-  border-radius:8px;
-  background:var(--accent);
-  color:white;
-  text-decoration:none;
-  white-space:nowrap;
-  font-size:.69rem;
-  font-weight:700;
-}
-.nav-cta:hover{background:var(--accent-dark)}
 .where-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -399,18 +362,7 @@ button{font:inherit}
 .decision-actions{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}
 .step-aside{margin-top:20px!important;padding-top:12px;border-top:1px solid var(--line);font-family:"DM Sans",sans-serif!important;font-size:.82rem!important}
 .gospel-progress{grid-template-columns:repeat(6,1fr)}
-
-@media(max-width:1100px){
-  .site-nav{gap:11px}
-  .site-nav>a{font-size:.6rem;letter-spacing:.05em}
-  .nav-cta{font-size:.62rem;padding:0 10px}
-}
 @media(max-width:850px){
-  .site-header{flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
-  .site-nav{order:3;width:100%;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
-  .site-nav::-webkit-scrollbar{display:none}
-  .site-nav>a{flex:0 0 auto}
-  .nav-cta{margin-left:auto}
   .home-gospel{grid-template-columns:1fr}
   .home-gospel .action{justify-self:start}
 }
@@ -547,18 +499,6 @@ button{font:inherit}
 .church-finder span{color:var(--muted);font-size:.82rem;line-height:1.4}
 @media(max-width:760px){.church-finders{grid-template-columns:1fr}}
 
-
-/* Layout and type tuning */
-.home-feature{
-  min-height:270px;
-  padding:22px;
-  text-decoration:none;
-  color:#fff;
-  cursor:pointer;
-}
-.home-feature span{font-weight:700}
-.home-feature:hover{transform:rotate(0deg) translateY(-3px);box-shadow:0 12px 26px rgba(31,95,139,.18)}
-
 .home-live main{padding-bottom:36px}
 .home-hero{min-height:auto;padding:42px 0 34px;gap:32px}
 .home-hero h1{max-width:680px;font-size:clamp(2.3rem,3.8vw,4rem);line-height:1.04;letter-spacing:-.03em}
@@ -575,7 +515,6 @@ button{font:inherit}
 .split-band{gap:10px}
 .split-card{padding:20px}
 .split-card h3{font-size:1.65rem}
-.home-feature h2{font-size:2rem}
 
 .hub-page{padding-bottom:42px}
 .hub-hero{padding:44px 0 26px}
@@ -684,7 +623,6 @@ button{font:inherit}
 
 @media(max-width:820px){
   .home-hero{padding:34px 0 26px;gap:20px}
-  .home-feature{min-height:220px}
   .home-section{padding:26px 0}
   .hub-hero{padding:34px 0 22px}
   .page-hero{padding:34px 18px 22px}
@@ -699,7 +637,6 @@ button{font:inherit}
   .home-section{padding:22px 0}
   .home-link{min-height:125px}
   .topic-card{min-height:150px}
-  .home-feature{min-height:190px}
   .basics-lead,.basics-question{align-items:flex-start;flex-direction:column}
   .basics-list a{grid-template-columns:1fr;gap:3px}
 }
@@ -818,8 +755,7 @@ button{font:inherit}
 .course-hero h1{margin:0;font-family:"Source Serif 4",serif;font-size:clamp(2.8rem,5vw,5rem);line-height:.96;font-weight:500;letter-spacing:-.03em}
 .course-hero>p{max-width:720px;color:var(--muted);font-size:1.04rem}
 .course-meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px;color:var(--muted);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
-.course-lesson{display:grid;grid-template-columns:76px 1fr;gap:24px;padding:30px 0;border-bottom:1px solid var(--line);scroll-margin-top:90px}
-.lesson-number{font-family:"Source Serif 4",serif;font-size:2.7rem;line-height:1;color:#a8bbc6}
+.course-lesson{display:grid;grid-template-columns:1fr;gap:24px;padding:30px 0;border-bottom:1px solid var(--line);scroll-margin-top:90px}
 .course-lesson h2{margin:0 0 10px;font-family:"Source Serif 4",serif;font-size:2rem;line-height:1.06;font-weight:600}
 .course-lesson p{font-family:"Source Serif 4",serif;font-size:1.02rem;line-height:1.62;color:#505650}
 .lesson-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
@@ -828,7 +764,7 @@ button{font:inherit}
 .course-finish{margin-top:30px;padding:24px;border-radius:16px;background:#e9eee8}
 .course-finish h2{margin:4px 0 8px;font-family:"Source Serif 4",serif;font-size:2rem;font-weight:500}
 .course-finish p{max-width:700px;color:#555d55}
-@media(max-width:680px){.course-grid{grid-template-columns:1fr}.course-lesson{grid-template-columns:1fr;gap:8px}.lesson-number{font-size:2rem}.course-card{min-height:210px}}
+@media(max-width:680px){.course-grid{grid-template-columns:1fr}.course-lesson{grid-template-columns:1fr;gap:8px}.course-card{min-height:210px}}
 
 
 /* Scripture translation notice */
@@ -837,185 +773,11 @@ button{font:inherit}
 .site-footer::after,footer::after{content:"Scripture quotations are taken from the Holy Bible, New Living Translation, copyright © 1996, 2004, 2015 by Tyndale House Foundation. Used by permission of Tyndale House Publishers, Carol Stream, Illinois 60188. All rights reserved.";grid-column:1/-1;margin-top:8px;padding-top:10px;border-top:1px solid var(--line);color:#7a7e78;font-size:.58rem;line-height:1.45}
 
 
-/* Editorial photography — section-based, relevant before unique.
-   All photographs below are free to use under the Unsplash License.
-   Sources:
-   Journey / clear forest path — Ritam Baishya:
-   https://unsplash.com/photos/a-peaceful-path-through-a-lush-green-forest-FA07FR3V8EQ
-   Questions / investigation — Acme Studio:
-   https://unsplash.com/photos/a-notebook-pen-and-apple-sitting-on-a-desk-next-to-a-laptop-JGZIOASLAKg
-   Courses / study — Acme Studio:
-   https://unsplash.com/photos/a-desk-with-a-lamp-and-some-books-on-it-SsGglvy7Cm8
-   Bible — Shane Hoving:
-   https://unsplash.com/photos/an-open-bible-on-a-table-in-the-sunlight-SZaxKdLwz6o
-   Church — Unsplash:
-   https://unsplash.com/photos/interior-of-a-church-with-pews-and-arched-doorways-KljTlrb971I
-   Life issues — one image per topic (all free Unsplash License; picks chosen from descriptions,
-   crops not yet checked by eye):
-   Life hub (default)  — Greg Rosenke: https://unsplash.com/photos/1dnMXxhJT_g   open door, morning light
-   Grief               — Xiaohan Feng: https://unsplash.com/photos/ufDkcI_U-Xo   single chair, sunlit room
-   Anxiety             — Kelly Sikkema: https://unsplash.com/photos/LNXU7dmMqBE   hands holding a white mug
-   Loneliness          — Andrew Krotov: https://unsplash.com/photos/qXJ77NsG478   bench over a foggy lake
-   Shame               — Phil Hearing: https://unsplash.com/photos/KmItTOoBDuw    hand holding a mended bowl
-   Addiction           — Angelo Abear: https://unsplash.com/photos/IXqt3DS3h8E    glass of water on a table
-   Marriage            — Florian Siedl: https://unsplash.com/photos/GPWpmI-7KXw   two mugs on a table
-   Suffering / Hurting — Suhyeon Choi: https://unsplash.com/photos/HCDugQDdtfc    rain on a window
-   Backups if a crop looks wrong: Grief UzndKc9FBwo, Anxiety c-8winJ3vNs, Loneliness ecq46sG0o80,
-   Shame 1dnMXxhJT_g, Addiction -kD-r3oKt3g, Marriage dyPsip8hnn4, Suffering jy-uS8iJhX4.
 
-   Do not add per-page photo overrides merely to make pages look different.
-   Repeating a strong image within a section is intentional.
-*/
-:root{
-  --photo-journey:url("https://unsplash.com/photos/FA07FR3V8EQ/download?force=true&w=1600");
-  --photo-thought:url("https://unsplash.com/photos/JGZIOASLAKg/download?force=true&w=1600");
-  --photo-study:url("https://unsplash.com/photos/SsGglvy7Cm8/download?force=true&w=1600");
-  --photo-bible:url("https://unsplash.com/photos/SZaxKdLwz6o/download?force=true&w=1600");
-  --photo-church:url("https://unsplash.com/photos/KljTlrb971I/download?force=true&w=1600");
-  --photo-life:url("https://images.unsplash.com/photo-1726804550899-f0e01f066031?auto=format&fit=crop&w=1600&q=74");
-  --photo-grief:url("https://images.unsplash.com/photo-1764776502863-7383c59b0bac?auto=format&fit=crop&w=1600&q=74");
-  --photo-anxiety:url("https://images.unsplash.com/photo-1764974012597-ef8ee8c806f0?auto=format&fit=crop&w=1600&q=74");
-  --photo-loneliness:url("https://images.unsplash.com/photo-1756212231818-e68dccf620db?auto=format&fit=crop&w=1600&q=74");
-  --photo-shame:url("https://images.unsplash.com/photo-1790021581912-37d944f8dfaa?auto=format&fit=crop&w=1600&q=74");
-  --photo-addiction:url("https://images.unsplash.com/photo-1618683133131-3c8907882c7c?auto=format&fit=crop&w=1600&q=74");
-  --photo-marriage:url("https://images.unsplash.com/photo-1787998861220-4cc8c0cb25ea?auto=format&fit=crop&w=1600&q=74");
-  --photo-suffering:url("https://images.unsplash.com/photo-1509635022432-0220ac12960b?auto=format&fit=crop&w=1600&q=74");
-}
 
-/* One significant image near the top of a page. Journey is the quiet default. */
-.page-hero::after,
-.hub-hero::after,
-.course-hero::after,
-.gospel-intro::after{
-  content:"";
-  display:block;
-  width:100%;
-  height:clamp(150px,20vw,240px);
-  margin-top:22px;
-  border:1px solid var(--line);
-  border-radius:16px;
-  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.16)),var(--photo-journey);
-  background-size:cover;
-  background-position:center 54%;
-  background-color:#dfe4dc;
-  filter:saturate(.82) contrast(.97); /* muted, editorial */
-  box-shadow:0 8px 22px rgba(28,35,30,.06);
-}
 .page-hero .inner-wrap{max-width:var(--max)}
-.page-hero::after{max-width:var(--max);margin-left:auto;margin-right:auto}
-
-/* Questions and doubt: notebooks, reading, research — not generic moody people. */
-html:has(link[rel="canonical"][href="https://christianityapparently.com/questions"]) body .page-hero::after,
-html:has(link[rel="canonical"][href^="https://christianityapparently.com/questions/"]) body .page-hero::after,
-html:has(link[rel="canonical"][href="https://christianityapparently.com/doubt"]) body .page-hero::after{
-  background-image:linear-gradient(180deg,rgba(20,25,22,.03),rgba(20,25,22,.18)),var(--photo-thought);
-  background-position:center 48%;
-}
-
-/* Bible and Scripture pages: visibly about reading the Bible. */
-html:has(link[rel="canonical"][href="https://christianityapparently.com/bible"]) body .page-hero::after,
-html:has(link[rel="canonical"][href="https://christianityapparently.com/scripture"]) body .page-hero::after{
-  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.12)),var(--photo-bible);
-  background-position:center 56%;
-}
-
-/* Church, baptism, and communion: actual church space rather than symbolic scenery. */
-html:has(link[rel="canonical"][href="https://christianityapparently.com/church"]) body .page-hero::after,
-html:has(link[rel="canonical"][href="https://christianityapparently.com/baptism"]) body .page-hero::after,
-html:has(link[rel="canonical"][href="https://christianityapparently.com/communion"]) body .page-hero::after{
-  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.14)),var(--photo-church);
-  background-position:center 55%;
-}
-
-/* Life issues: restrained environmental image, not stock-photo distress acting. */
-html:has(link[rel="canonical"][href="https://christianityapparently.com/life"]) body .hub-hero::after,
-html:has(link[rel="canonical"][href="https://christianityapparently.com/grief"]) body .page-hero::after,
-html:has(link[rel="canonical"][href="https://christianityapparently.com/anxiety"]) body .page-hero::after,
-html:has(link[rel="canonical"][href="https://christianityapparently.com/loneliness"]) body .page-hero::after,
-html:has(link[rel="canonical"][href="https://christianityapparently.com/shame"]) body .page-hero::after,
-html:has(link[rel="canonical"][href="https://christianityapparently.com/addiction"]) body .page-hero::after,
-html:has(link[rel="canonical"][href="https://christianityapparently.com/marriage"]) body .page-hero::after,
-html:has(link[rel="canonical"][href="https://christianityapparently.com/suffering"]) body .page-hero::after,
-html:has(link[rel="canonical"][href="https://christianityapparently.com/hurting"]) body .page-hero::after{
-  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.15)),var(--photo-life);
-  background-position:center 50%;
-}
-
-/* Life issues, by topic. Do not point two topics at the same photo unless it is deliberate. */
-html:has(link[rel="canonical"][href="https://christianityapparently.com/grief"]) body .page-hero::after{
-  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.15)),var(--photo-grief);
-  background-position:center 50%;
-}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/anxiety"]) body .page-hero::after{
-  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.15)),var(--photo-anxiety);
-  background-position:center 55%;
-}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/loneliness"]) body .page-hero::after{
-  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.15)),var(--photo-loneliness);
-  background-position:center 60%;
-}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/shame"]) body .page-hero::after{
-  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.15)),var(--photo-shame);
-  background-position:center 45%;
-}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/addiction"]) body .page-hero::after{
-  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.15)),var(--photo-addiction);
-  background-position:center 55%;
-}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/marriage"]) body .page-hero::after{
-  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.15)),var(--photo-marriage);
-  background-position:center 55%;
-}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/suffering"]) body .page-hero::after,
-html:has(link[rel="canonical"][href="https://christianityapparently.com/hurting"]) body .page-hero::after{
-  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.15)),var(--photo-suffering);
-  background-position:center 50%;
-}
-
-/* Homepage / Grow / Following keep the literal path motif. */
-.home-feature{
-  background-color:#dfe4dc;
-  background-image:linear-gradient(180deg,rgba(22,36,45,.24),rgba(22,36,45,.78)),var(--photo-journey);
-  background-size:cover;
-  background-position:center 54%;
-  text-shadow:0 1px 2px rgba(0,0,0,.18);
-}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/grow"]) body .page-hero::after,
-html:has(link[rel="canonical"][href="https://christianityapparently.com/following"]) body .page-hero::after{
-  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.14)),var(--photo-journey);
-  background-position:center 54%;
-}
-
-/* Courses: the visual language is study, not landscapes. */
-html:has(link[rel="canonical"][href="https://christianityapparently.com/courses"]) body .page-hero::after,
-html:has(link[rel="canonical"][href="https://christianityapparently.com/courses"]) body .hub-hero::after{
-  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.12)),var(--photo-study);
-  background-position:center 52%;
-}
 .course-card{overflow:hidden}
-.course-card::before{
-  content:"";
-  height:118px;
-  margin:-22px -22px 18px;
-  background-size:cover;
-  background-position:center;
-  border-bottom:1px solid var(--line);
-}
-.course-card:nth-child(1)::before{background-image:linear-gradient(rgba(0,0,0,.02),rgba(0,0,0,.10)),var(--photo-study);background-position:center 52%}
-.course-card:nth-child(2)::before{background-image:linear-gradient(rgba(0,0,0,.02),rgba(0,0,0,.10)),var(--photo-bible);background-position:center 54%}
-.course-card:nth-child(3)::before{background-image:linear-gradient(rgba(0,0,0,.02),rgba(0,0,0,.10)),var(--photo-thought);background-position:center 48%}
-.course-card:nth-child(4)::before{background-image:linear-gradient(rgba(0,0,0,.02),rgba(0,0,0,.10)),var(--photo-study);background-position:center 46%}
 .course-card h2{margin-top:18px}
-
-.course-hero::after{
-  height:clamp(190px,27vw,300px);
-  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.12)),var(--photo-study);
-  background-position:center 52%;
-}
-html:has(link[rel="canonical"][href="https://christianityapparently.com/course-bible"]) body .course-hero::after{
-  background-image:linear-gradient(180deg,rgba(20,25,22,.02),rgba(20,25,22,.11)),var(--photo-bible);
-  background-position:center 54%;
-}
 
 /* Slightly richer course lesson rhythm without introducing more images. */
 .course-lesson:nth-of-type(even){
@@ -1025,15 +787,6 @@ html:has(link[rel="canonical"][href="https://christianityapparently.com/course-b
   padding-right:14px;
   border-radius:12px;
   background:rgba(255,253,248,.58);
-}
-
-@media(max-width:700px){
-  .page-hero::after,.hub-hero::after,.course-hero::after,.gospel-intro::after{
-    height:145px;
-    margin-top:18px;
-    border-radius:12px;
-  }
-  .course-card::before{height:100px}
 }
 
 
@@ -1050,21 +803,19 @@ html:has(link[rel="canonical"][href="https://christianityapparently.com/course-b
 }
 html{scroll-padding-top:84px}
 body{background:var(--bg);color:var(--ink);line-height:1.6}
-.site-header,.nav{
+.nav{
   min-height:76px;background:rgba(247,244,237,.97);border-bottom:1px solid var(--line);
   backdrop-filter:blur(20px);gap:18px;padding-inline:clamp(18px,4vw,66px);
   box-shadow:none;
 }
 .brand{font-family:var(--editorial-sans);font-size:clamp(1rem,1.5vw,1.24rem);font-weight:700;letter-spacing:-.055em;line-height:1.1}
 .brand span{color:var(--warm)}
-.site-nav,.nav nav{gap:0;min-width:0}
-.site-nav>a,.nav nav>a,.mega summary{
+.nav nav{gap:0;min-width:0}
+.nav nav>a,.mega summary{
   font-family:var(--editorial-sans);color:var(--ink);font-size:.67rem;
   letter-spacing:.11em;font-weight:700;padding:12px 10px;transition:color .2s,background .2s;
 }
-.site-nav>a:hover,.nav nav>a:hover,.mega summary:hover{color:var(--warm)}
-.nav-cta,.site-header .nav-cta{border-radius:0!important;background:var(--ink)!important;color:var(--paper)!important;font-family:var(--editorial-sans);letter-spacing:.06em}
-.nav-cta:hover,.site-header .nav-cta:hover{background:var(--warm)!important;color:#fff!important}
+.nav nav>a:hover,.mega summary:hover{color:var(--warm)}
 .page-hero,.hub-hero,.course-hero,.gospel-intro{
   background:linear-gradient(115deg,#e6d9c7 0%,#f3eee4 52%,#eee5d7 100%);
   padding:clamp(48px,6vw,100px) clamp(20px,5vw,80px) clamp(40px,5vw,70px);
@@ -1085,8 +836,7 @@ body{background:var(--bg);color:var(--ink);line-height:1.6}
 .eyebrow,.kicker{font-family:var(--editorial-sans);letter-spacing:.15em;font-weight:700;color:var(--warm)}
 .article,.article.wide{max-width:960px;padding:clamp(28px,4vw,55px) 24px 66px}
 .article .intro{font-family:var(--editorial-serif);font-size:clamp(1.45rem,2.4vw,2rem);line-height:1.35;color:#31414a}
-.article h2,.article h3,.section-head h2,.question-index-heading h2,
-.questions-gospel h2,.choice-card strong,.topic-links span{
+.article h2,.article h3,.section-head h2,.question-index-heading h2,.questions-gospel h2,.choice-card strong,.topic-links span{
   font-family:var(--editorial-sans);letter-spacing:-.045em;color:var(--ink)
 }
 .article h2{font-size:clamp(2rem,3.2vw,3.25rem);line-height:1.05;margin:36px 0 14px}
@@ -1113,9 +863,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
   outline:3px solid var(--warm);outline-offset:3px
 }
 @media(max-width:900px){
-  .site-header,.nav{min-height:66px;padding:12px 18px;flex-wrap:wrap}
-  .site-nav,.nav nav{gap:4px;flex-wrap:wrap}
-  .site-nav>a,.nav nav>a{padding:7px;font-size:.63rem}
+  .nav{min-height:66px;padding:12px 18px;flex-wrap:wrap}
+  .nav nav{gap:4px;flex-wrap:wrap}
+  .nav nav>a{padding:7px;font-size:.63rem}
 }
 @media(max-width:600px){
   .page-hero,.hub-hero,.course-hero,.gospel-intro{padding:42px 18px 36px}
@@ -1129,26 +879,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
 /* Homepage design system — shared by all standard interior pages */
 :root{--bg:#f3efe7;--paper:#fcfaf5;--ink:#18242b;--muted:#60676b;--line:#d7d1c8;--accent:#304fb6;--accent-dark:#233d94;--warm:#bd5d40;--max:1120px}
 html{scroll-padding-top:90px}body{background:var(--bg);color:var(--ink);font-family:"Space Grotesk","DM Sans",Arial,sans-serif;font-size:15px;line-height:1.6}
-.site-header{min-height:74px!important;padding:0 clamp(18px,4vw,54px)!important;background:#18242bf5!important;border:0!important;border-bottom:1px solid #ffffff24!important;box-shadow:none!important;position:sticky;top:0;z-index:100;display:flex;flex-wrap:nowrap!important;gap:20px;align-items:center}
-.site-header>.brand{display:flex!important;flex-direction:column;flex:0 0 auto;text-decoration:none;color:#fcfaf5!important;font:800 14px/1.07 "Space Grotesk",Arial,sans-serif!important;letter-spacing:-.04em!important;text-transform:uppercase}
-.site-header>.brand span{display:block;color:#d78464!important;font:italic 18px/1.08 Georgia,serif!important;letter-spacing:-.04em!important;text-transform:none}
-.site-nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(10px,1.55vw,25px)!important;margin-left:auto}
-.site-nav a{color:#f4efe7!important;font:700 12px/1.2 "Space Grotesk",Arial,sans-serif!important;letter-spacing:.005em!important;text-transform:none!important;white-space:nowrap;padding:11px 2px!important;border:0!important;background:transparent!important;text-decoration:none!important}
-.site-nav a:hover,.site-nav a:focus-visible{color:#edb196!important;text-decoration:underline!important;text-underline-offset:5px}
-.site-header .nav-cta{display:none!important}
 .page-hero,.hub-hero,.course-hero,.gospel-intro{background:#eae1d5!important;color:var(--ink)!important;padding:52px clamp(20px,5vw,70px) 44px!important;min-height:0!important}
 .page-hero h1,.hub-hero h1,.course-hero h1,.gospel-intro h1{font-family:"Space Grotesk",Arial,sans-serif!important;font-size:clamp(38px,5.7vw,76px)!important;line-height:.99!important;letter-spacing:-.065em!important;text-transform:uppercase}
 .article,.article.wide,.course-main,.questions-hub{max-width:1120px!important;margin-left:auto!important;margin-right:auto!important}
 .article h2,.section-title,.question-index h2{font-family:"Space Grotesk",Arial,sans-serif!important;letter-spacing:-.045em;color:var(--ink)!important}
 .article a:not(.btn):not(.button),.questions-hub a:not(.btn){text-decoration-thickness:1px;text-underline-offset:3px}
 .card,.question-card,.course-card,.topic-card,.feature-card{border-radius:0!important;box-shadow:none!important;border-color:#d7d1c8!important}
-.btn,.button,.cta,.nav-cta{border-radius:0!important;font-family:"Space Grotesk",Arial,sans-serif!important;font-weight:750!important}
+.btn,.button,.cta{border-radius:0!important;font-family:"Space Grotesk",Arial,sans-serif!important;font-weight:750!important}
 footer,.site-footer{border-top:1px solid #d7d1c8}
-@media(max-width:820px){.site-header{min-height:66px!important;padding:11px 18px!important;flex-wrap:wrap!important}.site-header>.brand{font-size:12px!important}.site-header>.brand span{font-size:15px!important}.site-nav{width:100%;order:3;display:flex!important;justify-content:flex-start!important;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;flex-wrap:nowrap!important;padding:0 0 4px;margin:0}.site-nav a{font-size:12px!important;padding:8px 6px!important}.page-hero,.hub-hero,.course-hero,.gospel-intro{padding:36px 20px 30px!important}.page-hero h1,.hub-hero h1,.course-hero h1,.gospel-intro h1{font-size:clamp(37px,10vw,62px)!important}}
+@media(max-width:820px){.page-hero,.hub-hero,.course-hero,.gospel-intro{padding:36px 20px 30px!important}.page-hero h1,.hub-hero h1,.course-hero h1,.gospel-intro h1{font-size:clamp(37px,10vw,62px)!important}}
 
 /* Compact layout on every shared-style page: keep meaningful content, eliminate empty art blocks */
 :root{--max:1020px}
-.site-header{min-height:64px!important}
 .page-hero,.hub-hero,.course-hero,.gospel-intro{padding-top:30px!important;padding-bottom:26px!important}
 .page-hero h1,.hub-hero h1,.course-hero h1,.gospel-intro h1{font-size:clamp(34px,4.8vw,62px)!important}
 .article,.article.wide,.course-main,.questions-hub{padding-top:24px!important;padding-bottom:34px!important}
@@ -1161,4 +903,17 @@ section.content-section,.section,.feature-section,.pathway-section,.course-secti
 .article .spacer,.empty-placeholder,.photo-placeholder,.image-placeholder{display:none!important}
 .hero-photo:empty,.hero-visual:empty,.section-image:empty,.feature-photo:empty,.artwork:empty,.photo-frame:empty{display:none!important}
 .hero-photo:not(:has(img)):not([style*="background"]),.hero-visual:not(:has(img)):not([style*="background"]){display:none!important}
-@media(max-width:820px){.site-header{min-height:62px!important}.page-hero,.hub-hero,.course-hero,.gospel-intro{padding:25px 18px!important}.article,.article.wide,.course-main,.questions-hub{padding-top:19px!important;padding-bottom:28px!important}}
+@media(max-width:820px){.page-hero,.hub-hero,.course-hero,.gospel-intro{padding:25px 18px!important}.article,.article.wide,.course-main,.questions-hub{padding-top:19px!important;padding-bottom:28px!important}}
+
+/* One hero system: hub, course and gospel heroes are full-width bands like .page-hero, text aligned to the content column. */
+.hub-hero,.course-hero,.gospel-intro{max-width:none;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);padding-left:calc(50vw - 50%)!important;padding-right:calc(50vw - 50%)!important}
+body{overflow-x:clip}
+
+/* Questions hub: category filter buttons (progressive enhancement over #anchor links) */
+.question-category-nav a i{font-style:normal;opacity:.6;margin-left:3px;font-weight:500}
+.question-category-nav a[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.question-category-nav a[aria-pressed="true"] i{opacity:.8}
+.question-category-nav a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.course-note{margin:14px 0 0;font-size:.95rem;max-width:62ch}
+.course-note a{font-weight:600}
+.question-category-nav a[aria-pressed="true"],.question-category-nav a[aria-pressed="true"] i{color:#fff!important}
