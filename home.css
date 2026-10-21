@@ -119,3 +119,7 @@
 .hero-images .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:78% 50%}
 .hero-images::after{background:linear-gradient(90deg,#f3efe7 0%,#f3efe7f2 34%,#f3efe7a6 58%,#f3efe726 100%)}
 @media(max-width:760px){.hero-images{opacity:1}.hero-images::after{background:linear-gradient(180deg,#f3efe7f0,#f3efe7e0 60%,#f3efe7b8)}}
+
+/* Compact next-step navigation: no stretched empty cards or bottom-pinned labels. */
+.ca-next{padding:25px 0 30px}.ca-next-head{align-items:center;margin-bottom:13px}.ca-next-grid{gap:12px}.ca-next-card{min-height:0;padding:17px 19px;gap:9px}.ca-next-card strong{font-size:clamp(18px,1.7vw,24px);line-height:1.2}.ca-next-card b{margin-top:4px}.ca-next-question{margin-top:15px;padding-top:13px}
+@media(max-width:760px){.ca-next{padding:22px 0 28px}.ca-next-card{padding:16px 18px}}
