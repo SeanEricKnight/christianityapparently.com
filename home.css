@@ -110,7 +110,3 @@
 .ca-next-also{margin:14px 0 0;font-size:14px;color:var(--muted)}
 .ca-next-also a{color:#a85038;font-weight:600}
 @media(max-width:700px){.footer-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 18px;margin-top:26px}.footer-links a{padding:6px 0}}
-
-/* Preserve the full engraving instead of cropping a portrait into a wide card. */
-.story .story-image--portrait{object-fit:contain;background:#e8e1d5}
-.story-image-link:hover .story-image--portrait{transform:none}
