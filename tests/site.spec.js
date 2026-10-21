@@ -193,7 +193,7 @@ test('questions hub: category filter, search, and combination work together', as
   await page.goto('/questions.html');
   const visible = () => page.locator('.question-index-item:not([hidden])').count();
   const total = await page.locator('.question-index-item').count();
-  expect(total).toBeGreaterThanOrEqual(55);
+  expect(total).toBeGreaterThanOrEqual(54);
   expect(await visible()).toBe(total);
   const btn = page.locator('.question-category-nav a[data-cat="bible"]');
   await btn.click();
@@ -227,4 +227,22 @@ test('homepage footer links and secondary routes resolve', async ({ page, reques
   for (const need of ['basics.html', 'life.html', 'grow.html', 'church.html']) expect(hrefs).toContain(need);
   for (const h of hrefs) expect((await request.get('/' + h.split('#')[0])).ok(), h).toBeTruthy();
   await expect(page.locator('.ca-next-also a')).toHaveCount(3);
+});
+
+test('deployed directory: developer paths are not served, public paths are', async ({ request }) => {
+  for (const p of ['/docs/REBUILD-REPORT.md', '/docs/', '/scripts/build-dist.js', '/scripts/shell.js', '/tests/site.spec.js', '/questions-data.json', '/package.json', '/README.md', '/playwright.config.js', '/wrangler.jsonc', '/.git/config', '/.github/ISSUE_TEMPLATE/config.yml', '/test-report/index.html', '/node_modules/', '/dist/index.html'])
+    expect((await request.get(p)).status(), p).toBe(404);
+  for (const p of ['/', '/questions', '/questions/hypocrites', '/questions/pagan-myths', '/credits', '/styles.css', '/home.css', '/site-header.css', '/site-header.js', '/favicon.svg', '/robots.txt', '/sitemap.xml', '/assets/banner.jpg'])
+    expect((await request.get(p)).ok(), p).toBeTruthy();
+  expect((await request.get('/definitely-not-a-page')).status()).toBe(404);
+});
+
+test('retired page: redirect rule exists and target is a live page', async ({ request }) => {
+  const rules = fs.readFileSync(path.join(ROOT, '_redirects'), 'utf8');
+  expect(rules).toMatch(/\/questions\/unlike-jesus\s+\/questions\/hypocrites\s+301/);
+  expect((await request.get('/questions/hypocrites')).ok()).toBeTruthy();
+  expect((await request.get('/questions/unlike-jesus')).status()).toBe(404); // served only via the _redirects rule on Cloudflare
+  const hub = await (await request.get('/questions')).text();
+  expect(hub).not.toContain('unlike-jesus');
+  expect(await (await request.get('/sitemap.xml')).text()).not.toContain('unlike-jesus');
 });

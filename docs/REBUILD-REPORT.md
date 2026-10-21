@@ -146,3 +146,10 @@ Proposal only. To keep it out of anything Cloudflare Pages serves, the outline i
 
 ### Still BLOCKED / NOT VERIFIED
 External Wikimedia images and fonts, image licenses and authors, live Cloudflare behavior. Unchanged from earlier rounds.
+
+
+## Round 4: consolidation and deployment directory
+
+- **Hypocrisy pages:** `unlike-jesus` merged into `hypocrites` (the strongest New Testament material and the "no true Christian" caution were added; the page stays short). `no-better` is unchanged. `unlike-jesus` removed from the hub, sitemap and generator; `_redirects` sends `/questions/unlike-jesus` to `/questions/hypocrites` (301). Library is now 54 questions.
+- **Deployment:** only `dist/` is published. See `docs/DEPLOYMENT.md` for the configuration, the manual dashboard changes, and what is and is not verified. Cloudflare project type: **Workers** (static assets), not Pages. Verification against a real deployment is **NOT DONE**; the local test proves `dist/` does not contain the excluded paths, not how Cloudflare will serve them.
+- Note: the earlier statement in this report that the outline lives in `docs/` is superseded: it lives in a Google Doc.

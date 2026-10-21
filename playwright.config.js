@@ -7,7 +7,7 @@ module.exports = defineConfig({
   fullyParallel: true,
   reporter: [['list'], ['html', { open: 'never', outputFolder: 'test-report' }], ['json', { outputFile: 'test-results/results.json' }]],
   use: { baseURL: 'http://localhost:4173', trace: 'retain-on-failure' },
-  webServer: { command: 'npx --yes serve -l 4173 .', url: 'http://localhost:4173', reuseExistingServer: true, timeout: 120000 },
+  webServer: { command: 'node scripts/build-dist.js && npx --yes serve -l 4173 dist', url: 'http://localhost:4173', reuseExistingServer: true, timeout: 120000 },
   projects: [
     { name: 'desktop-1440', use: { viewport: { width: 1440, height: 900 } } },
     { name: 'tablet-768', use: { viewport: { width: 768, height: 1024 } } },
