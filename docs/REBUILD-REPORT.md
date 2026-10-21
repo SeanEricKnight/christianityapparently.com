@@ -2,6 +2,19 @@
 
 Base: `main` @ `389ac39`. `main` untouched. **Do not merge until the screenshots have been reviewed by eye and the `ONLINE=1` run is done.**
 
+## Latest round: tested commit `1987349` (full SHA 19873496ae8c433c1de53e736b0dbc7568a07d11)
+Final recommendation: **NOT READY TO MERGE**, because external image and font verification is **BLOCKED** (no internet access or linked browser in the build environment). Everything else passes.
+
+| Task | Status |
+|---|---|
+| 1. Verify external images, captions, credits, licences, Google Fonts | **BLOCKED.** `curl` to commons.wikimedia.org, upload.wikimedia.org, fonts.googleapis.com, fonts.gstatic.com, images.unsplash.com and even example.com returns no response; the web-fetch tool refuses Commons pages; no browser is linked. Nothing in this task was verified. `credits.html` still attributes by link only. |
+| 2. Homepage length | Done. Not inflated by whitespace: section padding was already 32px; the length is 17 story cards, 3 evidence tiles, 3 case cards and a 2,194px scroll-driven section. Spacing-only trims (evidence tiles 360->300px, story-card padding/margins) cut mobile from 14,841 to **14,409 px** (-2.9%); desktop unchanged at 9,491 px. Image crops were not touched because the real photos could not be seen. Larger savings would need a restructure (e.g. horizontal card rows on mobile), not done. |
+| 3. First-visitor navigation | Done. **"Start here"** (links to `basics.html`) is now the first item in the shared header on all 95 pages. Verified: no wrapping or overflow at 1440/1280/1100/1051/1050/1000/900/800/768/720/701 px; mobile menu (<=700px) lists six links. Header still pixel-identical across pages. Tests updated from 5 to 6 nav links (a genuine spec change, not a loosened check). |
+| 4. Production testing | Static checks pass (95 pages); generator and shell regeneration produce no changes; full Playwright suite **300/300 passed, 0 failed, 0 flaky, 3.2 min** at desktop/tablet/mobile. Screenshots with real images and fonts were **not possible** (offline). |
+| 5. Reports | This file, plus a Google Doc (link given in the hand-off message). |
+
+Evidence: `docs/test-run/results.json`, `docs/test-run/screens/` (46 offline screenshots + `header-start-here-1440-768-390.png`).
+
 ## RECOMMENDATION: NOT READY TO MERGE (one gate left)
 Everything that can be verified without internet passes. The one gate left is **a pass with real internet access**: this environment blocks Wikimedia, Unsplash and Google Fonts, so no external image or font has ever been loaded or looked at in this work. Merge once someone with internet has (1) run `ONLINE=1 npm run test:browser` and (2) looked at the pages with the real images and fonts loaded (checklist under "Needs a networked pass").
 
