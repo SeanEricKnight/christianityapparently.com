@@ -4,12 +4,30 @@
 
 Editorial brief: explain what Scripture says, where Christians disagree and why, and be honest about which readings have stronger historical and textual support. Do not pretend every interpretation is equally supported, and do not preach. Name the cost of each position on real people.
 
-## Framing decisions I need from you
+## Framing (set by the site owner, 20 October 2026)
 
-1. **The site's own position.** Existing pages already speak in the first person ("I think…") and use a "What I'm not sure about" section. Should these pages do the same, stating your view and then where Christians disagree? Or describe the main positions without a stated view?
-2. **Tradition lens.** Which positions count as the historic majority view that the page presents first? (My suggestion: state plainly that the historic position across Catholic, Orthodox and most Protestant churches has been that sex belongs within marriage between a man and a woman, then present the revisionist and "side B" views fairly. You may want a different framing.)
-3. **Voice on pastoral content.** Should each page end with a pastoral note for readers directly affected (gay and trans readers, divorced readers, single readers, women who have been told to be silent)?
-4. **Review before publishing.** Do you want an outside reader (pastor, scholar, or LGBTQ Christian) to look at these before they go live?
+Evidence-first, biblically serious, broadly Protestant. Every page:
+
+1. **Starts with the actual question**, stated plainly.
+2. **Explains the relevant passages in context**, including historical and linguistic issues that affect interpretation.
+3. **Separates four layers, each labelled on the page:**
+   - what the biblical text explicitly says;
+   - what Christians infer from it;
+   - where the major traditions (Catholic, Orthodox, Protestant) agree;
+   - where serious disagreement exists, and why.
+4. **Represents traditional and affirming readings accurately**, each with its strongest arguments and its strongest objections. It does not manufacture consensus, and does not treat disagreement as proof that Scripture says nothing.
+5. **Does not speak for the owner's personal convictions** where they have not been specified. Any place that needs an editorial judgment is marked `[EDITORIAL REVIEW]` in the draft for the owner to decide, rather than filled in by me.
+6. **Compassionate and respectful toward LGBTQ people and everyone affected**; no caricature or inflammatory language.
+
+Note: the instruction I received was cut off after "Avoid caricatures, inflammatory language, an…". I have assumed the rest means "and unsourced claims" or similar. Please resend the remainder so I don't miss a requirement.
+
+Consequence for the existing page pattern: the first-person "What I'm not sure about" section would be replaced on these pages by "Where I'd flag an editorial decision" (visible only in the draft, removed before publishing), unless you choose to state a position.
+
+## Remaining decisions
+
+1. Pastoral note at the end of each page for readers directly affected (yes or no)?
+2. Outside reader (pastor, scholar, or LGBTQ Christian) before publication?
+3. Does "broadly Protestant" mean the Protestant range is presented first and Catholic and Orthodox views noted where they differ?
 
 ## Proposed pages (one question per page, matching the existing format)
 
