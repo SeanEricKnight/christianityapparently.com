@@ -99,7 +99,9 @@ for (const file of pages) {
     });
     const imgs = await page.evaluate(() => [...document.images].map(i => { const r = i.getBoundingClientRect(), cs = getComputedStyle(i);
       return { src: i.currentSrc || i.src, ok: i.complete && i.naturalWidth > 0, hidden: cs.display === 'none' || cs.visibility === 'hidden' || !!i.closest('[inert],[hidden]'),
-        w: Math.round(r.width), h: Math.round(r.height), right: Math.round(r.right + scrollX) }; }));
+        w: Math.round(r.width), h: Math.round(r.height),
+        // right edge of what is actually visible: an image scaled by a transform (e.g. the Ken Burns zoom) but clipped by an overflow:hidden/clip ancestor does not overflow the page
+        right: (() => { let right = r.right; for (let a = i.parentElement; a && a !== document.documentElement; a = a.parentElement) { const o = getComputedStyle(a).overflowX; if (o !== 'visible') right = Math.min(right, a.getBoundingClientRect().right); } return Math.round(right + scrollX); })() }; }));
     for (const i of imgs) {
       if (!(i.src.startsWith('http://localhost') || ONLINE)) continue;
       expect(i.ok, 'image failed to load: ' + i.src).toBeTruthy();
@@ -149,7 +151,7 @@ test('original-experience: hero visible, dots navigate, tiles go to the right pa
   await open(page, 'original-experience.html'); await page.waitForTimeout(500);
   const op = await page.evaluate(() => parseFloat(getComputedStyle(document.querySelector('.scene-1')).opacity));
   expect(op, 'hero text visible at top').toBeGreaterThan(0.9);
-  const want = [/wrong\s+questions/i, /extraordinary/i, /something\s+happened/i, /what\s+if\s+it/i];
+  const want = [/Explore\s+the claims\.\s+Examine\s+the evidence\./i, /extraordinary/i, /something\s+happened/i, /what\s+if\s+it/i];
   const dots = page.locator('.side-index a');
   for (let i = 0; i < 4; i++) {
     await dots.nth(i).click({ force: true }); await page.waitForTimeout(1500);
@@ -245,4 +247,27 @@ test('retired page: redirect rule exists and target is a live page', async ({ re
   const hub = await (await request.get('/questions')).text();
   expect(hub).not.toContain('unlike-jesus');
   expect(await (await request.get('/sitemap.xml')).text()).not.toContain('unlike-jesus');
+});
+
+// Enforced once the images have been localized (scripts/localize-images.js writes the manifest).
+const LOCALIZED = fs.existsSync(path.join(ROOT, 'assets', 'images', 'MANIFEST.json'));
+test('images are self-hosted: no third-party image URLs and every image loads', async ({ page }) => {
+  test.skip(!LOCALIZED, 'assets/images/MANIFEST.json not present: images are still hotlinked (run scripts/localize-images.js)');
+  const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'assets', 'images', 'MANIFEST.json'), 'utf8'));
+  for (const [slug, m] of Object.entries(manifest)) expect(fs.existsSync(path.join(ROOT, m.local.replace(/^\//, ''))), slug).toBeTruthy();
+  const external = [];
+  page.on('request', r => { const u = r.url(); if (r.resourceType() === 'image' && !u.startsWith('http://localhost')) external.push(u); });
+  for (const f of ['index.html', 'councils.html', 'original-experience.html', 'questions.html', 'credits.html']) {
+    await page.goto('/' + f);
+    await page.evaluate(async () => {
+      for (const i of document.images) { i.scrollIntoView({ block: 'center' }); await new Promise(r => setTimeout(r, 60)); }
+      await Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.addEventListener('load', r, { once: true }); i.addEventListener('error', r, { once: true }); setTimeout(r, 8000); })));
+      scrollTo(0, 0);
+    });
+    const bad = await page.evaluate(() => [...document.images].filter(i => !(i.complete && i.naturalWidth > 0)).map(i => i.currentSrc || i.src));
+    expect(bad, f + ' images that failed to load').toEqual([]);
+    const html = fs.readFileSync(path.join(ROOT, f), 'utf8');
+    expect(html, f + ' still hotlinks Commons images').not.toMatch(/Special:FilePath|upload\.wikimedia\.org/);
+  }
+  expect(external).toEqual([]);
 });
