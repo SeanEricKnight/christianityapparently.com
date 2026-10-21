@@ -11,10 +11,11 @@ body:
   - type: input
     id: page
     attributes:
-      label: Which page?
-      placeholder: "https://christianityapparently.com/..."
+      label: Which article or topic? (optional)
+      description: No URL needed. The article may already be in the issue title.
+      placeholder: "For example: salvation and faith"
     validations:
-      required: true
+      required: false
   - type: textarea
     id: confusing
     attributes:
