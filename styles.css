@@ -917,3 +917,10 @@ body{overflow-x:clip}
 .course-note{margin:14px 0 0;font-size:.95rem;max-width:62ch}
 .course-note a{font-weight:600}
 .question-category-nav a[aria-pressed="true"],.question-category-nav a[aria-pressed="true"] i{color:#fff!important}
+
+/* Tighter questions library: the category name appeared twice per group; show it once and reduce padding (2026-10-21). */
+.questions-hub>.intro{font-size:clamp(1.05rem,1.6vw,1.3rem);line-height:1.45;margin-bottom:14px}
+.question-index-heading h2{font-size:clamp(1.15rem,1.6vw,1.5rem);margin-top:0}
+.question-index-heading .kicker{display:none}
+.question-index-group{padding:16px 0;gap:clamp(12px,2vw,28px)}
+.question-index-item{padding:11px 5px}
