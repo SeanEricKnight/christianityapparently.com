@@ -45,3 +45,7 @@ npm run test:browser   # real-browser suite: 94 pages x 1440/768/390 (needs: npm
 ```
 
 Edit the shared header in `scripts/shell.js` / `site-header.css`, then run `npm run build`.
+
+## Project operations and AI assistants
+
+Read [AGENTS.md](AGENTS.md) before substantive code changes. Website build and deployment guidance lives in [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md); the live Cloudflare dashboard remains authoritative for deployment settings. Private project context, decisions and ChatGPT/Claude handoffs belong in the separate private `SeanEricKnight/christianity-apparently-ops` repo, **not** in this public repository. Consult existing Google Docs/Sheets for editorial research, drafts and previously documented audits before repeating work.
