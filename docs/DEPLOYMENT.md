@@ -24,9 +24,11 @@ The Nicaea painting is served locally at `/assets/images/first-council-nicaea-su
 ```sh
 npm run check
 npm run check:dist
-npm run test:browser
+npm run test:browser   # optional, see below
 npm run verify:deployment -- https://<deployed-preview-host>
 ```
+
+**What is required:** `npm run check` and `npm run check:dist` for site changes, and `npm run verify:deployment` against a preview or live URL when a deployment itself changed. **Optional:** `npm run test:browser`, locally or in Linux CI. The Linux GitHub Actions run of the browser suite is **not required** (owner decision, 2026-10-21: this is a hobby site and the cost is not worth it). Its strict header-screenshot comparison failed intermittently in CI runs 39658128898 (2 pages) and 39663392025 (11 pages); the failing screenshots were reported to differ by only 3 anti-aliased pixels (max channel delta 5/255), not by a visible defect. The workflow `.github/workflows/verify-self-host-images.yml` only triggers on pushes to the already-merged `self-host-images` branch and can be deleted.
 
 The deployment verifier checks real 404s for developer files, public routes, both retired-page redirects, four security headers, homepage navigation staying on the current host, and the local Nicaea image. The browser suite checks layout and interaction at desktop, tablet and mobile sizes; its local static server does not emulate Workers headers or redirect rules.
 

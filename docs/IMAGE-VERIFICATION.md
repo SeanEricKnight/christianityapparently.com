@@ -16,9 +16,17 @@ Attempted the full suite with `ONLINE=1 npm run test:browser`. Playwright report
 
 The three self-hosted-image cases were selected (not skipped), but each failed at browser startup. They have **not passed**. A complete passing run on a host where Playwright can launch Chromium remains required. No test expectations or browser security settings were weakened to obtain a pass.
 
+*Superseded 2026-10-21: see "Update: browser suite no longer required" at the end of this file.*
+
 ## Requested wording updates
 
 - Homepage history: “Including the mess.” → “In context.”
 - Original Experience opening: “What if we've been asking the wrong questions?” → “Explore the claims. Examine the evidence.”
 
 All changes remain confined to `self-host-images`.
+
+## Update: browser suite no longer required (2026-10-21, later)
+
+PR #7 (`self-host-images` into `main`) was merged. The full browser suite was then run on Linux in GitHub Actions: run 39658128898 on commit `ceb7c43` finished with 325 passed and 2 failed; both failures were the strict mobile (390px) header screenshot comparison, and the self-hosted-image cases were not among them (as reported from that run's results; not independently re-read). A later run (39663392025, PR #8 head `48f95e9`) failed 11 header screenshots on different pages, so the failures are intermittent, not tied to particular pages. The failing screenshot pairs were reported to differ by exactly 3 pixels each, with a maximum channel difference of 5/255.
+
+Owner decision, 2026-10-21: the Linux browser run is not needed for this hobby site. The "complete passing run ... remains required" condition above is withdrawn. Static and distribution checks remain the standard checks (see `docs/DEPLOYMENT.md`).

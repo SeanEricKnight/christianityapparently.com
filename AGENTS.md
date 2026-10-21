@@ -17,7 +17,7 @@ This is the **public, production website repository**. These instructions apply 
 
 ## Engineering discipline
 - Do not hand-edit generated headers/question-page output; follow the canonical generators described in `README.md`.
-- Run the applicable static, distribution and browser tests. Record the **exact commit** tested and failures; never re-label an earlier commit's result as current. Do not weaken checks to make a failing build look green.
+- Run `npm run check` and `npm run check:dist` for site changes. The browser suite (`npm run test:browser`) and its Linux GitHub Actions run are **optional, not required** (owner decision, 2026-10-21; see `docs/DEPLOYMENT.md`): run it locally only when a change touches the header, layout or JavaScript, and never block work on it. Record the **exact commit** tested and failures; never re-label an earlier commit's result as current. Do not weaken checks to make a failing build look green.
 - Track actionable work in GitHub Issues and PRs. Include documentation changes in the same PR as consequential hosting, architecture, deployment, or site behavior changes.
 - Preserve existing docs and update them in place rather than creating competing sources of truth.
 - Changes to production deployment, sensitive editorial content, or private/public exposure need the owner's authorization. Merging code alone does not prove the live deployment succeeded.
