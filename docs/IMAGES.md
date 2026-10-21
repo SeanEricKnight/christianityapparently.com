@@ -46,9 +46,9 @@ node scripts/localize-images.js --dry-run
 npm run build:dist
 node scripts/check-static.js
 node scripts/check-dist.js
-ONLINE=1 npm run test:browser
+ONLINE=1 npm run test:browser   # optional (see docs/DEPLOYMENT.md#checks)
 ```
 
-After localization the dry run should report zero remaining external Commons references. Do not expect the original 17 again once the pages have been rewritten. A `MANIFEST.json` enables the self-hosting test in all three Playwright projects (desktop, tablet and mobile); those three cases must execute and pass, not skip. The test exercises image loading and absence of third-party image requests.
+After localization the dry run should report zero remaining external Commons references. Do not expect the original 17 again once the pages have been rewritten. A `MANIFEST.json` enables the self-hosting test in all three Playwright projects (desktop, tablet and mobile); when the browser suite is run, those three cases should execute and pass, not skip (running it is optional). The test exercises image loading and absence of third-party image requests.
 
 No production deployment or main-branch changes are part of this work.
