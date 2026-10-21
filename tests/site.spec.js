@@ -151,7 +151,7 @@ test('original-experience: hero visible, dots navigate, tiles go to the right pa
   await open(page, 'original-experience.html'); await page.waitForTimeout(500);
   const op = await page.evaluate(() => parseFloat(getComputedStyle(document.querySelector('.scene-1')).opacity));
   expect(op, 'hero text visible at top').toBeGreaterThan(0.9);
-  const want = [/wrong\s+questions/i, /extraordinary/i, /something\s+happened/i, /what\s+if\s+it/i];
+  const want = [/Explore\s+the claims\.\s+Examine\s+the evidence\./i, /extraordinary/i, /something\s+happened/i, /what\s+if\s+it/i];
   const dots = page.locator('.side-index a');
   for (let i = 0; i < 4; i++) {
     await dots.nth(i).click({ force: true }); await page.waitForTimeout(1500);
