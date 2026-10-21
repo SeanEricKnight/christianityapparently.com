@@ -24,3 +24,16 @@ This is the **public, production website repository**. These instructions apply 
 
 ## For Claude
 A dated handoff from ChatGPT is in the private ops repo at `handoffs/2026-10-21-website-documentation-workflow-to-claude.md`. Read it and the ops `HANDOFF.md` index. The GitHub coordination architecture was already approved in early October 2026; **continue it, don't replace it**.
+
+## Value-of-work and token discipline (owner-approved, 2026-10-21)
+
+Protect the owner's time, token budget, and actual outcomes. **Do not optimize for a green test dashboard at any cost.** Before expanding a task, assess: What user-visible failure or material risk does this prevent? How likely/severe is it? What is the cheapest reliable check? What is the stopping rule?
+
+- **Priority:** security, privacy, data loss, broken production, failed deployments, accessibility, incorrect content, and user-visible defects first. Cosmetic differences and infrastructure polish are lower priority unless the owner expressly requests them.
+- **Proportionality:** a failing test is evidence to investigate, not automatically a broken product. Classify real defect vs test fragility vs unknown; inspect failure context before rewriting code. Keep substantive tests strong; tune overly sensitive assertions based on evidence, not to hide defects.
+- **Timebox:** after one focused investigation or two unsuccessful attempts, reassess cost/benefit. If impact is minor, document it, propose a proportionate follow-up, and move on. Escalate only if materially justified.
+- **Lean execution:** read existing GitHub/Google Docs evidence first; batch independent checks; avoid repeating full test suites unnecessarily; prefer targeted checks then one final comprehensive run when warranted; record concise facts and direct links instead of lengthy transcripts.
+- **No unbounded rabbit holes:** avoid speculative rewrites, repeated tool calls for marginal certainty, and chasing imperceptible pixel changes when layout/functionality tests pass. Stop when additional evidence is unlikely to change the decision.
+- **Risk exception:** never abandon potentially serious security, privacy, accessibility, data-integrity, or production issues merely to save tokens. Report meaningful unresolved risk plainly.
+
+Example: the 2026-10-21 CI header screenshot failures were traced to 3 color-channel-level pixels out of a 390×70 screenshot. That tiny rasterization difference should not consume an open-ended investigation or block an otherwise validated site change. This is a lesson about proportionality, not blanket permission to ignore CI.
