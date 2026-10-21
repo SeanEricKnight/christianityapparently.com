@@ -11,10 +11,17 @@ const BLOCKED = ["/docs/REBUILD-REPORT.md","/docs/REBUILD-REPORT","/docs/","/scr
 (async () => {
   for (const p of BLOCKED) await expectStatus(p, 404, "BLOCKED " + p);
   for (const p of ["/", "/index.html", "/questions", "/questions.html", "/questions/hypocrites", "/questions/pagan-myths", "/basics", "/credits", "/councils", "/life", "/robots.txt", "/sitemap.xml", "/styles.css", "/site-header.css", "/home.css", "/site-header.js", "/favicon.svg"]) await expectStatus(p, [200, 307, 308], "PUBLIC " + p);
-  const old = await expectStatus("/questions/unlike-jesus", [301, 308], "retired page redirect");
-  if (old.status && ![301, 308].includes(old.status)) { /* already recorded */ } else if (!/\/questions\/hypocrites$/.test(old.headers.get("location") || "")) fails.push("retired page redirect target: " + old.headers.get("location"));
+  for (const p of ["/questions/unlike-jesus", "/questions/unlike-jesus.html"]) {
+    const old = await expectStatus(p, [301, 308], "retired page redirect " + p);
+    if ([301, 308].includes(old.status) && new URL(old.headers.get("location") || "/", base).pathname !== "/questions/hypocrites") fails.push("retired page redirect target: " + old.headers.get("location"));
+  }
   const nf = await get("/definitely-not-a-page-xyz"); n++; if (nf.status !== 404) fails.push("unknown path should be 404, got " + nf.status);
   const h = await get("/"); n++; const hdr = k => h.headers.get(k); if (hdr("x-content-type-options") !== "nosniff") fails.push("missing X-Content-Type-Options header"); if (!/DENY/i.test(hdr("x-frame-options") || "")) fails.push("missing X-Frame-Options header");
+  n++; if (hdr("referrer-policy") !== "strict-origin-when-cross-origin") fails.push("missing Referrer-Policy header");
+  n++; if (hdr("permissions-policy") !== "camera=(), geolocation=(), microphone=(), payment=(), usb=()") fails.push("missing Permissions-Policy header");
+  const home = await h.text(); n++; if (/<a\b[^>]*\bhref=["']https:\/\/christianityapparently\.com(?:\/|["'])/i.test(home)) fails.push("homepage navigation escapes to production");
+  const image = await expectStatus("/assets/images/first-council-nicaea-surikov.jpg", 200, "local Nicaea image");
+  n++; if (!/^image\/jpeg\b/.test(image.headers.get("content-type") || "") || (await image.arrayBuffer()).byteLength === 0) fails.push("local Nicaea image is empty or has wrong content type");
   console.log(`${n} checks, ${fails.length} failure(s)`); if (fails.length) { console.error(fails.join("\n")); process.exit(1); }
   console.log("deployment verification passed for " + base);
 })().catch(e => { console.error(e); process.exit(1); });

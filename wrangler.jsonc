@@ -1,9 +1,10 @@
 {
   // Cloudflare Workers (static assets). Only dist/ is published.
   // Build:   node scripts/build-dist.js
-  // Deploy:  npx wrangler deploy        (non-production branches: npx wrangler versions upload)
+  // Deploy: npx wrangler deploy (production); npx wrangler preview (preview branches).
   "name": "christianityapparently-com",
   "compatibility_date": "2026-10-01",
+  "previews": {},
   "assets": {
     "directory": "./dist",
     "html_handling": "auto-trailing-slash",

@@ -29,7 +29,7 @@ for(const p of pages){
   // 4 links
   const markup=s.replace(/<script[\s\S]*?<\/script>/g,'');
   for(const m of markup.matchAll(/<a\b[^>]*\shref="([^"]+)"/g)){let h=m[1];if(/^(https?:|mailto:|tel:|javascript:)/.test(h))continue;
-    const [file,frag]=h.split('#');let target=file?path.resolve(path.dirname(p),decodeURIComponent(file)):p;
+    const [file,frag]=h.split('#');let target=file?(file.startsWith('/')?path.resolve(ROOT,'.'+decodeURIComponent(file)):path.resolve(path.dirname(p),decodeURIComponent(file))):p;
     if(file&&!exists(target)&&exists(target+'.html'))target+='.html';
     if(file&&!exists(target)){fail(p,'dead link '+h);continue}
     if(frag&&target.endsWith('.html')&&ids.has(target)&&!ids.get(target).has(frag))fail(p,'missing anchor '+h)}
