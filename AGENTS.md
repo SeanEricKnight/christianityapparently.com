@@ -49,3 +49,13 @@ This is a personal hobby project, **not a business-critical enterprise website**
 ## Owner design principle (2026-10-21)
 
 **If something doesn't help visitors understand, navigate, or investigate, it probably doesn't need to be there.** Prefer calm, clear design over decorative animation, repeated slogans, unnecessary whitespace and oversized visual effects. Remove low-value flourishes rather than replacing them with new flourishes; protect legibility, helpful imagery and navigation. The private ops README has this approved cross-assistant design direction. Keep changes and testing proportionate to a hobby website.
+
+## Editorial scope — Christianity Apparently (owner decision, 2026-10-21)
+
+**Mission:** Investigate Christianity's foundational truth claims through history, Scripture, textual criticism, archaeology, philosophy, science, and reason. Ask whether claims are historically and intellectually defensible, presenting the evidence, serious competing explanations, and uncertainties without forcing a verdict.
+
+**In scope:** Jesus' life, identity, death and resurrection; biblical authorship, canon, transmission, interpretation and contradictions; historical development of core Christian beliefs; verifiable prophecy; biblical archaeology; God, suffering, miracles, salvation, doubt, and major philosophical objections. Relevant historical institutions/councils belong when needed to understand the evidence or doctrinal development.
+
+**Out of scope for new editorial pitches:** Culture-war or current political controversy, partisan arguments, modern social-policy fights, denominational minutiae, lifestyle-rule FAQs and trivial practices (e.g. Halloween decorations, cremation rules). Do not turn the site into a general Christian advice or hot-take platform. Some existing pastoral/life content can remain; this decision guides *new investigations and proposed expansion*, not automatic deletions.
+
+**Selection test:** Does this help someone investigate a consequential claim about Christianity's truth, historical reliability, or coherent interpretation? Is the issue substantial and supported by serious research? If not, don't pitch or build it. Avoid duplicate questions already answered. Political or ethical implications may arise incidentally in explaining history/texts; treat these factually without making them the page's agenda. Ask the owner before any deliberate expansion beyond this scope.
