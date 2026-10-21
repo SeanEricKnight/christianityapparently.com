@@ -2,7 +2,7 @@
 // These do NOT replace the browser suite in tests/ (rendering, animation, overflow, console errors).
 const fs=require('fs'),path=require('path'),vm=require('vm');
 const ROOT=path.join(__dirname,'..');
-const pages=[];(function walk(d){for(const f of fs.readdirSync(d)){if(f==='.git'||f==='node_modules'||f==='tests')continue;const p=path.join(d,f);fs.statSync(p).isDirectory()?walk(p):f.endsWith('.html')&&pages.push(p)}})(ROOT);
+const pages=[];(function walk(d){for(const f of fs.readdirSync(d)){if(f==='.git'||f==='node_modules'||f==='tests'||f==='test-report'||f==='test-results'||f==='docs')continue;const p=path.join(d,f);fs.statSync(p).isDirectory()?walk(p):f.endsWith('.html')&&pages.push(p)}})(ROOT);
 const rel=p=>path.relative(ROOT,p);
 const fails=[];const fail=(p,m)=>fails.push(rel(p)+': '+m);
 const exists=f=>fs.existsSync(f);
