@@ -41,8 +41,10 @@ Homepage/Councils styling lives in `home.css`; interior pages use `styles.css`.
 ```bash
 npm run build     # regenerate question pages, then apply the shared shell (idempotent)
 npm run check     # build + fail if anything changed + static checks (links, anchors, JS, content rules)
-npm run test:browser   # real-browser suite: 94 pages x 1440/768/390 (needs: npm i && npx playwright install chromium)
+npm run test:browser   # OPTIONAL real-browser suite: 94 pages x 1440/768/390 (needs: npm i && npx playwright install chromium)
 ```
+
+`npm run check` (plus `npm run check:dist` before a deploy) is the checklist for ordinary changes. The browser suite and its Linux GitHub Actions run are **not required** for this personal hobby site (owner decision, 2026-10-21); run the suite locally only if you changed the header, layout or JavaScript and want the extra check. See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md#checks).
 
 Edit the shared header in `scripts/shell.js` / `site-header.css`, then run `npm run build`.
 

@@ -1,3 +1,5 @@
+# Optional, not required (owner decision 2026-10-21; see docs/DEPLOYMENT.md#checks).
+# Only runs on pushes to the already-merged self-host-images branch. Safe to delete.
 name: Verify self-hosted images
 
 on:
