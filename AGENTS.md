@@ -45,3 +45,7 @@ Read the private ops repo's `DECISIONS.md` and `README.md` for the full approved
 ## Scale: personal hobby site (owner clarification, 2026-10-21)
 
 This is a personal hobby project, **not a business-critical enterprise website**. Optimize for a working, welcoming site and enjoyable, low-friction development, not exhaustive perfection. Use lightweight checks and favor fixes visitors would notice. Do not spend excessive time/tokens on microscopic screenshots, rare cosmetic edge cases, or process ceremony. Still protect actual security/privacy, legal/image licensing, data integrity, meaningful accessibility and broken functionality. `Production` means the public hosting environment, not a commercial-grade SLA. Refer to the private ops README for the full agreed effort policy.
+
+## Owner design principle (2026-10-21)
+
+**If something doesn't help visitors understand, navigate, or investigate, it probably doesn't need to be there.** Prefer calm, clear design over decorative animation, repeated slogans, unnecessary whitespace and oversized visual effects. Remove low-value flourishes rather than replacing them with new flourishes; protect legibility, helpful imagery and navigation. The private ops README has this approved cross-assistant design direction. Keep changes and testing proportionate to a hobby website.
