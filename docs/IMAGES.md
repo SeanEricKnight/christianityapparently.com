@@ -52,3 +52,17 @@ ONLINE=1 npm run test:browser   # optional (see docs/DEPLOYMENT.md#checks)
 After localization the dry run should report zero remaining external Commons references. Do not expect the original 17 again once the pages have been rewritten. A `MANIFEST.json` enables the self-hosting test in all three Playwright projects (desktop, tablet and mobile); when the browser suite is run, those three cases should execute and pass, not skip (running it is optional). The test exercises image loading and absence of third-party image requests.
 
 No production deployment or main-branch changes are part of this work.
+
+## AI-generated illustrations (added 2026-10-21, PR #11)
+
+Five images in `assets/images/illustrations/` were generated with an AI image tool for this site. They are **not** Commons images, are not in `MANIFEST.json`, and must never be presented as photographs, real artifacts or evidence. They have no third-party source or license; they are credited in the "AI-generated illustrations" section of `credits.html`.
+
+| File | Used on |
+|---|---|
+| `hero-journey.jpg` | Homepage hero |
+| `hero-scripture.jpg` | Bible Problems header |
+| `hero-history.jpg` | Councils header |
+| `resurrection-card.jpg` | Homepage card: "Did Jesus rise from the dead?" |
+| `historical-jesus-card.jpg` | Homepage card: "Did Jesus actually exist?" |
+
+Originals were PNGs (kept in the owner's Drive folder "Christianity Apparently Image Assets"); the site uses resized JPEGs. Any alt text must say "Illustration (AI-generated)".
