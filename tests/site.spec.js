@@ -18,7 +18,7 @@ const measure = () => {
     brandLeft: Math.round(br.left), brand: cs(b), em: cs(em), linkText: links.map(a => a.textContent.trim()),
     navFont: links[0] ? cs(links[0]) : null };
 };
-const ref = {}, refShot = {};  // per-viewport homepage reference
+const referencePromises = {}; // one immutable homepage reference per viewport, even with parallel tests
 
 async function open(page, file) {
   const errors = [], failed = [];
@@ -44,21 +44,36 @@ for (const file of pages) {
     expect(failed, 'failed requests').toEqual([]);
 
     // 2. header identical to the homepage reference at this viewport
-    if (!ref[vw]) { const p2 = await browser.newPage({ viewport: info.project.use.viewport }); await p2.goto('/index.html'); await p2.evaluate(() => document.fonts.ready); await p2.waitForTimeout(300); ref[vw] = await p2.evaluate(measure); refShot[vw] = await p2.locator('header.ca-global-header').screenshot({ animations: 'disabled' }); await p2.close(); }
+    if (!referencePromises[vw]) {
+      referencePromises[vw] = (async () => {
+        const p2 = await browser.newPage({ viewport: info.project.use.viewport });
+        try {
+          await p2.goto('/index.html');
+          await p2.evaluate(() => document.fonts.ready);
+          await p2.waitForTimeout(300);
+          const measurement = await p2.evaluate(measure);
+          const screenshot = await p2.locator('header.ca-global-header').screenshot({ animations: 'disabled' });
+          return { measurement, screenshot };
+        } finally {
+          await p2.close();
+        }
+      })();
+    }
+    const { measurement: reference, screenshot: referenceShot } = await referencePromises[vw];
     const m = await page.evaluate(measure);
     expect(m, 'shared header present').not.toBeNull();
-    expect(m.height).toBe(ref[vw].height);
-    expect(m.brandLeft).toBe(ref[vw].brandLeft);
-    expect(m.brand).toEqual(ref[vw].brand);
-    expect(m.em).toEqual(ref[vw].em);
-    expect(m.navFont).toEqual(ref[vw].navFont);
-    expect(m.linkText).toEqual(ref[vw].linkText);
+    expect(m.height).toBe(reference.height);
+    expect(m.brandLeft).toBe(reference.brandLeft);
+    expect(m.brand).toEqual(reference.brand);
+    expect(m.em).toEqual(reference.em);
+    expect(m.navFont).toEqual(reference.navFont);
+    expect(m.linkText).toEqual(reference.linkText);
     expect(m.position).toBe('sticky');
     // visual: the rendered header must be pixel-identical to the homepage's at this width
     await page.evaluate(() => document.fonts.ready);
     const shot = await page.locator('header.ca-global-header').screenshot({ animations: 'disabled' });
-    if (!shot.equals(refShot[vw])) { await info.attach('header-' + slug(file), { body: shot, contentType: 'image/png' }); await info.attach('header-home', { body: refShot[vw], contentType: 'image/png' }); }
-    expect(shot.equals(refShot[vw]), 'header pixels differ from homepage').toBeTruthy();
+    if (!shot.equals(referenceShot)) { await info.attach('header-' + slug(file), { body: shot, contentType: 'image/png' }); await info.attach('header-home', { body: referenceShot, contentType: 'image/png' }); }
+    expect(shot.equals(referenceShot), 'header pixels differ from homepage').toBeTruthy();
 
     // 3. sticky: after scrolling 1200px the header is still at the top
     await page.evaluate(() => scrollTo(0, 1200)); await page.waitForTimeout(300);
