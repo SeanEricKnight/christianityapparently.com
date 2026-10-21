@@ -1,4 +1,5 @@
 const { test, expect } = require('@playwright/test');
+const { PNG } = require('pngjs');
 const fs = require('fs'), path = require('path');
 const ROOT = path.join(__dirname, '..');
 const ONLINE = !!process.env.ONLINE;
@@ -19,6 +20,23 @@ const measure = () => {
     navFont: links[0] ? cs(links[0]) : null };
 };
 const ref = {}, refShot = {};  // per-viewport homepage reference
+
+// Header screenshots may differ from the homepage's by a few anti-aliased glyph pixels
+// (CI run 39658128898 and 39663392025: all 13 failures were exactly 3 pixels, max channel
+// delta 5/255, at one spot of a 390x70 header). Allow that noise; fail on anything larger.
+const HEADER_MAX_CHANGED_PX = 30;  // about 0.1% of a 390x70 header
+const HEADER_MAX_DELTA = 16;       // per-channel, out of 255
+function headerDiff(a, b) {
+  const A = PNG.sync.read(a), B = PNG.sync.read(b);
+  if (A.width !== B.width || A.height !== B.height) return { sizeMismatch: true, changed: Infinity, maxDelta: 255 };
+  let changed = 0, maxDelta = 0;
+  for (let i = 0; i < A.data.length; i += 4) {
+    let d = 0;
+    for (let c = 0; c < 4; c++) d = Math.max(d, Math.abs(A.data[i + c] - B.data[i + c]));
+    if (d > 0) { changed++; if (d > maxDelta) maxDelta = d; }
+  }
+  return { sizeMismatch: false, changed, maxDelta };
+}
 
 async function open(page, file) {
   const errors = [], failed = [];
@@ -54,11 +72,21 @@ for (const file of pages) {
     expect(m.navFont).toEqual(ref[vw].navFont);
     expect(m.linkText).toEqual(ref[vw].linkText);
     expect(m.position).toBe('sticky');
-    // visual: the rendered header must be pixel-identical to the homepage's at this width
+    // visual: the rendered header must match the homepage's at this width, allowing only
+    // anti-aliasing noise (see HEADER_MAX_* above). Real differences (font, spacing, text,
+    // colour) change hundreds of pixels and still fail.
     await page.evaluate(() => document.fonts.ready);
     const shot = await page.locator('header.ca-global-header').screenshot({ animations: 'disabled' });
-    if (!shot.equals(refShot[vw])) { await info.attach('header-' + slug(file), { body: shot, contentType: 'image/png' }); await info.attach('header-home', { body: refShot[vw], contentType: 'image/png' }); }
-    expect(shot.equals(refShot[vw]), 'header pixels differ from homepage').toBeTruthy();
+    const diff = headerDiff(shot, refShot[vw]);
+    if (diff.sizeMismatch || diff.changed > HEADER_MAX_CHANGED_PX || diff.maxDelta > HEADER_MAX_DELTA) {
+      await info.attach('header-' + slug(file), { body: shot, contentType: 'image/png' });
+      await info.attach('header-home', { body: refShot[vw], contentType: 'image/png' });
+    } else if (diff.changed > 0) {
+      info.annotations.push({ type: 'header-aa-noise', description: `${diff.changed} px differ, max channel delta ${diff.maxDelta}` });
+    }
+    expect(diff.sizeMismatch, 'header screenshot size differs from homepage').toBe(false);
+    expect(diff.maxDelta, `header colour differs from homepage (${diff.changed} px changed)`).toBeLessThanOrEqual(HEADER_MAX_DELTA);
+    expect(diff.changed, `header pixels differ from homepage (max channel delta ${diff.maxDelta})`).toBeLessThanOrEqual(HEADER_MAX_CHANGED_PX);
 
     // 3. sticky: after scrolling 1200px the header is still at the top
     await page.evaluate(() => scrollTo(0, 1200)); await page.waitForTimeout(300);

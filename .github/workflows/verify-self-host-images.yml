@@ -3,6 +3,8 @@ name: Verify self-hosted images
 on:
   push:
     branches: [self-host-images]
+  pull_request:
+    branches: [main]
 
 permissions:
   contents: read
