@@ -45,7 +45,7 @@ for(const p of pages){
 const sigs=new Set(canon.values());if(sigs.size>1)fail(ROOT,'header markup differs between pages ('+sigs.size+' variants)');
 // sitemap covers every indexable page
 const sm=read(path.join(ROOT,'sitemap.xml'));
-for(const p of pages){const r=rel(p);if(r==='404.html')continue;const u='https://christianityapparently.com/'+(r==='index.html'?'':r.replace(/\.html$/,''));if(!sm.includes('<loc>'+u+'</loc>'))fail(p,'not in sitemap')}
+for(const p of pages){const r=rel(p);if(r==='404.html')continue;if(/<meta name="robots" content="noindex/.test(fs.readFileSync(p,'utf8')))continue;const u='https://christianityapparently.com/'+(r==='index.html'?'':r.replace(/\.html$/,''));if(!sm.includes('<loc>'+u+'</loc>'))fail(p,'not in sitemap')}
 // stylesheets: no stock photography or external photo backgrounds (HTML-only checks missed these once)
 for(const f of fs.readdirSync(ROOT).filter(f=>f.endsWith('.css'))){const c=fs.readFileSync(path.join(ROOT,f),'utf8');
   if(/unsplash/i.test(c))fail(f,'Unsplash reference in CSS');
