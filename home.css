@@ -123,3 +123,8 @@
 /* Compact next-step navigation: no stretched empty cards or bottom-pinned labels. */
 .ca-next{padding:25px 0 30px}.ca-next-head{align-items:center;margin-bottom:13px}.ca-next-grid{gap:12px}.ca-next-card{min-height:0;padding:17px 19px;gap:9px}.ca-next-card strong{font-size:clamp(18px,1.7vw,24px);line-height:1.2}.ca-next-card b{margin-top:4px}.ca-next-question{margin-top:15px;padding-top:13px}
 @media(max-width:760px){.ca-next{padding:22px 0 28px}.ca-next-card{padding:16px 18px}}
+
+/* Questions-first homepage: search box and compact hero. */
+.hero-compact{min-height:0}.home-search{margin:22px 0 10px;max-width:640px}.home-search label{display:block;font:700 12px/1 'Space Grotesk',sans-serif;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}.home-search-row{display:flex;gap:10px}.home-search input{flex:1;min-width:0;padding:14px 16px;font:500 16px 'DM Sans',sans-serif;border:1px solid #d5d0c6;background:#fcfaf5;color:#18242b;border-radius:0}.home-search .btn{white-space:nowrap;border:0;cursor:pointer}.home-search-alt{margin:6px 0 0;font-size:14px}.home-search-alt a{font-weight:600}
+@media(max-width:560px){.home-search-row{flex-direction:column}}
+#collections .index-grid{grid-template-columns:repeat(2,minmax(0,1fr))}@media(max-width:760px){#collections .index-grid{grid-template-columns:1fr}}
